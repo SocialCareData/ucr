@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/n3/browser/n3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/3d-force-graph"></script>
+    <script type="module">
+        import SpriteText from "https://esm.sh/three-spritetext";
+
+        const response = await fetch("data.ttl")
+        const text = await response.text()
+        const parser = new N3.Parser
+        const store = new N3.Store
+        const quads = parser.parse(text)
+        store.addQuads(quads)
+
+        const requirements = [...store.match(undefined, p("title"))].map(q => ({
+            id: q.subject.id,
+            number: q.subject.id.split("/").pop(),
+            title: q.object.value,
+            useCaseCount: [...store.match(q.subject, p("use-case"))].length,
+            description: [...[...store.match(q.subject, p("description"))].map(x => x.object.value)][0],
+        }))
+        const useCases = [...new Set([...store.match(undefined, p("useCaseTitle"))].map(q => ({
+            id: q.subject.id,
+            number: q.subject.id.split("/").pop(),
+            title: q.object.value,
+            requirementCount: [...store.match(undefined, p("target"), q.subject)]
+                .map(x => [...store.match(undefined, p("use-case"), x.subject)]).length,
+            description: [...[...store.match(q.subject, p("useCaseDescription"))].map(x => x.object.value)][0],
+        })))]
+        const useCaseLinks = Object.entries(Object.groupBy([...store.match(undefined, p("use-case"))].map(q => ({
+            requirement: q.subject.id,
+            target: [...store.match(q.object, p("target"))].map(q => q.object.id)[0],
+            comment: [...store.match(q.object, p("comment"))].map(q => q.object.value)[0],
+        })), i => i.requirement)).map(x => [x[0], x[1].map(t => ({ target: t.target, comment: t.comment }))]).map(x => ({
+            requirement: x[0],
+            useCases: x[1]
+        }))
+
+        const gData = {
+            nodes: [
+                ...requirements.map(x => ({ id: x.id, title: x.title, group: "requirement" })),
+                ...useCases.map(x => ({ id: x.id, title: x.title, group: "useCase" }))],
+            links: useCaseLinks.flatMap(x => x.useCases.map(y => ({ source: x.requirement, target: y.target }))),
+        };
+
+
+
+
+
+        const Graph = new ForceGraph3D(document.getElementById("graph"))
+            .graphData(gData)
+            .nodeAutoColorBy("group")
+            .linkDirectionalArrowLength(5)
+            .nodeThreeObject(node => {
+                const sprite = new SpriteText(node.title);
+                sprite.material.depthWrite = false; // make sprite background transparent
+                sprite.color = node.color;
+                sprite.textHeight = 8;
+                sprite.center.y = -0.6; // shift above node
+                return sprite;
+            })
+            .nodeThreeObjectExtend(true);
+
+
+        function p(name) {
+            return N3.DataFactory.namedNode(`https://github.com/SocialCareData/ucr/schema/${name}`)
+        }
+    </script>
+</head>
+
+<body>
+    <div id="graph"></div>
+
+</body>
+</html>
