@@ -536,3 +536,55 @@ req:56
 	:title "Audit Log Standard" ;
 	:description "Systems must provide a full audit log of all actions in standard format. The audit log must meet statutory requirements for record-keeping. It provides accountability and supports compliance verification." ;
 .
+
+uc:1
+	:title "Access and contribute to a shared record (subject of care)" ;
+	:description "As a data subject, I need to be able to contribute to my record, so that my experience and preferences can be considered when making decisions about my care." ;
+
+uc:2
+	:title "Social worker recording" ;
+	:description "As a person giving care, I need to write freeform notes regarding the provision of care following an interaction with a person receiving care so that relevant information is kept for further reference." ;
+
+uc:3
+	:title "Finding and synthesising information from the CMS" ;
+	:description "As a social worker, I need to find information within my CMS quickly and reliably, so that I can use it to inform mine or my colleagues' planning and work with the subject of care." ;
+
+uc:4
+	:title "Supporting CMS migration" ;
+	:description "As a social care leader, I need to be getting the best value for my social workers from their case management system so that they can do their jobs most effectively" ;
+
+uc:5
+	:title "Analysing information from the CMS" ;
+	:description "As a social work senior leader, I need to be able to analyse data about children being supported by my service area, so that I can make decisions about service planning." ;
+
+uc:6
+	:title "Social care statutory reporting" ;
+	:description "As a BI/ performance team member, I can generate accurate statutory returns (e.g. CLD or SSDA903) from reliable data in the CMS, minimising manual data cleansing, so that the local authority meets national reporting requirements, and we can use this data for benchmarking and insights." ;
+
+uc:7
+	:title "Sharing care summaries" ;
+	:description "As a social work admin support team, I need to be able to create a version of someone’s care records which are intelligible to them and do not breach duties of confidentiality to others, so that I can respect their right to know what was written about them." ;
+
+uc:8
+	:title "Transition  from children’s social care to adult social care" ;
+	:description "As an adult social worker or transitions manager, I can receive, track, and act on information about young people transitioning from children’s to adult services, so that their care is continuous, assessments are timely, and support plans are appropriate when they reach adulthood." ;
+
+uc:9
+	:title "Transfer of responsibility" ;
+	:description "As a social worker I need to be able to transfer records between local authorities, so that when a child or young person who is subject to a child protection plan moves outside my local authority, the new social work teams are able to understand the full history of my involvement.  This transfer of records happens at a Transfer-in Child Protection Conference, hosted by the receiving social work team." ;
+
+uc:10
+	:title "Multi-agency enquiries" ;
+	:description "As a professional starting work directly with an individual, I want to know their history of involvement with professionals, including concerns, interventions, and outcomes.  This helps me plan my work with them, and avoids them feeling they have to explain their story over and over again." ;
+
+uc:11
+	:title "Multi-agency notifications" ;
+	:description "As a social worker, I need to be notified of important events regarding the people I am supporting, so that I can make decisions about their care based on the most up-to-date information." ;
+
+uc:12
+	:title "Multiagency input into a person’s record" ;
+	:description "As a practitioner working in a multiagency team, I need all key partners to be able to view relevant aspects of a child’s record and input into the record of a child I am providing care for, so that the record provides a full picture of the child and their needs." ;
+
+uc:13
+	:title "Recording and sharing adult social care needs assessments" ;
+	:description "As an adult social worker or delegated professional (e.g., OT), I can record a person’s care needs, preferences, and outcomes in a structured, standardised way, so that the local authority can determine eligibility, plan support, ensure continuity of care, facilitate sharing with other professionals, and improve oversight and service quality." ;
