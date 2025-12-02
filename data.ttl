@@ -94,7 +94,7 @@ req:8
 		[ :target uc:7; :comment "to get all the data relevant to SAR" ; ],
 		[ :target uc:8; :comment "this is how we get all the data that needs to move with the subject as they go from child to adult" ; ],
 		[ :target uc:9; :comment "whatever data travels during this transfer comes together via query" ; ],
-		[ :target uc:10; :comment "because it might be all kinds of data they�re after" ; ],
+		[ :target uc:10; :comment "because it might be all kinds of data they're after" ; ],
 		[ :target uc:11; :comment "because notifications are potentially about anything" ; ],
 		[ :target uc:12; :comment "" ; ]
 	;
@@ -129,7 +129,7 @@ req:11
 		[ :target uc:5; :comment "" ; ],
 		[ :target uc:6; :comment "" ; ],
 		[ :target uc:7; :comment "mostly domain but some admin data is relevant to SAR" ; ],
-		[ :target uc:8; :comment "some data that moves with subject is �admin�" ; ],
+		[ :target uc:8; :comment "some data that moves with subject is 'admin'" ; ],
 		[ :target uc:9; :comment "all kinds of data must travel" ; ],
 		[ :target uc:10; :comment "all kinds" ; ],
 		[ :target uc:11; :comment "also all kinds" ; ],
@@ -633,12 +633,12 @@ uc:6
 
 uc:7
 	:useCaseTitle "Sharing care summaries" ;
-	:useCaseDescription "As a social work admin support team, I need to be able to create a version of someone�s care records which are intelligible to them and do not breach duties of confidentiality to others, so that I can respect their right to know what was written about them." ;
+	:useCaseDescription "As a social work admin support team, I need to be able to create a version of someone's care records which are intelligible to them and do not breach duties of confidentiality to others, so that I can respect their right to know what was written about them." ;
 .
 
 uc:8
 	:useCaseTitle "Transition  from children's social care to adult social care" ;
-	:useCaseDescription "As an adult social worker or transitions manager, I can receive, track, and act on information about young people transitioning from children�s to adult services, so that their care is continuous, assessments are timely, and support plans are appropriate when they reach adulthood." ;
+	:useCaseDescription "As an adult social worker or transitions manager, I can receive, track, and act on information about young people transitioning from children's to adult services, so that their care is continuous, assessments are timely, and support plans are appropriate when they reach adulthood." ;
 .
 
 uc:9
@@ -658,10 +658,10 @@ uc:11
 
 uc:12
 	:useCaseTitle "Multiagency input into a person's record" ;
-	:useCaseDescription "As a practitioner working in a multiagency team, I need all key partners to be able to view relevant aspects of a child�s record and input into the record of a child I am providing care for, so that the record provides a full picture of the child and their needs." ;
+	:useCaseDescription "As a practitioner working in a multiagency team, I need all key partners to be able to view relevant aspects of a child's record and input into the record of a child I am providing care for, so that the record provides a full picture of the child and their needs." ;
 .
 
 uc:13
 	:useCaseTitle "Recording and sharing adult social care needs assessments" ;
-	:useCaseDescription "As an adult social worker or delegated professional (e.g., OT), I can record a person�s care needs, preferences, and outcomes in a structured, standardised way, so that the local authority can determine eligibility, plan support, ensure continuity of care, facilitate sharing with other professionals, and improve oversight and service quality." ;
+	:useCaseDescription "As an adult social worker or delegated professional (e.g., OT), I can record a person's care needs, preferences, and outcomes in a structured, standardised way, so that the local authority can determine eligibility, plan support, ensure continuity of care, facilitate sharing with other professionals, and improve oversight and service quality." ;
 .
