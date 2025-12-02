@@ -65,9 +65,9 @@ req:6
 	:title "System-to-System Data Transfer" ;
 	:description "The target system must be able to connect to the source system's export interface. This connection enables direct data import from one system to another. The functionality must support automated data transfer operations." ;
 	:use-case
-		[ :target uc:4; :comment "" ; ],
-		[ :target uc:8; :comment "" ; ],
-		[ :target uc:9; :comment "having the api functionality is key" ; ]
+		[ :target uc:4; :comment "System-to-system data transfer and connectivity is a core requirement for automated data migration." ; ],
+		[ :target uc:8; :comment "Enables automation of children to adult social care systems data transfer." ; ],
+		[ :target uc:9; :comment "Enables automation of care data transfer between local authorities. Core requiremetn for use case 9: Transfer of responsibility." ; ]
 	;
 .
 
@@ -75,12 +75,12 @@ req:7
 	:title "Case Management System Registry" ;
 	:description "A registry must exist that links case management systems to local authorities. This registry documents which systems are used by which authorities. It enables coordination and data sharing between authorities." ;
 	:use-case
-		[ :target uc:6; :comment "" ; ],
-		[ :target uc:8; :comment "to find which target system holds info about a subject" ; ],
-		[ :target uc:9; :comment "where to migrate" ; ],
-		[ :target uc:10; :comment "so they can find where they can find more" ; ],
-		[ :target uc:11; :comment "" ; ],
-		[ :target uc:12; :comment "" ; ]
+		[ :target uc:6; :comment "A CMS registry enables statutory reporting by identifying which systems hold data for which authorities." ; ],
+		[ :target uc:8; :comment "A CMS registry helps identify which target system holds information about a subject during transition from child to adult social care." ; ],
+		[ :target uc:9; :comment "A CMS registry identifies source and destination systems for transfer of responsibility between local authorities." ; ],
+		[ :target uc:10; :comment "A CMS registry enables external agencies to locate relevant data sources for multiagency enquiries." ; ],
+		[ :target uc:11; :comment "A CMS registry enables routing of multiagency notifications to appropriate systems." ; ],
+		[ :target uc:12; :comment "A CMS registry enables multiagency teams to identify which systems they need to integrate for shared record access." ; ]
 	;
 .
 
@@ -88,15 +88,15 @@ req:8
 	:title "Global Query Interface" ;
 	:description "A global query interface must allow users to ask questions about all data in the system. This interface must provide a unified view across all case management systems. Users must be able to search and retrieve information regardless of which system stores the data." ;
 	:use-case
-		[ :target uc:3; :comment "" ; ],
-		[ :target uc:5; :comment "" ; ],
-		[ :target uc:6; :comment "" ; ],
-		[ :target uc:7; :comment "to get all the data relevant to SAR" ; ],
-		[ :target uc:8; :comment "this is how we get all the data that needs to move with the subject as they go from child to adult" ; ],
-		[ :target uc:9; :comment "whatever data travels during this transfer comes together via query" ; ],
-		[ :target uc:10; :comment "because it might be all kinds of data they're after" ; ],
-		[ :target uc:11; :comment "because notifications are potentially about anything" ; ],
-		[ :target uc:12; :comment "" ; ]
+		[ :target uc:3; :comment "A global query interface enables social workers to find information quickly across case management systems regardless of where it is stored." ; ],
+		[ :target uc:5; :comment "A global query interface enables querying data across systems for analysis and to inform decisions." ; ],
+		[ :target uc:6; :comment "A global query interface enables statutory reporting by aggregating data across systems." ; ],
+		[ :target uc:7; :comment "A global query interface retrieves all data relevant to subject access requests from across social care systems." ; ],
+		[ :target uc:8; :comment "A global query interface gathers all data that needs to move with the subject during transition from child to adult social care." ; ],
+		[ :target uc:9; :comment "A global query interface gathers all data for transfer of responsibility between local authorities." ; ],
+		[ :target uc:10; :comment "A global query interface supports multi-agency enquiries by enabling search across diverse data types." ; ],
+		[ :target uc:11; :comment "A global query interface enables notifications about any type of data across systems." ; ],
+		[ :target uc:12; :comment "A global query interface enables multiagency teams to access complete information across systems." ; ]
 	;
 .
 
@@ -104,9 +104,9 @@ req:9
 	:title "Statutory Reporting Registry" ;
 	:description "A registry must exist that documents all statutory reporting requirements for local authorities. This registry must be maintained and updated as requirements change. It serves as a reference for compliance obligations." ;
 	:use-case
-		[ :target uc:3; :comment "this registry will inform some of the queries that serve these UCs" ; ],
-		[ :target uc:5; :comment "as above" ; ],
-		[ :target uc:6; :comment "" ; ]
+		[ :target uc:3; :comment "A statutory reporting registry informs the queries that must be used to find information needed for compliance." ; ],
+		[ :target uc:5; :comment "A statutory reporting registry informs analytical queries that are used for analysis and decision-making." ; ],
+		[ :target uc:6; :comment "Core requirement for use case 6: Social care statutory reporting. A statutory reporting registry defines the requirements that statutory reporting must fulfill." ; ]
 	;
 .
 
@@ -114,10 +114,10 @@ req:10
 	:title "Query Aggregation Functions" ;
 	:description "The query interface must support aggregation functions. Users must be able to perform operations like sum, count, average, and group by. These functions enable statistical analysis and reporting across the data set." ;
 	:use-case
-		[ :target uc:3; :comment "" ; ],
-		[ :target uc:5; :comment "" ; ],
-		[ :target uc:6; :comment "" ; ],
-		[ :target uc:11; :comment "some notification triggers or notification response payloads are aggregates" ; ]
+		[ :target uc:3; :comment "Aggregation enable social workers to synthesize information across multiple records." ; ],
+		[ :target uc:5; :comment "Aggregation enable trend analysis and patterns recognition accross social care data." ; ],
+		[ :target uc:6; :comment "Aggregation functions enable statutory reporting that requires statistical summaries." ; ],
+		[ :target uc:11; :comment "Aggregation functions support notification triggers and payloads that require aggregated data." ; ]
 	;
 .
 
