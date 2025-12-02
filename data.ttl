@@ -314,9 +314,21 @@ req:27
 
 req:28
 	:title "Standards-Based Authorization API" ;
-	:description "The API must implement authorization based on the authorization ontology and taxonomy. All access control decisions must use the standardized authorization data. This ensures consistent security enforcement." ;
-
-# TODO: Probably linked to all: this is likely oauth or more general or more specific. Mandating a protocol plus standard authorization model (that evolves with legal requirements) (also evolves with tech)
+	:description "The API must implement authorization based on the authorization ontology and taxonomy. All access control decisions must use the standardized authorization data. This ensures consistent security enforcement. A standard protocol (e.g. OAuth) and authorization model that can evolve with legal requirements is required. The standard must accomodate for evolution of technology (orthogonality of standards)." ;
+	:use-case
+		[ :target uc:1; :comment "Core requirement for all use cases. Necessary to adequately enable requirement 27: Authorization Taxonomy." ; ],
+		[ :target uc:2; :comment "Core requirement for all use cases. Necessary to adequately enable requirement 27: Authorization Taxonomy." ; ],
+		[ :target uc:3; :comment "Core requirement for all use cases. Necessary to adequately enable requirement 27: Authorization Taxonomy." ; ],
+		[ :target uc:4; :comment "Core requirement for all use cases. Necessary to adequately enable requirement 27: Authorization Taxonomy." ; ],
+		[ :target uc:5; :comment "Core requirement for all use cases. Necessary to adequately enable requirement 27: Authorization Taxonomy." ; ],
+		[ :target uc:6; :comment "Core requirement for all use cases. Necessary to adequately enable requirement 27: Authorization Taxonomy." ; ],
+		[ :target uc:7; :comment "Core requirement for all use cases. Necessary to adequately enable requirement 27: Authorization Taxonomy." ; ],
+		[ :target uc:8; :comment "Core requirement for all use cases. Necessary to adequately enable requirement 27: Authorization Taxonomy." ; ],
+		[ :target uc:9; :comment "Core requirement for all use cases. Necessary to adequately enable requirement 27: Authorization Taxonomy." ; ],
+		[ :target uc:10; :comment "Core requirement for all use cases. Necessary to adequately enable requirement 27: Authorization Taxonomy." ; ],
+		[ :target uc:11; :comment "Core requirement for all use cases. Necessary to adequately enable requirement 27: Authorization Taxonomy." ; ],
+		[ :target uc:12; :comment "Core requirement for all use cases. Necessary to adequately enable requirement 27: Authorization Taxonomy." ; ],
+		[ :target uc:13; :comment "Core requirement for all use cases. Necessary to adequately enable requirement 27: Authorization Taxonomy." ; ]
 .
 
 req:29
@@ -465,8 +477,6 @@ req:44
 		[ :target uc:10; :comment "Necessary to adequately enable requirement 43: Credential-Based Authentication." ; ],
 		[ :target uc:11; :comment "Necessary to adequately enable requirement 43: Credential-Based Authentication." ; ],
 		[ :target uc:12; :comment "Necessary to adequately enable requirement 43: Credential-Based Authentication." ; ]
-
-# TODO: Prob relevant to anything previous req
 .
 
 req:45
@@ -489,30 +499,76 @@ req:47
 	:title "Common Data Standards" ;
 	:description "All case management system implementations must use the same standards and specifications. Each implementation must follow the same protocols and data models. This ensures interoperability between different systems." ;
 	:use-case
-		[ :target uc:1; :comment "Core requirement for all use cases." ; ]
-
-# TODO: Prob all
+		[ :target uc:1; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:2; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:3; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:4; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:5; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:6; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:7; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:8; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:9; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:10; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:11; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:12; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:13; :comment "Core requirement for all use cases." ; ]
 .
 
 req:48
 	:title "Comprehensive Data Model" ;
 	:description "The data standard must include all data elements identified in use case documentation. The model must cover all aspects of case management operations. Required elements will be derived from the 'data' sections of use cases." ;
-
-# TODO: Prob all
+	:use-case
+		[ :target uc:1; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:2; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:3; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:4; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:5; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:6; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:7; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:8; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:9; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:10; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:11; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:12; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:13; :comment "Core requirement for all use cases." ; ]
 .
 
 req:49
 	:title "Complete API Coverage" ;
 	:description "All system functionality must be available through the API. No functionality should require direct user interface access. This enables programmatic access and automation of all operations." ;
-
-# TODO: Prob all
+	:use-case
+		[ :target uc:1; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:2; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:3; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:4; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:5; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:6; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:7; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:8; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:9; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:10; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:11; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:12; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:13; :comment "Core requirement for all use cases." ; ]
 .
 
 req:50
 	:title "Case Management System Creation" ;
 	:description "The protocol must enable the creation of full case management systems. It must provide all specifications needed to build a complete system. This includes data models, APIs, and operational requirements." ;
-
-# TODO: Prob all (facilitate a free market)
+	:use-case
+		[ :target uc:1; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:2; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:3; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:4; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:5; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:6; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:7; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:8; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:9; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:10; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:11; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:12; :comment "Core requirement for all use cases." ; ],
+		[ :target uc:13; :comment "Core requirement for all use cases." ; ]
 .
 
 req:51
@@ -577,12 +633,12 @@ uc:6
 
 uc:7
 	:useCaseTitle "Sharing care summaries" ;
-	:useCaseDescription "As a social work admin support team, I need to be able to create a version of someone’s care records which are intelligible to them and do not breach duties of confidentiality to others, so that I can respect their right to know what was written about them." ;
+	:useCaseDescription "As a social work admin support team, I need to be able to create a version of someoneï¿½s care records which are intelligible to them and do not breach duties of confidentiality to others, so that I can respect their right to know what was written about them." ;
 .
 
 uc:8
 	:useCaseTitle "Transition  from children's social care to adult social care" ;
-	:useCaseDescription "As an adult social worker or transitions manager, I can receive, track, and act on information about young people transitioning from children’s to adult services, so that their care is continuous, assessments are timely, and support plans are appropriate when they reach adulthood." ;
+	:useCaseDescription "As an adult social worker or transitions manager, I can receive, track, and act on information about young people transitioning from childrenï¿½s to adult services, so that their care is continuous, assessments are timely, and support plans are appropriate when they reach adulthood." ;
 .
 
 uc:9
@@ -602,10 +658,10 @@ uc:11
 
 uc:12
 	:useCaseTitle "Multiagency input into a person's record" ;
-	:useCaseDescription "As a practitioner working in a multiagency team, I need all key partners to be able to view relevant aspects of a child’s record and input into the record of a child I am providing care for, so that the record provides a full picture of the child and their needs." ;
+	:useCaseDescription "As a practitioner working in a multiagency team, I need all key partners to be able to view relevant aspects of a childï¿½s record and input into the record of a child I am providing care for, so that the record provides a full picture of the child and their needs." ;
 .
 
 uc:13
 	:useCaseTitle "Recording and sharing adult social care needs assessments" ;
-	:useCaseDescription "As an adult social worker or delegated professional (e.g., OT), I can record a person’s care needs, preferences, and outcomes in a structured, standardised way, so that the local authority can determine eligibility, plan support, ensure continuity of care, facilitate sharing with other professionals, and improve oversight and service quality." ;
+	:useCaseDescription "As an adult social worker or delegated professional (e.g., OT), I can record a personï¿½s care needs, preferences, and outcomes in a structured, standardised way, so that the local authority can determine eligibility, plan support, ensure continuity of care, facilitate sharing with other professionals, and improve oversight and service quality." ;
 .
