@@ -335,7 +335,7 @@ req:29
 	:title "Person Search Request Shape" ;
 	:description "The data standard must define the shape of person search requests. This includes all fields that can be used to search for a person. The standard ensures consistent search capabilities across systems." ;
 	:use-case
-		[ :target uc:10; :comment "core. Person is what they enquire about" ; ]
+		[ :target uc:10; :comment "Core requirement for use case 10: Multi-agency enquiries." ; ]
 	;
 .
 
@@ -343,7 +343,7 @@ req:30
 	:title "Person Search Results Shape" ;
 	:description "The data standard must define the shape of person search results. This includes all fields returned in search responses. The standard ensures consistent result formats across systems." ;
 	:use-case
-		[ :target uc:10; :comment "core. Is what response they get when they enquire" ; ]
+		[ :target uc:10; :comment "Core requirement for use case 10: Multi-agency enquiries." ; ]
 	;
 .
 
@@ -351,17 +351,17 @@ req:31
 	:title "Person Search Protocol" ;
 	:description "The protocol must include an API for person search operations. This API allows systems to search for individuals across case management systems. The API must support the standard search request and result shapes." ;
 	:use-case
-		[ :target uc:10; :comment "core. Endpoints for this kind of request" ; ]
+		[ :target uc:10; :comment "Core requirement for use case 10: Multi-agency enquiries." ; ]
 	;
 .
 
 req:32
 	:title "Lightweight Information Client Creation" ;
-	:description "The protocol must enable the creation of social care information clients. These clients can access, display and modify social care data without implementing full case management. This supports specialized tools and applications." ;
+	:description "The protocol must enable the creation of social care information clients. These clients can access, display and modify social care data without implementing full case management. This supports specialized tools and applications. This is a subset of the full standards for data model and protocol." ;
 	:use-case
-		[ :target uc:10; :comment "when some non social care system enquires from a yes social care system about a subject" ; ],
-		[ :target uc:11; :comment "the clients that subscribe to notifications. The LW info consumer should be a subset of the full social care model" ; ],
-		[ :target uc:12; :comment "" ; ]
+		[ :target uc:10; :comment "This part of the data model supports external agencies (non-social-care system) querying data found in a social care system." ; ],
+		[ :target uc:11; :comment "External systems should be able to subscribe to notifications on specific parts of social care data." ; ],
+		[ :target uc:12; :comment "External systems should be able to input specific data into social care systems." ; ]
 	;
 .
 
@@ -369,7 +369,7 @@ req:33
 	:title "Lightweight Information Provider Support" ;
 	:description "The protocol must support creating information providers that are not full case management systems. This allows non-social-care systems to expose data in a compatible format. It enables integration with external data sources." ;
 	:use-case
-		[ :target uc:10; :comment "when a yes social system asks from a non social system" ; ]
+		[ :target uc:10; :comment "Core requirement for use case 10: Multi-agency enquiries." ; ]
 	;
 .
 
@@ -377,16 +377,15 @@ req:34
 	:title "External System Interoperability" ;
 	:description "The protocol should facilitate interoperability with external systems through a plugin model. Systems can implement connectors or extensions to integrate with external services. This approach enables flexible integration without modifying core systems." ;
 	:use-case
-		[ :target uc:2; :comment "maybe not as this req was intended for next item" ; ],
-		[ :target uc:10; :comment "the requesting social care system must implement a connector to some external data provider that is not a lightweight info provider (req up)" ; ]
+		[ :target uc:10; :comment "External systems might not support requirement 33: Lightweight Information Provider Support. In that case, requesting data from external systems will require a connector specific to the external data provider. In order to reduce workloads and facilitate multi-agency enquiries, the connectors/plugins should be reusable. This relates to requirement 35: Plugin Registry." ; ]
 	;
 .
 
 req:35
 	:title "Plugin Registry" ;
-	:description "A registry must exist of plugins for interoperating with external systems. Implementers can use these existing plugins rather than building their own. The registry promotes code reuse and reduces implementation effort." ;
+	:description "A registry must exist of plugins for interoperating with external systems. Implementers can use these existing plugins rather than building their own. The registry promotes code reuse and reduces implementation effort. This facilitates distributed workloads, removes redundancy in implementing connectors and lowers the cost of integration by sharing implementations." ;
 	:use-case
-		[ :target uc:10; :comment "supports req above, distribute workload, remove redundancy in implementing connectors, lower cost of integration by sharing implementations" ; ]
+		[ :target uc:10; :comment "A plugin registry will ensure that External System Interoperability is supported and up to date for systems that do not support requirement 33: Lightweight Information Provider Support. This relates to requirement 24: External System Interoperability." ; ]
 	;
 .
 
@@ -423,7 +422,7 @@ req:39
 	:description "A documented certification process must vet implementations against the test suite and legal requirements. Implementations must maintain certification by keeping up with legislative changes. Loss of compliance results in loss of certification." ;
 	:use-case
 		[ :target uc:2; :comment "Recording social workers notes, for example using AI transcription tools is subject to legal compliance. Social care data management systems and associated tooling must be certified to ensure only compliant tooling is used." ; ],
-		[ :target uc:10; :comment "External agencies systems must be certified to ensure data that is used outside of the core ecosystem in a manner compliant with current legislation. Relates to requirement 32: Lightweight Information Provider Support." ; ]
+		[ :target uc:10; :comment "External agencies systems must be certified to ensure data that is used outside of the core ecosystem in a manner compliant with current legislation. Relates to requirement 33: Lightweight Information Provider Support." ; ]
 	;
 .
 
