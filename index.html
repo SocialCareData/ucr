@@ -6,15 +6,114 @@
 	<script type="module">
 		const response = await fetch("data.ttl")
 		const text = await response.text()
-		const parser = new N3.Parser()
-		const store = new N3.Store()
+		const parser = new N3.Parser
+		const store = new N3.Store
 		const quads = parser.parse(text)
 		store.addQuads(quads)
 
-		console.log(store)
+		const requirements = [...store.match(undefined, p("title"))].map(q => ({
+			id: q.subject.id,
+			title: q.object.value
+		}))
+		for (const requirement of requirements) {
+			const li = document.createElement("li")
+			li.innerText = requirement.title
+			li.dataset.id = requirement.id
+			document.getElementById("requirements").appendChild(li)
+
+			li.addEventListener("click", onRequirementClick)
+		}
+
+		const useCaseLinks = Object.entries(Object.groupBy([...store.match(undefined, p("use-case"))].map(q => ({
+			requirement: q.subject.id,
+			target: [...store.match(q.object, p("target"))].map(q => q.object.id)[0],
+			comment: [...store.match(q.object, p("comment"))].map(q => q.object.value)[0],
+		})), i => i.requirement)).map(x => [x[0], x[1].map(t => ({ target: t.target, comment: t.comment }))]).map(x => ({
+			requirement: x[0],
+			useCases: x[1]
+		}))
+
+		const useCases = new Set([...store.match(undefined, p("useCaseTitle"))].map(q => ({
+			id: q.subject.id,
+			title: q.object.value
+		})))
+		for (const useCase of useCases) {
+			const li = document.createElement("li")
+			li.innerText = useCase.title
+			li.dataset.id = useCase.id
+			document.getElementById("useCases").appendChild(li)
+
+			li.addEventListener("click", onUseCaseClick)
+		}
+
+		document.addEventListener("keydown", e => {
+			if (e.key === "Escape") {
+				clearClicked()
+			}
+		})
+
+		function clearClicked() {
+			for (const element of document.querySelectorAll(".clicked")) {
+				element.classList.remove("clicked")
+			}
+			for (const element of document.querySelectorAll(".hide")) {
+				element.classList.remove("hide")
+			}
+		}
+
+		function onRequirementClick(e) {
+			clearClicked()
+			e.target.classList.add("clicked")
+			for (const useCaseElement of document.querySelectorAll("#useCases li")) {
+				if (!useCaseLinks.filter(x => x.requirement === e.target.dataset.id).flatMap(x => x.useCases).some(x => x.target === useCaseElement.dataset.id)) {
+					useCaseElement.classList.add("hide")
+				}
+			}
+		}
+
+		function onUseCaseClick(e) {
+			clearClicked()
+			e.target.classList.add("clicked")
+			for (const requirementElement of document.querySelectorAll("#requirements li")) {
+				if (!useCaseLinks.filter(x => x.useCases.some(x => x.target === e.target.dataset.id)).some(x => x.requirement === requirementElement.dataset.id)) {
+					requirementElement.classList.add("hide")
+				}
+			}
+		}
+
+		function p(name) {
+			return N3.DataFactory.namedNode(`https://github.com/SocialCareData/ucr/schema/${name}`)
+		}
 	</script>
+	<style>
+		body {
+			display: flex;
+			margin: 0;
+			height: 100vh;
+			justify-content: space-between;
+		}
+
+		fieldset {
+			overflow-y: auto;
+		}
+
+		.clicked {
+			background-color: yellow
+		}
+
+		.hide {
+			display: none;
+		}
+	</style>
 </head>
 <body>
-
+	<fieldset>
+		<legend>Requirements</legend>
+		<ul id="requirements"></ul>
+	</fieldset>
+	<fieldset>
+		<legend>Use cases</legend>
+		<ul id="useCases"></ul>
+	</fieldset>
 </body>
 </html>
