@@ -7,7 +7,7 @@ req:1
 	:title "Bulk Data Export API" ;
 	:description "The system must provide an API for bulk data export. This API allows all data to be extracted from the system in a single operation. The export function must be accessible to authorized users and systems." ;
 	:use-case
-		[ :target uc:4; :comment "" ; ]
+		[ :target uc:4; :comment "Core requirement for use case 4: Supporting CMS migration. Bulk export enables complete data extraction when migrating between case management systems." ; ]
 	;
 .
 
@@ -15,7 +15,7 @@ req:2
 	:title "Bulk Data Import API" ;
 	:description "The system must provide an API for bulk data import. This API allows data to be inserted into the system in a single operation. The import function must validate incoming data against the standard data model." ;
 	:use-case
-		[ :target uc:4; :comment "" ; ]
+		[ :target uc:4; :comment "Core requirement for use case 4: Supporting CMS migration. Bulk import enables complete data insertion when migrating between case management systems." ; ]
 	;
 .
 
@@ -23,13 +23,13 @@ req:3
 	:title "Open Data Model" ;
 	:description "The data model must be open and freely available. It must use a permissive license that allows reuse and modification. The model must be documented and publicly accessible to all stakeholders." ;
 	:use-case
-		[ :target uc:4; :comment "" ; ],
-		[ :target uc:6; :comment "to harmonize fields and interpretations of concepts" ; ],
-		[ :target uc:8; :comment "multiparty transaction, some not in social care, all would benefit from accessible standard" ; ],
-		[ :target uc:9; :comment "this is still a kind of transition, so vendor interop is key" ; ],
-		[ :target uc:10; :comment "global/non-social-care interop" ; ],
-		[ :target uc:11; :comment "" ; ],
-		[ :target uc:12; :comment "" ; ]
+		[ :target uc:4; :comment "An open data model ensures vendor interoperability and facilitates CMS migration by providing a common standard all systems can implement." ; ],
+		[ :target uc:6; :comment "An open data model harmonizes fields and interpretations of concepts, enabling consistent statutory reporting across different systems." ; ],
+		[ :target uc:8; :comment "An open data model encompasses source and target systems requirements, unifying data and enabling migration from child to adult social care." ; ],
+		[ :target uc:9; :comment "An open data model is essential for vendor interoperability during transfer of responsibility between local authorities." ; ],
+		[ :target uc:10; :comment "An open data model facilitates global and non-social-care interoperability for multi-agency enquiries." ; ],
+		[ :target uc:11; :comment "An open data model enables multi-agency notifications by providing a common vocabulary and structure." ; ],
+		[ :target uc:12; :comment "An open data model supports multiagency input by ensuring all agencies can understand and contribute to records using common structures." ; ]
 	;
 .
 
@@ -37,12 +37,12 @@ req:4
 	:title "Open Protocol" ;
 	:description "The protocol must be open and freely available. It must use a permissive license and be publicly accessible. This ensures that any organization can implement the protocol without restrictions." ;
 	:use-case
-		[ :target uc:4; :comment "" ; ],
-		[ :target uc:8; :comment "as previous req" ; ],
-		[ :target uc:9; :comment "as above" ; ],
-		[ :target uc:10; :comment "" ; ],
-		[ :target uc:11; :comment "" ; ],
-		[ :target uc:12; :comment "" ; ]
+		[ :target uc:4; :comment "An open protocol ensures any organization can implement connectivity for CMS migration without facing licensing or interoperability issues." ; ],
+		[ :target uc:8; :comment "An open protocol enables systems across child and adult social care to communicate during transitions without facing licensing or interoperability issues." ; ],
+		[ :target uc:9; :comment "An open protocol ensures transfer of cases between local authorities is not limited by licensing or interoperability issues." ; ],
+		[ :target uc:10; :comment "An open protocol enables external agencies to participate in multi-agency in an interoperable manner." ; ],
+		[ :target uc:11; :comment "An open protocol allows any agency to participate in multi-agency notification systems." ; ],
+		[ :target uc:12; :comment "An open protocol ensures the adequate standard interfaces exist to enable multiagency teams to integrate their workflows and input data into social care systems." ; ]
 	;
 .
 
@@ -50,14 +50,14 @@ req:5
 	:title "Open Standardization Process" ;
 	:description "The standardization process must allow community participation. Decision-making processes must be documented publicly. This transparency ensures that all stakeholders can contribute to the standard's evolution." ;
 	:use-case
-		[ :target uc:4; :comment "add to req text: for buy-in" ; ],
-		[ :target uc:5; :comment "so that requirements capture all ecosystem wishes" ; ],
-		[ :target uc:6; :comment "to glean different ways of working and from those establish a shared understanding and machine readable format etc" ; ],
-		[ :target uc:8; :comment "as previous 2 reqs" ; ],
-		[ :target uc:9; :comment "as above" ; ],
-		[ :target uc:10; :comment "" ; ],
-		[ :target uc:11; :comment "" ; ],
-		[ :target uc:12; :comment "" ; ]
+		[ :target uc:4; :comment "An open standardization process helps buy-in to the standard by involving relevant actors and ensuring their needs and requirements are met as well as ensuring adequate knowledge of the standards." ; ],
+		[ :target uc:5; :comment "An open standardization process captures requirements from all ecosystem participants for analysis and reporting needs." ; ],
+		[ :target uc:6; :comment "An open standardization process enables gathering different ways of working and establishing shared understanding for statutory reporting." ; ],
+		[ :target uc:8; :comment "An open standardization process ensures both child and adult social care stakeholders contribute to transition standards." ; ],
+		[ :target uc:9; :comment "An open standardization process enables all local authorities to contribute to transfer of responsibility standards." ; ],
+		[ :target uc:10; :comment "An open standardization process allows external agencies to contribute to multi-agency enquiry standards." ; ],
+		[ :target uc:11; :comment "An open standardization process enables all agencies to shape notification standards." ; ],
+		[ :target uc:12; :comment "An open standardization process ensures multiagency teams can contribute to shared record standards." ; ]
 	;
 .
 
