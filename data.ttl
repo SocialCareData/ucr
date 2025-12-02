@@ -414,7 +414,7 @@ req:38
 		[ :target uc:4; :comment "In order to facilitate migration from one CMS to another, social care management systems must remain compliant to the standard and therefore regularly tested in an automated manner." ; ],
 		[ :target uc:8; :comment "In order to facilitate migration, children and adult social care management systems must remain compliant to the standard and therefore regularly tested in an automated manner. Compliance facilitates transition between child and adult systems." ; ],
 		[ :target uc:9; :comment "In order to facilitate migration, from one local authority to another, social care management systems must remain compliant to the standard and therefore regularly tested in an automated manner." ; ],
-		[ :target uc:10; :comment "A compliance test suite must support all relevant standards, including Lightweight Information Provider Support." ; ],
+		[ :target uc:10; :comment "A compliance test suite must support all relevant standards, including Lightweight Information Provider Support." ; ]
 	;
 .
 
@@ -423,7 +423,7 @@ req:39
 	:description "A documented certification process must vet implementations against the test suite and legal requirements. Implementations must maintain certification by keeping up with legislative changes. Loss of compliance results in loss of certification." ;
 	:use-case
 		[ :target uc:2; :comment "Recording social workers notes, for example using AI transcription tools is subject to legal compliance. Social care data management systems and associated tooling must be certified to ensure only compliant tooling is used." ; ],
-		[ :target uc:10; :comment "External agencies systems must be certified to ensure data that is used outside of the core ecosystem in a manner compliant with current legislation. Relates to requirement 32: Lightweight Information Provider Support." ; ],
+		[ :target uc:10; :comment "External agencies systems must be certified to ensure data that is used outside of the core ecosystem in a manner compliant with current legislation. Relates to requirement 32: Lightweight Information Provider Support." ; ]
 	;
 .
 
