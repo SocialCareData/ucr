@@ -394,7 +394,7 @@ req:36
 	:title "Person Matching Algorithm Standard" ;
 	:description "A standard must define the algorithm for matching person records across systems. This algorithm determines when two records refer to the same individual. It ensures consistent person matching across all implementations." ;
 	:use-case
-		[ :target uc:10; :comment "person matching is exactly what happens to answer these enquiries. Traceability of care subject across the ecosystem." ; ]
+		[ :target uc:10; :comment "Core requirement for use case 10: Multi-agency enquiries. A person matching algorithm is required to find relevant data and enable traceability of care subject across the ecosystem." ; ]
 	;
 .
 
@@ -402,20 +402,19 @@ req:37
 	:title "Case Management API Registry" ;
 	:description "A registry must exist that lists all case management system APIs. This registry provides discovery of available systems and their endpoints. It enables systems to find and connect with each other." ;
 	:use-case
-		[ :target uc:6; :comment "" ; ],
-		[ :target uc:10; :comment "registry tells us who to direct our enquiries at" ; ]
+		[ :target uc:6; :comment "In order to facilitate reporting, case management systems must be registered so that relevant authorities data can be collated." ; ],
+		[ :target uc:10; :comment "To facilitate multi-agency enquiries, all relevant systems must be registered." ; ]
 	;
 .
 
 req:38
 	:title "Compliance Test Suite" ;
-	:description "A test suite must exist to verify compliance with the protocol and data standards. The test suite must be versioned to accommodate evolving legal requirements. It ensures that implementations meet all specifications and legal obligations." ;
+	:description "A test suite must exist to verify compliance with the protocol and data standards. The test suite must be versioned to accommodate evolving legal requirements. It ensures that implementations meet all specifications and legal obligations that can be tested in an automated manner. Some legal requirements might need a verification process that is not automatable. This is complemented by requirement 39: Certification Process." ;
 	:use-case
-		[ :target uc:4; :comment "" ; ],
-		[ :target uc:8; :comment "proves interoperability, facilitates transition between child and adult systems" ; ],
-		[ :target uc:9; :comment "as above but for vendor interop" ; ],
-		[ :target uc:10; :comment "test suite must cover Lightweight Information Provider Support" ; ],
-		[ :target uc:12; :comment "" ; ]
+		[ :target uc:4; :comment "In order to facilitate migration from one CMS to another, social care management systems must remain compliant to the standard and therefore regularly tested in an automated manner." ; ],
+		[ :target uc:8; :comment "In order to facilitate migration, children and adult social care management systems must remain compliant to the standard and therefore regularly tested in an automated manner. Compliance facilitates transition between child and adult systems." ; ],
+		[ :target uc:9; :comment "In order to facilitate migration, from one local authority to another, social care management systems must remain compliant to the standard and therefore regularly tested in an automated manner." ; ],
+		[ :target uc:10; :comment "A compliance test suite must support all relevant standards, including Lightweight Information Provider Support." ; ],
 	;
 .
 
@@ -423,17 +422,16 @@ req:39
 	:title "Certification Process" ;
 	:description "A documented certification process must vet implementations against the test suite and legal requirements. Implementations must maintain certification by keeping up with legislative changes. Loss of compliance results in loss of certification." ;
 	:use-case
-		[ :target uc:2; :comment "legal compliance mandates information recording capability" ; ],
-		[ :target uc:10; :comment "also must certify Lightweight Information Provider Support" ; ],
-		[ :target uc:12; :comment "" ; ]
+		[ :target uc:2; :comment "Recording social workers notes, for example using AI transcription tools is subject to legal compliance. Social care data management systems and associated tooling must be certified to ensure only compliant tooling is used." ; ],
+		[ :target uc:10; :comment "External agencies systems must be certified to ensure data that is used outside of the core ecosystem in a manner compliant with current legislation. Relates to requirement 32: Lightweight Information Provider Support." ; ],
 	;
 .
 
 req:40
 	:title "Federated Person Search" ;
-	:description "Functionality must exist to query the registry for relevant case management APIs and then search across them. The system must harmonize results from different APIs using a documented algorithm. This enables searching for individuals across multiple systems." ;
+	:description "Functionality must exist to query the registry for relevant case management APIs and then search across them. The system must standardise queries and harmonize results from different APIs using a documented algorithm. This enables searching for individuals across multiple systems." ;
 	:use-case
-		[ :target uc:10; :comment "core. Harmonized algorithm to achieve consistency across ecosystem" ; ]
+		[ :target uc:10; :comment "Core requirement for use case 10: Multi-agency enquiries." ; ]
 	;
 .
 
