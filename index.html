@@ -13,11 +13,12 @@
 
 		const requirements = [...store.match(undefined, p("title"))].map(q => ({
 			id: q.subject.id,
-			title: q.object.value
+			number: q.subject.id.split("/").pop(),
+			title: q.object.value,
 		}))
 		for (const requirement of requirements) {
 			const li = document.createElement("li")
-			li.innerText = requirement.title
+			li.innerText = `${requirement.number} - ${requirement.title}`
 			li.dataset.id = requirement.id
 			document.getElementById("requirements").appendChild(li)
 
@@ -35,11 +36,12 @@
 
 		const useCases = new Set([...store.match(undefined, p("useCaseTitle"))].map(q => ({
 			id: q.subject.id,
+			number: q.subject.id.split("/").pop(),
 			title: q.object.value
 		})))
 		for (const useCase of useCases) {
 			const li = document.createElement("li")
-			li.innerText = useCase.title
+			li.innerText = `${useCase.number} - ${useCase.title}`
 			li.dataset.id = useCase.id
 			document.getElementById("useCases").appendChild(li)
 
@@ -56,8 +58,8 @@
 			for (const element of document.querySelectorAll(".clicked")) {
 				element.classList.remove("clicked")
 			}
-			for (const element of document.querySelectorAll(".hide")) {
-				element.classList.remove("hide")
+			for (const element of document.querySelectorAll(".filtered")) {
+				element.classList.remove("filtered")
 			}
 		}
 
@@ -65,8 +67,8 @@
 			clearClicked()
 			e.target.classList.add("clicked")
 			for (const useCaseElement of document.querySelectorAll("#useCases li")) {
-				if (!useCaseLinks.filter(x => x.requirement === e.target.dataset.id).flatMap(x => x.useCases).some(x => x.target === useCaseElement.dataset.id)) {
-					useCaseElement.classList.add("hide")
+				if (useCaseLinks.filter(x => x.requirement === e.target.dataset.id).flatMap(x => x.useCases).some(x => x.target === useCaseElement.dataset.id)) {
+					useCaseElement.classList.add("filtered")
 				}
 			}
 		}
@@ -75,8 +77,8 @@
 			clearClicked()
 			e.target.classList.add("clicked")
 			for (const requirementElement of document.querySelectorAll("#requirements li")) {
-				if (!useCaseLinks.filter(x => x.useCases.some(x => x.target === e.target.dataset.id)).some(x => x.requirement === requirementElement.dataset.id)) {
-					requirementElement.classList.add("hide")
+				if (useCaseLinks.filter(x => x.useCases.some(x => x.target === e.target.dataset.id)).some(x => x.requirement === requirementElement.dataset.id)) {
+					requirementElement.classList.add("filtered")
 				}
 			}
 		}
@@ -101,8 +103,8 @@
 			background-color: yellow
 		}
 
-		.hide {
-			display: none;
+		.filtered {
+			background-color: lightgreen
 		}
 	</style>
 </head>
