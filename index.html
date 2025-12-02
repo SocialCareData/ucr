@@ -15,12 +15,16 @@
 			id: q.subject.id,
 			number: q.subject.id.split("/").pop(),
 			title: q.object.value,
+			useCaseCount: [...store.match(q.subject, p("use-case"))].length
 		}))
-		for (const requirement of requirements) {
-			const li = document.createElement("li")
-			li.innerText = `${requirement.number} - ${requirement.title}`
+		for (const requirement of requirements.sort((a, b) => b.useCaseCount - a.useCaseCount)) {
+			const li = document.getElementById("requirements").appendChild(document.createElement("li"))
+			const div = li.appendChild(document.createElement("div"))
+			const div2 = li.appendChild(document.createElement("div"))
+
+			div.innerText = `${requirement.number} - ${requirement.title} (${requirement.useCaseCount})`
 			li.dataset.id = requirement.id
-			document.getElementById("requirements").appendChild(li)
+			div2.className = "comment"
 
 			li.addEventListener("click", onRequirementClick)
 		}
@@ -34,51 +38,70 @@
 			useCases: x[1]
 		}))
 
-		const useCases = new Set([...store.match(undefined, p("useCaseTitle"))].map(q => ({
+		const useCases = [...new Set([...store.match(undefined, p("useCaseTitle"))].map(q => ({
 			id: q.subject.id,
 			number: q.subject.id.split("/").pop(),
-			title: q.object.value
-		})))
-		for (const useCase of useCases) {
-			const li = document.createElement("li")
-			li.innerText = `${useCase.number} - ${useCase.title}`
+			title: q.object.value,
+			requirementCount: [...store.match(undefined, p("target"), q.subject)]
+				.map(x => [...store.match(undefined, p("use-case"), x.subject)]).length
+		})))]
+		for (const useCase of useCases.sort((a, b) => b.requirementCount - a.requirementCount)) {
+			const li = document.getElementById("useCases").appendChild(document.createElement("li"))
+			const div = li.appendChild(document.createElement("div"))
+			const div2 = li.appendChild(document.createElement("div"))
+
+			div.innerText = `${useCase.number} - ${useCase.title} (${useCase.requirementCount})`
 			li.dataset.id = useCase.id
-			document.getElementById("useCases").appendChild(li)
+			div2.className = "comment"
 
 			li.addEventListener("click", onUseCaseClick)
 		}
 
 		document.addEventListener("keydown", e => {
 			if (e.key === "Escape") {
-				clearClicked()
+				clear()
 			}
 		})
 
-		function clearClicked() {
+		function clear() {
 			for (const element of document.querySelectorAll(".clicked")) {
 				element.classList.remove("clicked")
 			}
 			for (const element of document.querySelectorAll(".filtered")) {
 				element.classList.remove("filtered")
 			}
+			for (const element of document.querySelectorAll(".comment")) {
+				element.innerText = ""
+			}
 		}
 
-		function onRequirementClick(e) {
-			clearClicked()
-			e.target.classList.add("clicked")
+		function onRequirementClick() {
+			clear()
+			this.classList.add("clicked")
 			for (const useCaseElement of document.querySelectorAll("#useCases li")) {
-				if (useCaseLinks.filter(x => x.requirement === e.target.dataset.id).flatMap(x => x.useCases).some(x => x.target === useCaseElement.dataset.id)) {
+				const links = useCaseLinks
+					.filter(x => x.requirement === this.dataset.id)
+					.flatMap(x => x.useCases.filter(x => x.target === useCaseElement.dataset.id))
+					.map(x => x.comment)
+				if (links.length) {
 					useCaseElement.classList.add("filtered")
+					useCaseElement.querySelector(".comment").innerText = links[0]
 				}
 			}
 		}
 
-		function onUseCaseClick(e) {
-			clearClicked()
-			e.target.classList.add("clicked")
+		function onUseCaseClick() {
+			clear()
+			this.classList.add("clicked")
 			for (const requirementElement of document.querySelectorAll("#requirements li")) {
-				if (useCaseLinks.filter(x => x.useCases.some(x => x.target === e.target.dataset.id)).some(x => x.requirement === requirementElement.dataset.id)) {
+				const links = useCaseLinks
+					.filter(x => x.useCases.some(x => x.target === this.dataset.id))
+					.filter(x => x.requirement === requirementElement.dataset.id)
+					.flatMap(x => x.useCases.filter(x => x.target === this.dataset.id).map(x=>x.comment))
+
+				if (links.length) {
 					requirementElement.classList.add("filtered")
+					requirementElement.querySelector(".comment").innerText = links[0]
 				}
 			}
 		}
@@ -97,6 +120,16 @@
 
 		fieldset {
 			overflow-y: auto;
+			width: 50%;
+		}
+
+		ul {
+			padding: 0;
+		}
+
+		li {
+			list-style: none;
+			margin: 20px;
 		}
 
 		.clicked {
@@ -105,6 +138,12 @@
 
 		.filtered {
 			background-color: lightgreen
+		}
+
+		.comment {
+			font-style: italic;
+			padding-left:30px;
+			font-size: 90%
 		}
 	</style>
 </head>
