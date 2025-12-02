@@ -94,7 +94,7 @@ req:8
 		[ :target uc:7; :comment "to get all the data relevant to SAR" ; ],
 		[ :target uc:8; :comment "this is how we get all the data that needs to move with the subject as they go from child to adult" ; ],
 		[ :target uc:9; :comment "whatever data travels during this transfer comes together via query" ; ],
-		[ :target uc:10; :comment "because it might be all kinds of data they’re after" ; ],
+		[ :target uc:10; :comment "because it might be all kinds of data theyï¿½re after" ; ],
 		[ :target uc:11; :comment "because notifications are potentially about anything" ; ],
 		[ :target uc:12; :comment "" ; ]
 	;
@@ -129,7 +129,7 @@ req:11
 		[ :target uc:5; :comment "" ; ],
 		[ :target uc:6; :comment "" ; ],
 		[ :target uc:7; :comment "mostly domain but some admin data is relevant to SAR" ; ],
-		[ :target uc:8; :comment "some data that moves with subject is ‘admin’" ; ],
+		[ :target uc:8; :comment "some data that moves with subject is ï¿½adminï¿½" ; ],
 		[ :target uc:9; :comment "all kinds of data must travel" ; ],
 		[ :target uc:10; :comment "all kinds" ; ],
 		[ :target uc:11; :comment "also all kinds" ; ],
@@ -429,7 +429,7 @@ req:41
 	:title "Publish-Subscribe Notification System" ;
 	:description "The protocol must define a publish-subscribe system for delivering notifications. Systems must be able to both publish and subscribe to notifications. This enables real-time updates and event-driven workflows." ;
 	:use-case
-		[ :target uc:11; :comment "core tech for this UC" ; ]
+		[ :target uc:11; :comment "Core requirement for use case 11: Multi-agency notifications." ; ]
 	;
 .
 
@@ -437,11 +437,12 @@ req:42
 	:title "External Actor Authorization" ;
 	:description "The authorization component must accommodate external actors. These may include organizations or systems outside the core social care ecosystem. The authorization model must support secure access by external parties." ;
 	:use-case
-		[ :target uc:1; :comment "subject of care" ; ],
-		[ :target uc:4; :comment "" ; ],
-		[ :target uc:6; :comment "" ; ],
-		[ :target uc:11; :comment "" ; ],
-		[ :target uc:12; :comment "" ; ]
+		[ :target uc:1; :comment "The subject of care must be able to gain access to some of its data." ; ],
+		[ :target uc:4; :comment "Different local authorities must have access to the data to enable data migration between systems." ; ],
+		[ :target uc:6; :comment "Statutory reporting requires external actors to access specific data in social care systems. This relates to requirement 43: Credential-Based Authentication." ; ],
+		[ :target uc:10; :comment "External agencies must have access to specific social care systems' data. This relates to requirement 43: Credential-Based Authentication." ; ],
+		[ :target uc:11; :comment "External agencies must have access to specific social care systems' data. This relates to requirement 43: Credential-Based Authentication." ; ],
+		[ :target uc:12; :comment "External agencies must have access to specific social care systems' data. This relates to requirement 43: Credential-Based Authentication." ; ]
 	;
 .
 
@@ -449,16 +450,21 @@ req:43
 	:title "Credential-Based Authentication" ;
 	:description "The authorization component must support credential-based authentication. This authentication is based on verifiable credentials rather than identity alone. It enables authorized access by organizations and authorities." ;
 	:use-case
-		[ :target uc:6; :comment "authorities authenticate themselves by some credential rather than by identity because that’s what gives them the power to get these reports. Not who the user happens to be." ; ],
-		[ :target uc:10; :comment "very likely that some requesting agencies do so by authority that is best demonstrated as holding a credential, not by identity" ; ],
-		[ :target uc:11; :comment "as above" ; ],
-		[ :target uc:12; :comment "" ; ]
+		[ :target uc:6; :comment "Local Authorities staff must gain access to specific data based on their role within a defined structure rather than on their identity." ; ],
+		[ :target uc:10; :comment "Staff from different agencies must gain access to specific data held by other agencies based on their roles within an agency and responsibility against a care subject rather than based on their identity." ; ],
+		[ :target uc:11; :comment "Staff from different agencies must be notified of specific data held by other agencies based on their roles within an agency and responsibility against a care subject rather than based on their identity." ; ],
+		[ :target uc:12; :comment "Staff from different agencies must input specific data into other agencies' systems based on their roles within an agency and responsibility against a care subject rather than based on their identity." ; ]
 	;
 .
 
 req:44
 	:title "Trusted Credential Issuer Registry" ;
 	:description "A registry must exist of trusted credential issuers and credential types. The registry must map credential types to permissions. This enables automated authorization decisions based on presented credentials." ;
+	:use-case
+		[ :target uc:6; :comment "Necessary to adequately enable requirement 43: Credential-Based Authentication." ; ],
+		[ :target uc:10; :comment "Necessary to adequately enable requirement 43: Credential-Based Authentication." ; ],
+		[ :target uc:11; :comment "Necessary to adequately enable requirement 43: Credential-Based Authentication." ; ],
+		[ :target uc:12; :comment "Necessary to adequately enable requirement 43: Credential-Based Authentication." ; ]
 
 # TODO: Prob relevant to anything previous req
 .
@@ -467,7 +473,7 @@ req:45
 	:title "Data Model Extension Mechanism" ;
 	:description "The data standard must include a mechanism for extensions. Extensions allow new data shapes not defined in the core model. Each extension consists of a payload and its schema description." ;
 	:use-case
-		[ :target uc:13; :comment "to allow for flexibility across different LAs" ; ]
+		[ :target uc:13; :comment "Social care assessment needs data fields vary accross local authorities and needs standardisation while remaining flexible." ; ]
 	;
 .
 
@@ -475,13 +481,15 @@ req:46
 	:title "Needs Assessment Data Shape" ;
 	:description "The data standard must include a shape for needs assessments. This shape defines all data elements used in assessing care needs. It ensures consistent documentation of needs assessments across systems." ;
 	:use-case
-		[ :target uc:13; :comment "core req" ; ]
+		[ :target uc:13; :comment "Core requirement for use case 13: Recording and sharing adult social care needs assessments." ; ]
 	;
 .
 
 req:47
 	:title "Common Data Standards" ;
 	:description "All case management system implementations must use the same standards and specifications. Each implementation must follow the same protocols and data models. This ensures interoperability between different systems." ;
+	:use-case
+		[ :target uc:1; :comment "Core requirement for all use cases." ; ]
 
 # TODO: Prob all
 .
