@@ -15,16 +15,20 @@
 			id: q.subject.id,
 			number: q.subject.id.split("/").pop(),
 			title: q.object.value,
-			useCaseCount: [...store.match(q.subject, p("use-case"))].length
+			useCaseCount: [...store.match(q.subject, p("use-case"))].length,
+			description: [...[...store.match(q.subject, p("description"))].map(x => x.object.value)][0],
 		}))
 		for (const requirement of requirements.sort((a, b) => b.useCaseCount - a.useCaseCount)) {
 			const li = document.getElementById("requirements").appendChild(document.createElement("li"))
 			const div = li.appendChild(document.createElement("div"))
-			const div2 = li.appendChild(document.createElement("div"))
+			const descriptionDiv = li.appendChild(document.createElement("div"))
+			const commentDiv = li.appendChild(document.createElement("div"))
 
 			div.innerText = `${requirement.number} - ${requirement.title} (${requirement.useCaseCount})`
 			li.dataset.id = requirement.id
-			div2.className = "comment"
+			commentDiv.className = "comment"
+			descriptionDiv.innerText = requirement.description
+			descriptionDiv.className = "description"
 
 			li.addEventListener("click", onRequirementClick)
 		}
@@ -43,16 +47,21 @@
 			number: q.subject.id.split("/").pop(),
 			title: q.object.value,
 			requirementCount: [...store.match(undefined, p("target"), q.subject)]
-				.map(x => [...store.match(undefined, p("use-case"), x.subject)]).length
+				.map(x => [...store.match(undefined, p("use-case"), x.subject)]).length,
+			description: [...[...store.match(q.subject, p("useCaseDescription"))].map(x => x.object.value)][0],
 		})))]
+		console.log(useCases);
 		for (const useCase of useCases.sort((a, b) => b.requirementCount - a.requirementCount)) {
 			const li = document.getElementById("useCases").appendChild(document.createElement("li"))
 			const div = li.appendChild(document.createElement("div"))
-			const div2 = li.appendChild(document.createElement("div"))
+			const descriptionDiv = li.appendChild(document.createElement("div"))
+			const commentDiv = li.appendChild(document.createElement("div"))
 
 			div.innerText = `${useCase.number} - ${useCase.title} (${useCase.requirementCount})`
 			li.dataset.id = useCase.id
-			div2.className = "comment"
+			commentDiv.className = "comment"
+			descriptionDiv.innerText = useCase.description
+			descriptionDiv.className = "description"
 
 			li.addEventListener("click", onUseCaseClick)
 		}
@@ -97,7 +106,7 @@
 				const links = useCaseLinks
 					.filter(x => x.useCases.some(x => x.target === this.dataset.id))
 					.filter(x => x.requirement === requirementElement.dataset.id)
-					.flatMap(x => x.useCases.filter(x => x.target === this.dataset.id).map(x=>x.comment))
+					.flatMap(x => x.useCases.filter(x => x.target === this.dataset.id).map(x => x.comment))
 
 				if (links.length) {
 					requirementElement.classList.add("filtered")
@@ -129,7 +138,7 @@
 
 		li {
 			list-style: none;
-			margin: 20px;
+			cursor: pointer;
 		}
 
 		.clicked {
@@ -142,8 +151,19 @@
 
 		.comment {
 			font-style: italic;
-			padding-left:30px;
-			font-size: 90%
+			padding-left: 30px;
+			font-size: 90%;
+			padding-bottom: 20px;
+		}
+
+		.description {
+			font-size: 90%;
+			padding-left: 30px;
+			display: none;
+		}
+
+		.clicked .description {
+			display: block;
 		}
 	</style>
 </head>
