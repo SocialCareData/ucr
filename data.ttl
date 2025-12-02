@@ -1,0 +1,538 @@
+BASE <https://github.com/SocialCareData/ucr/>
+PREFIX : <schema/>
+PREFIX req: <requirement/>
+PREFIX uc: <use-case/>
+
+req:1
+	:title "Bulk Data Export API" ;
+	:description "The system must provide an API for bulk data export. This API allows all data to be extracted from the system in a single operation. The export function must be accessible to authorized users and systems." ;
+	:use-case
+		[ :target uc:4; :comment "" ; ]
+	;
+.
+
+req:2
+	:title "Bulk Data Import API" ;
+	:description "The system must provide an API for bulk data import. This API allows data to be inserted into the system in a single operation. The import function must validate incoming data against the standard data model." ;
+	:use-case
+		[ :target uc:4; :comment "" ; ]
+	;
+.
+
+req:3
+	:title "Open Data Model" ;
+	:description "The data model must be open and freely available. It must use a permissive license that allows reuse and modification. The model must be documented and publicly accessible to all stakeholders." ;
+	:use-case
+		[ :target uc:4; :comment "" ; ],
+		[ :target uc:6; :comment "to harmonize fields and interpretations of concepts" ; ],
+		[ :target uc:8; :comment "multiparty transaction, some not in social care, all would benefit from accessible standard" ; ],
+		[ :target uc:9; :comment "this is still a kind of transition, so vendor interop is key" ; ],
+		[ :target uc:10; :comment "global/non-social-care interop" ; ],
+		[ :target uc:11; :comment "" ; ],
+		[ :target uc:12; :comment "" ; ]
+	;
+.
+
+req:4
+	:title "Open Protocol" ;
+	:description "The protocol must be open and freely available. It must use a permissive license and be publicly accessible. This ensures that any organization can implement the protocol without restrictions." ;
+	:use-case
+		[ :target uc:4; :comment "" ; ],
+		[ :target uc:8; :comment "as previous req" ; ],
+		[ :target uc:9; :comment "as above" ; ],
+		[ :target uc:10; :comment "" ; ],
+		[ :target uc:11; :comment "" ; ],
+		[ :target uc:12; :comment "" ; ]
+	;
+.
+
+req:5
+	:title "Open Standardization Process" ;
+	:description "The standardization process must allow community participation. Decision-making processes must be documented publicly. This transparency ensures that all stakeholders can contribute to the standard's evolution." ;
+	:use-case
+		[ :target uc:4; :comment "add to req text: for buy-in" ; ],
+		[ :target uc:5; :comment "so that requirements capture all ecosystem wishes" ; ],
+		[ :target uc:6; :comment "to glean different ways of working and from those establish a shared understanding and machine readable format etc" ; ],
+		[ :target uc:8; :comment "as previous 2 reqs" ; ],
+		[ :target uc:9; :comment "as above" ; ],
+		[ :target uc:10; :comment "" ; ],
+		[ :target uc:11; :comment "" ; ],
+		[ :target uc:12; :comment "" ; ]
+	;
+.
+
+req:6
+	:title "System-to-System Data Transfer" ;
+	:description "The target system must be able to connect to the source system's export interface. This connection enables direct data import from one system to another. The functionality must support automated data transfer operations." ;
+	:use-case
+		[ :target uc:4; :comment "" ; ],
+		[ :target uc:8; :comment "" ; ],
+		[ :target uc:9; :comment "having the api functionality is key" ; ]
+	;
+.
+
+req:7
+	:title "Case Management System Registry" ;
+	:description "A registry must exist that links case management systems to local authorities. This registry documents which systems are used by which authorities. It enables coordination and data sharing between authorities." ;
+	:use-case
+		[ :target uc:6; :comment "" ; ],
+		[ :target uc:8; :comment "to find which target system holds info about a subject" ; ],
+		[ :target uc:9; :comment "where to migrate" ; ],
+		[ :target uc:10; :comment "so they can find where they can find more" ; ],
+		[ :target uc:11; :comment "" ; ],
+		[ :target uc:12; :comment "" ; ]
+	;
+.
+
+req:8
+	:title "Global Query Interface" ;
+	:description "A global query interface must allow users to ask questions about all data in the system. This interface must provide a unified view across all case management systems. Users must be able to search and retrieve information regardless of which system stores the data." ;
+	:use-case
+		[ :target uc:3; :comment "" ; ],
+		[ :target uc:5; :comment "" ; ],
+		[ :target uc:6; :comment "" ; ],
+		[ :target uc:7; :comment "to get all the data relevant to SAR" ; ],
+		[ :target uc:8; :comment "this is how we get all the data that needs to move with the subject as they go from child to adult" ; ],
+		[ :target uc:9; :comment "whatever data travels during this transfer comes together via query" ; ],
+		[ :target uc:10; :comment "because it might be all kinds of data they’re after" ; ],
+		[ :target uc:11; :comment "because notifications are potentially about anything" ; ],
+		[ :target uc:12; :comment "" ; ]
+	;
+.
+
+req:9
+	:title "Statutory Reporting Registry" ;
+	:description "A registry must exist that documents all statutory reporting requirements for local authorities. This registry must be maintained and updated as requirements change. It serves as a reference for compliance obligations." ;
+	:use-case
+		[ :target uc:3; :comment "this registry will inform some of the queries that serve these UCs" ; ],
+		[ :target uc:5; :comment "as above" ; ],
+		[ :target uc:6; :comment "" ; ]
+	;
+.
+
+req:10
+	:title "Query Aggregation Functions" ;
+	:description "The query interface must support aggregation functions. Users must be able to perform operations like sum, count, average, and group by. These functions enable statistical analysis and reporting across the data set." ;
+	:use-case
+		[ :target uc:3; :comment "" ; ],
+		[ :target uc:5; :comment "" ; ],
+		[ :target uc:6; :comment "" ; ],
+		[ :target uc:11; :comment "some notification triggers or notification response payloads are aggregates" ; ]
+	;
+.
+
+req:11
+	:title "Domain and Administrative Data" ;
+	:description "The system must store both domain data and administrative data. Domain data includes information about people and their social care needs. Administrative data includes information about work activities, schedules, and budgets." ;
+	:use-case
+		[ :target uc:3; :comment "" ; ],
+		[ :target uc:5; :comment "" ; ],
+		[ :target uc:6; :comment "" ; ],
+		[ :target uc:7; :comment "mostly domain but some admin data is relevant to SAR" ; ],
+		[ :target uc:8; :comment "some data that moves with subject is ‘admin’" ; ],
+		[ :target uc:9; :comment "all kinds of data must travel" ; ],
+		[ :target uc:10; :comment "all kinds" ; ],
+		[ :target uc:11; :comment "also all kinds" ; ],
+		[ :target uc:12; :comment "" ; ],
+		[ :target uc:13; :comment "" ; ]
+	;
+.
+
+req:12
+	:title "Taxonomy Standard" ;
+	:description "A standard must exist to describe how data is categorized. This includes definitions for units of measure and classification schemes. The taxonomy ensures consistent categorization across all systems." ;
+	:use-case
+		[ :target uc:3; :comment "" ; ],
+		[ :target uc:4; :comment "" ; ],
+		[ :target uc:5; :comment "" ; ],
+		[ :target uc:6; :comment "these concepts are what captures the shared understanding" ; ],
+		[ :target uc:8; :comment "a lot of the data that moves with the subject is taxonomy concepts. The event of transition from child to adult is also a concept in the taxonomy" ; ],
+		[ :target uc:9; :comment "as above" ; ],
+		[ :target uc:10; :comment "" ; ],
+		[ :target uc:11; :comment "" ; ],
+		[ :target uc:12; :comment "" ; ],
+		[ :target uc:13; :comment "" ; ]
+	;
+.
+
+req:13
+	:title "Data Freshness Standards" ;
+	:description "A standard must define time constraints for data freshness in statutory reporting. These standards specify how current data must be for different reporting requirements. Systems must meet these service level agreements." ;
+	:use-case
+		[ :target uc:5; :comment "adhering to legal constraints, these might inform what queries need to run to achieve UC" ; ]
+	;
+.
+
+req:14
+	:title "Business Intelligence Export Formats" ;
+	:description "Query results must be available in formats used by business intelligence tools. Supported formats must include Excel and Looker Studio. This enables users to analyze data using familiar productivity software." ;
+	:use-case
+		[ :target uc:3; :comment "" ; ],
+		[ :target uc:5; :comment "" ; ]
+	;
+.
+
+req:15
+	:title "Non-Professional Accessibility Metadata" ;
+	:description "The data model must include metadata that makes it accessible to non-professionals. This metadata provides plain language descriptions and explanations. It helps users without technical expertise understand the data structure." ;
+	:use-case
+		[ :target uc:1; :comment "subject of care" ; ],
+		[ :target uc:3; :comment "" ; ],
+		[ :target uc:5; :comment "" ; ],
+		[ :target uc:7; :comment "nonprof metadata explains terms shapes concepts to laypeople" ; ]
+	;
+.
+
+req:16
+	:title "Taxonomy nonprof Accessibility Metadata" ;
+	:description "The taxonomy standard must include metadata for non-professional users. This metadata provides clear explanations of classification terms. It ensures that the taxonomy is understandable to all users." ;
+	:use-case
+		[ :target uc:1; :comment "subject of care" ; ],
+		[ :target uc:3; :comment "" ; ],
+		[ :target uc:5; :comment "" ; ],
+		[ :target uc:7; :comment "as previous" ; ]
+	;
+.
+
+req:17
+	:title "Confidentiality Metadata in Ontology" ;
+	:description "The ontology must include granular metadata about confidentiality and redaction. This metadata specifies which data elements are sensitive and how they should be protected. It enables automated enforcement of confidentiality rules." ;
+	:use-case
+		[ :target uc:5; :comment "facilitates by restricting. E.g. anonimization" ; ],
+		[ :target uc:6; :comment "reports probably have redacted parts" ; ],
+		[ :target uc:7; :comment "some parts of records will need to be redacted etc based on confidentiality" ; ],
+		[ :target uc:8; :comment "some data must not transition. Confidentiality is one of the filters for that" ; ],
+		[ :target uc:9; :comment "as above" ; ],
+		[ :target uc:10; :comment "" ; ],
+		[ :target uc:11; :comment "" ; ],
+		[ :target uc:12; :comment "" ; ],
+		[ :target uc:13; :comment "" ; ]
+	;
+.
+
+req:18
+	:title "Confidentiality Metadata in Taxonomy" ;
+	:description "The taxonomy must include metadata about confidentiality requirements. This metadata specifies sensitivity levels for different classification categories. It supports proper handling of sensitive information." ;
+	:use-case
+		[ :target uc:5; :comment "" ; ],
+		[ :target uc:6; :comment "as previous req" ; ],
+		[ :target uc:7; :comment "as previous req" ; ],
+		[ :target uc:8; :comment "as previous req" ; ],
+		[ :target uc:9; :comment "as previous req" ; ],
+		[ :target uc:10; :comment "" ; ],
+		[ :target uc:11; :comment "" ; ],
+		[ :target uc:12; :comment "" ; ],
+		[ :target uc:13; :comment "" ; ]
+	;
+.
+
+req:19
+	:title "Subject Access Request Standard" ;
+	:description "A standard must exist for implementing subject data access requests for care leavers. This standard defines how individuals can request their personal data. It ensures compliance with data protection regulations." ;
+	:use-case
+		[ :target uc:7; :comment "this is the core req for that UC. this req is about having shapes and apis etc for SAR. data must capture all import/export and take that info into consideration when putting SAR response together. Also must consider confidentiality. Also audit" ; ]
+	;
+.
+
+req:20
+	:title "AI Legal Requirements Registry" ;
+	:description "A registry must document legal requirements for AI tools in social care. This registry specifies compliance obligations for AI systems. It helps AI tool developers understand their legal obligations." ;
+	:use-case
+		[ :target uc:2; :comment "" ; ]
+	;
+.
+
+req:21
+	:title "Unified Adult and Child Standards" ;
+	:description "Adult social care systems and child social care systems must use the same standards. Both must implement the same specifications and protocols. This enables data sharing and coordination between adult and child services." ;
+	:use-case
+		[ :target uc:8; :comment "core req for UC, shared model/protocol is the foundation of interop between the two worlds" ; ]
+	;
+.
+
+req:22
+	:title "Data Sunsetting and Archival" ;
+	:description "The system must support sunsetting and archival of old data. This functionality ensures that historical data is properly preserved. It also ensures that outdated data does not interfere with current operations." ;
+	:use-case
+		[ :target uc:7; :comment "archive might be the source of data that goes into SAR response" ; ],
+		[ :target uc:8; :comment "because transition is one of the triggers of sunsetting, it is also unified across the two legs of the system" ; ],
+		[ :target uc:9; :comment "as prev" ; ]
+	;
+.
+
+req:23
+	:title "Case Import Functionality" ;
+	:description "The system must provide functionality to import individual cases. This includes all case data and associated documentation. The import process must validate data against the standard data model." ;
+	:use-case
+		[ :target uc:7; :comment "for traceability" ; ],
+		[ :target uc:8; :comment "protocol core for UC, receiving system must be able to accept incoming subject" ; ],
+		[ :target uc:9; :comment "" ; ]
+	;
+.
+
+req:24
+	:title "Case Export Functionality" ;
+	:description "The system must provide functionality to export individual cases. This includes all case data and associated documentation. The export format must conform to the standard data model." ;
+	:use-case
+		[ :target uc:7; :comment "for traceability" ; ],
+		[ :target uc:8; :comment "proto core for UC, child system must be able to export to adult system" ; ],
+		[ :target uc:9; :comment "" ; ]
+	;
+.
+
+req:25
+	:title "Case Export Request API" ;
+	:description "An API must exist for submitting case export requests. This API allows authorized users to request case data exports. The API must handle authorization and queueing of export requests." ;
+	:use-case
+		[ :target uc:8; :comment "" ; ],
+		[ :target uc:9; :comment "" ; ]
+	;
+.
+
+req:26
+	:title "Authorization Shapes in Ontology" ;
+	:description "The ontology must include data shapes that describe authorization rules. These shapes define who can access what data under what circumstances. They enable consistent authorization enforcement across systems." ;
+	:use-case
+		[ :target uc:5; :comment "" ; ]
+	;
+.
+
+req:27
+	:title "Authorization Taxonomy" ;
+	:description "The taxonomy must include terms and categories related to authorization. This provides a standard vocabulary for describing permissions and access rights. It ensures consistent authorization terminology across systems." ;
+	:use-case
+		[ :target uc:5; :comment "" ; ],
+		[ :target uc:7; :comment "summary considers authorization terms and categories to eg redact data" ; ],
+		[ :target uc:8; :comment "policy language must be expressive enough to capture transition, eg authorize access after migration" ; ],
+		[ :target uc:9; :comment "technically same kind of import/export as above" ; ],
+		[ :target uc:10; :comment "authz tax must be able to describe enquiries from external sources, authorities" ; ],
+		[ :target uc:11; :comment "as prev uc except must describe eligibility for notification" ; ],
+		[ :target uc:12; :comment "" ; ],
+		[ :target uc:13; :comment "" ; ]
+	;
+.
+
+req:28
+	:title "Standards-Based Authorization API" ;
+	:description "The API must implement authorization based on the authorization ontology and taxonomy. All access control decisions must use the standardized authorization data. This ensures consistent security enforcement." ;
+
+# TODO: Probably linked to all: this is likely oauth or more general or more specific. Mandating a protocol plus standard authorization model (that evolves with legal requirements) (also evolves with tech)
+.
+
+req:29
+	:title "Person Search Request Shape" ;
+	:description "The data standard must define the shape of person search requests. This includes all fields that can be used to search for a person. The standard ensures consistent search capabilities across systems." ;
+	:use-case
+		[ :target uc:10; :comment "core. Person is what they enquire about" ; ]
+	;
+.
+
+req:30
+	:title "Person Search Results Shape" ;
+	:description "The data standard must define the shape of person search results. This includes all fields returned in search responses. The standard ensures consistent result formats across systems." ;
+	:use-case
+		[ :target uc:10; :comment "core. Is what response they get when they enquire" ; ]
+	;
+.
+
+req:31
+	:title "Person Search Protocol" ;
+	:description "The protocol must include an API for person search operations. This API allows systems to search for individuals across case management systems. The API must support the standard search request and result shapes." ;
+	:use-case
+		[ :target uc:10; :comment "core. Endpoints for this kind of request" ; ]
+	;
+.
+
+req:32
+	:title "Lightweight Information Client Creation" ;
+	:description "The protocol must enable the creation of social care information clients. These clients can access, display and modify social care data without implementing full case management. This supports specialized tools and applications." ;
+	:use-case
+		[ :target uc:10; :comment "when some non social care system enquires from a yes social care system about a subject" ; ],
+		[ :target uc:11; :comment "the clients that subscribe to notifications. The LW info consumer should be a subset of the full social care model" ; ],
+		[ :target uc:12; :comment "" ; ]
+	;
+.
+
+req:33
+	:title "Lightweight Information Provider Support" ;
+	:description "The protocol must support creating information providers that are not full case management systems. This allows non-social-care systems to expose data in a compatible format. It enables integration with external data sources." ;
+	:use-case
+		[ :target uc:10; :comment "when a yes social system asks from a non social system" ; ]
+	;
+.
+
+req:34
+	:title "External System Interoperability" ;
+	:description "The protocol should facilitate interoperability with external systems through a plugin model. Systems can implement connectors or extensions to integrate with external services. This approach enables flexible integration without modifying core systems." ;
+	:use-case
+		[ :target uc:2; :comment "maybe not as this req was intended for next item" ; ],
+		[ :target uc:10; :comment "the requesting social care system must implement a connector to some external data provider that is not a lightweight info provider (req up)" ; ]
+	;
+.
+
+req:35
+	:title "Plugin Registry" ;
+	:description "A registry must exist of plugins for interoperating with external systems. Implementers can use these existing plugins rather than building their own. The registry promotes code reuse and reduces implementation effort." ;
+	:use-case
+		[ :target uc:10; :comment "supports req above, distribute workload, remove redundancy in implementing connectors, lower cost of integration by sharing implementations" ; ]
+	;
+.
+
+req:36
+	:title "Person Matching Algorithm Standard" ;
+	:description "A standard must define the algorithm for matching person records across systems. This algorithm determines when two records refer to the same individual. It ensures consistent person matching across all implementations." ;
+	:use-case
+		[ :target uc:10; :comment "person matching is exactly what happens to answer these enquiries. Traceability of care subject across the ecosystem." ; ]
+	;
+.
+
+req:37
+	:title "Case Management API Registry" ;
+	:description "A registry must exist that lists all case management system APIs. This registry provides discovery of available systems and their endpoints. It enables systems to find and connect with each other." ;
+	:use-case
+		[ :target uc:6; :comment "" ; ],
+		[ :target uc:10; :comment "registry tells us who to direct our enquiries at" ; ]
+	;
+.
+
+req:38
+	:title "Compliance Test Suite" ;
+	:description "A test suite must exist to verify compliance with the protocol and data standards. The test suite must be versioned to accommodate evolving legal requirements. It ensures that implementations meet all specifications and legal obligations." ;
+	:use-case
+		[ :target uc:4; :comment "" ; ],
+		[ :target uc:8; :comment "proves interoperability, facilitates transition between child and adult systems" ; ],
+		[ :target uc:9; :comment "as above but for vendor interop" ; ],
+		[ :target uc:10; :comment "test suite must cover Lightweight Information Provider Support" ; ],
+		[ :target uc:12; :comment "" ; ]
+	;
+.
+
+req:39
+	:title "Certification Process" ;
+	:description "A documented certification process must vet implementations against the test suite and legal requirements. Implementations must maintain certification by keeping up with legislative changes. Loss of compliance results in loss of certification." ;
+	:use-case
+		[ :target uc:2; :comment "legal compliance mandates information recording capability" ; ],
+		[ :target uc:10; :comment "also must certify Lightweight Information Provider Support" ; ],
+		[ :target uc:12; :comment "" ; ]
+	;
+.
+
+req:40
+	:title "Federated Person Search" ;
+	:description "Functionality must exist to query the registry for relevant case management APIs and then search across them. The system must harmonize results from different APIs using a documented algorithm. This enables searching for individuals across multiple systems." ;
+	:use-case
+		[ :target uc:10; :comment "core. Harmonized algorithm to achieve consistency across ecosystem" ; ]
+	;
+.
+
+req:41
+	:title "Publish-Subscribe Notification System" ;
+	:description "The protocol must define a publish-subscribe system for delivering notifications. Systems must be able to both publish and subscribe to notifications. This enables real-time updates and event-driven workflows." ;
+	:use-case
+		[ :target uc:11; :comment "core tech for this UC" ; ]
+	;
+.
+
+req:42
+	:title "External Actor Authorization" ;
+	:description "The authorization component must accommodate external actors. These may include organizations or systems outside the core social care ecosystem. The authorization model must support secure access by external parties." ;
+	:use-case
+		[ :target uc:1; :comment "subject of care" ; ],
+		[ :target uc:4; :comment "" ; ],
+		[ :target uc:6; :comment "" ; ],
+		[ :target uc:11; :comment "" ; ],
+		[ :target uc:12; :comment "" ; ]
+	;
+.
+
+req:43
+	:title "Credential-Based Authentication" ;
+	:description "The authorization component must support credential-based authentication. This authentication is based on verifiable credentials rather than identity alone. It enables authorized access by organizations and authorities." ;
+	:use-case
+		[ :target uc:6; :comment "authorities authenticate themselves by some credential rather than by identity because that’s what gives them the power to get these reports. Not who the user happens to be." ; ],
+		[ :target uc:10; :comment "very likely that some requesting agencies do so by authority that is best demonstrated as holding a credential, not by identity" ; ],
+		[ :target uc:11; :comment "as above" ; ],
+		[ :target uc:12; :comment "" ; ]
+	;
+.
+
+req:44
+	:title "Trusted Credential Issuer Registry" ;
+	:description "A registry must exist of trusted credential issuers and credential types. The registry must map credential types to permissions. This enables automated authorization decisions based on presented credentials." ;
+
+# TODO: Prob relevant to anything previous req
+.
+
+req:45
+	:title "Data Model Extension Mechanism" ;
+	:description "The data standard must include a mechanism for extensions. Extensions allow new data shapes not defined in the core model. Each extension consists of a payload and its schema description." ;
+	:use-case
+		[ :target uc:13; :comment "to allow for flexibility across different LAs" ; ]
+	;
+.
+
+req:46
+	:title "Needs Assessment Data Shape" ;
+	:description "The data standard must include a shape for needs assessments. This shape defines all data elements used in assessing care needs. It ensures consistent documentation of needs assessments across systems." ;
+	:use-case
+		[ :target uc:13; :comment "core req" ; ]
+	;
+.
+
+req:47
+	:title "Common Data Standards" ;
+	:description "All case management system implementations must use the same standards and specifications. Each implementation must follow the same protocols and data models. This ensures interoperability between different systems." ;
+
+# TODO: Prob all
+.
+
+req:48
+	:title "Comprehensive Data Model" ;
+	:description "The data standard must include all data elements identified in use case documentation. The model must cover all aspects of case management operations. Required elements will be derived from the 'data' sections of use cases." ;
+
+# TODO: Prob all
+.
+
+req:49
+	:title "Complete API Coverage" ;
+	:description "All system functionality must be available through the API. No functionality should require direct user interface access. This enables programmatic access and automation of all operations." ;
+
+# TODO: Prob all
+.
+
+req:50
+	:title "Case Management System Creation" ;
+	:description "The protocol must enable the creation of full case management systems. It must provide all specifications needed to build a complete system. This includes data models, APIs, and operational requirements." ;
+
+# TODO: Prob all (facilitate a free market)
+.
+
+req:51
+	:title "Partial Implementation Support" ;
+	:description "The protocol must support partial implementations. This may include conformance levels that define subsets of functionality. Systems can implement only the capabilities they need while remaining compliant." ;
+.
+
+req:52
+	:title "Implementation Guides" ;
+	:description "Implementation guides must exist for the data standard and protocol. These guides provide practical instructions for developers. They help implementers understand how to correctly apply the standards." ;
+.
+
+req:53
+	:title "Educational Materials" ;
+	:description "Educational materials must exist for using the protocol and data standard. These materials must link to relevant legal requirements. They help users understand both technical and legal aspects of the system." ;
+.
+
+req:54
+	:title "Reference Implementation" ;
+	:description "Reference implementations must exist in multiple programming languages. These implementations demonstrate correct application of the protocol and data standard. They serve as examples and starting points for new implementations." ;
+.
+
+req:55
+	:title "Alignment with External Standards" ;
+	:description "The data standard must align with existing standards and practices in other institutions. This includes healthcare, education, and other relevant sectors. Alignment enables broader data sharing and reduces duplication." ;
+.
+
+req:56
+	:title "Audit Log Standard" ;
+	:description "Systems must provide a full audit log of all actions in standard format. The audit log must meet statutory requirements for record-keeping. It provides accountability and supports compliance verification." ;
+.
