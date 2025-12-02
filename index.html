@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://unpkg.com/n3/browser/n3.min.js"></script>
+	<script type="module">
+		const response = await fetch("data.ttl")
+		const text = await response.text()
+		const parser = new N3.Parser()
+		const store = new N3.Store()
+		const quads = parser.parse(text)
+		store.addQuads(quads)
+
+		console.log(store)
+	</script>
+</head>
+<body>
+
+</body>
+</html>
