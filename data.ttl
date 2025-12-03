@@ -125,16 +125,16 @@ req:11
 	:title "Domain and Administrative Data" ;
 	:description "The system must store both domain data and administrative data. Domain data includes information about people and their social care needs. Administrative data includes information about work activities, schedules, and budgets." ;
 	:use-case
-		[ :target uc:3; :comment "" ; ],
-		[ :target uc:5; :comment "" ; ],
-		[ :target uc:6; :comment "" ; ],
-		[ :target uc:7; :comment "mostly domain but some admin data is relevant to SAR" ; ],
-		[ :target uc:8; :comment "some data that moves with subject is 'admin'" ; ],
-		[ :target uc:9; :comment "all kinds of data must travel" ; ],
-		[ :target uc:10; :comment "all kinds" ; ],
-		[ :target uc:11; :comment "also all kinds" ; ],
-		[ :target uc:12; :comment "" ; ],
-		[ :target uc:13; :comment "" ; ]
+		[ :target uc:3; :comment "Both domain and administrative data enable social workers to find all information relevant to planning and work." ; ],
+		[ :target uc:5; :comment "Both domain and administrative data enable senior leaders to analyse service operations comprehensively." ; ],
+		[ :target uc:6; :comment "Both domain and administrative data may be required for different statutory reports." ; ],
+		[ :target uc:7; :comment "Subject access requests may require both domain and some administrative data." ; ],
+		[ :target uc:8; :comment "Both domain and administrative data may need to move with the subject during transition from child to adult social care." ; ],
+		[ :target uc:9; :comment "All types of data must be transferable during transfer of responsibility." ; ],
+		[ :target uc:10; :comment "Multi-agency enquiries may require access to all types of data." ; ],
+		[ :target uc:11; :comment "Multi-agency notifications may involve all types of data." ; ],
+		[ :target uc:12; :comment "Multiagency teams need access to both domain and administrative data." ; ],
+		[ :target uc:13; :comment "Needs assessments involve both domain and administrative data." ; ]
 	;
 .
 
@@ -142,16 +142,16 @@ req:12
 	:title "Taxonomy Standard" ;
 	:description "A standard must exist to describe how data is categorized. This includes definitions for units of measure and classification schemes. The taxonomy ensures consistent categorization across all systems." ;
 	:use-case
-		[ :target uc:3; :comment "" ; ],
-		[ :target uc:4; :comment "" ; ],
-		[ :target uc:5; :comment "" ; ],
-		[ :target uc:6; :comment "these concepts are what captures the shared understanding" ; ],
-		[ :target uc:8; :comment "a lot of the data that moves with the subject is taxonomy concepts. The event of transition from child to adult is also a concept in the taxonomy" ; ],
-		[ :target uc:9; :comment "as above" ; ],
-		[ :target uc:10; :comment "" ; ],
-		[ :target uc:11; :comment "" ; ],
-		[ :target uc:12; :comment "" ; ],
-		[ :target uc:13; :comment "" ; ]
+		[ :target uc:3; :comment "A taxonomy standard ensures social workers interpret categories consistently when finding information." ; ],
+		[ :target uc:4; :comment "A taxonomy standard ensures consistent data categorization during CMS migration." ; ],
+		[ :target uc:5; :comment "A taxonomy standard enables senior leaders to analyse data with consistent categories." ; ],
+		[ :target uc:6; :comment "Taxonomy concepts capture the shared understanding required for consistent statutory reporting." ; ],
+		[ :target uc:8; :comment "Many taxonomy concepts move with the subject during transition. The transition event itself is a taxonomy concept." ; ],
+		[ :target uc:9; :comment "Taxonomy concepts are essential to transfer of responsibility and represent the transfer event itself." ; ],
+		[ :target uc:10; :comment "A taxonomy standard enables consistent interpretation of data in multi-agency enquiries." ; ],
+		[ :target uc:11; :comment "A taxonomy standard enables consistent notification triggers and content." ; ],
+		[ :target uc:12; :comment "A taxonomy standard ensures multiagency teams interpret shared data consistently." ; ],
+		[ :target uc:13; :comment "A taxonomy standard ensures consistent recording of needs assessments." ; ]
 	;
 .
 
@@ -159,7 +159,7 @@ req:13
 	:title "Data Freshness Standards" ;
 	:description "A standard must define time constraints for data freshness in statutory reporting. These standards specify how current data must be for different reporting requirements. Systems must meet these service level agreements." ;
 	:use-case
-		[ :target uc:5; :comment "adhering to legal constraints, these might inform what queries need to run to achieve UC" ; ]
+		[ :target uc:5; :comment "Data freshness standards inform which queries need to run to meet legal constraints for analysis and reporting." ; ]
 	;
 .
 
@@ -167,8 +167,8 @@ req:14
 	:title "Business Intelligence Export Formats" ;
 	:description "Query results must be available in formats used by business intelligence tools. Supported formats must include Excel and Looker Studio. This enables users to analyze data using familiar productivity software." ;
 	:use-case
-		[ :target uc:3; :comment "" ; ],
-		[ :target uc:5; :comment "" ; ]
+		[ :target uc:3; :comment "BI export formats enable social workers to use familiar tools for information synthesis." ; ],
+		[ :target uc:5; :comment "BI export formats enable senior leaders to use standard analytical tools for decision-making." ; ]
 	;
 .
 
@@ -176,10 +176,10 @@ req:15
 	:title "Non-Professional Accessibility Metadata" ;
 	:description "The data model must include metadata that makes it accessible to non-professionals. This metadata provides plain language descriptions and explanations. It helps users without technical expertise understand the data structure." ;
 	:use-case
-		[ :target uc:1; :comment "subject of care" ; ],
-		[ :target uc:3; :comment "" ; ],
-		[ :target uc:5; :comment "" ; ],
-		[ :target uc:7; :comment "nonprof metadata explains terms shapes concepts to laypeople" ; ]
+		[ :target uc:1; :comment "Non-professional accessibility metadata enables subjects of care to understand their records." ; ],
+		[ :target uc:3; :comment "Non-professional accessibility metadata helps social workers understand technical data structures." ; ],
+		[ :target uc:5; :comment "Non-professional accessibility metadata helps senior leaders interpret analytical data." ; ],
+		[ :target uc:7; :comment "Non-professional accessibility metadata explains terms and concepts to laypeople in care summaries." ; ]
 	;
 .
 
@@ -187,10 +187,10 @@ req:16
 	:title "Taxonomy nonprof Accessibility Metadata" ;
 	:description "The taxonomy standard must include metadata for non-professional users. This metadata provides clear explanations of classification terms. It ensures that the taxonomy is understandable to all users." ;
 	:use-case
-		[ :target uc:1; :comment "subject of care" ; ],
-		[ :target uc:3; :comment "" ; ],
-		[ :target uc:5; :comment "" ; ],
-		[ :target uc:7; :comment "as previous" ; ]
+		[ :target uc:1; :comment "Taxonomy accessibility metadata enables subjects of care to understand classification terms in their records." ; ],
+		[ :target uc:3; :comment "Taxonomy accessibility metadata helps social workers understand classification systems." ; ],
+		[ :target uc:5; :comment "Taxonomy accessibility metadata helps senior leaders interpret categorized data." ; ],
+		[ :target uc:7; :comment "Taxonomy accessibility metadata explains classification terms to laypeople in care summaries." ; ]
 	;
 .
 
@@ -198,15 +198,15 @@ req:17
 	:title "Confidentiality Metadata in Ontology" ;
 	:description "The ontology must include granular metadata about confidentiality and redaction. This metadata specifies which data elements are sensitive and how they should be protected. It enables automated enforcement of confidentiality rules." ;
 	:use-case
-		[ :target uc:5; :comment "facilitates by restricting. E.g. anonimization" ; ],
-		[ :target uc:6; :comment "reports probably have redacted parts" ; ],
-		[ :target uc:7; :comment "some parts of records will need to be redacted etc based on confidentiality" ; ],
-		[ :target uc:8; :comment "some data must not transition. Confidentiality is one of the filters for that" ; ],
-		[ :target uc:9; :comment "as above" ; ],
-		[ :target uc:10; :comment "" ; ],
-		[ :target uc:11; :comment "" ; ],
-		[ :target uc:12; :comment "" ; ],
-		[ :target uc:13; :comment "" ; ]
+		[ :target uc:5; :comment "Confidentiality metadata facilitates analysis by restricting sensitive data, enabling anonymization where required." ; ],
+		[ :target uc:6; :comment "Confidentiality metadata identifies which parts of statutory reports need redaction." ; ],
+		[ :target uc:7; :comment "Confidentiality metadata determines which parts of records must be redacted in care summaries based on confidentiality requirements." ; ],
+		[ :target uc:8; :comment "Confidentiality metadata filters which data must not transition from child to adult social care." ; ],
+		[ :target uc:9; :comment "Confidentiality metadata filters which data can be transferred during transfer of responsibility." ; ],
+		[ :target uc:10; :comment "Confidentiality metadata controls what data is shared in multi-agency enquiries." ; ],
+		[ :target uc:11; :comment "Confidentiality metadata determines what information can be included in multi-agency notifications." ; ],
+		[ :target uc:12; :comment "Confidentiality metadata controls what data multiagency teams can access and input." ; ],
+		[ :target uc:13; :comment "Confidentiality metadata protects sensitive information in needs assessments." ; ]
 	;
 .
 
@@ -214,15 +214,15 @@ req:18
 	:title "Confidentiality Metadata in Taxonomy" ;
 	:description "The taxonomy must include metadata about confidentiality requirements. This metadata specifies sensitivity levels for different classification categories. It supports proper handling of sensitive information." ;
 	:use-case
-		[ :target uc:5; :comment "" ; ],
-		[ :target uc:6; :comment "as previous req" ; ],
-		[ :target uc:7; :comment "as previous req" ; ],
-		[ :target uc:8; :comment "as previous req" ; ],
-		[ :target uc:9; :comment "as previous req" ; ],
-		[ :target uc:10; :comment "" ; ],
-		[ :target uc:11; :comment "" ; ],
-		[ :target uc:12; :comment "" ; ],
-		[ :target uc:13; :comment "" ; ]
+		[ :target uc:5; :comment "Taxonomy confidentiality metadata enables appropriate handling of sensitive categories in analysis." ; ],
+		[ :target uc:6; :comment "Taxonomy confidentiality metadata identifies sensitive categories for redaction in statutory reports." ; ],
+		[ :target uc:7; :comment "Taxonomy confidentiality metadata determines which classified information must be redacted in care summaries." ; ],
+		[ :target uc:8; :comment "Taxonomy confidentiality metadata filters which classified data can transition from child to adult social care." ; ],
+		[ :target uc:9; :comment "Taxonomy confidentiality metadata filters which classified data can be transferred between authorities." ; ],
+		[ :target uc:10; :comment "Taxonomy confidentiality metadata controls which classified data is shared in multi-agency enquiries." ; ],
+		[ :target uc:11; :comment "Taxonomy confidentiality metadata determines which classified information can be included in notifications." ; ],
+		[ :target uc:12; :comment "Taxonomy confidentiality metadata controls which classified data multiagency teams can access." ; ],
+		[ :target uc:13; :comment "Taxonomy confidentiality metadata protects sensitive classifications in needs assessments." ; ]
 	;
 .
 
@@ -230,7 +230,7 @@ req:19
 	:title "Subject Access Request Standard" ;
 	:description "A standard must exist for implementing subject data access requests for care leavers. This standard defines how individuals can request their personal data. It ensures compliance with data protection regulations." ;
 	:use-case
-		[ :target uc:7; :comment "this is the core req for that UC. this req is about having shapes and apis etc for SAR. data must capture all import/export and take that info into consideration when putting SAR response together. Also must consider confidentiality. Also audit" ; ]
+		[ :target uc:7; :comment "Core requirement for use case 7: Sharing care summaries. This standard defines shapes and APIs for subject access requests. Data must capture all import/export events and consider this information, along with confidentiality and audit data, when assembling SAR responses." ; ]
 	;
 .
 
@@ -238,7 +238,7 @@ req:20
 	:title "AI Legal Requirements Registry" ;
 	:description "A registry must document legal requirements for AI tools in social care. This registry specifies compliance obligations for AI systems. It helps AI tool developers understand their legal obligations." ;
 	:use-case
-		[ :target uc:2; :comment "" ; ]
+		[ :target uc:2; :comment "Core requirement for use case 2: Social worker recording. AI tools such as transcription services must comply with documented legal requirements." ; ]
 	;
 .
 
@@ -246,7 +246,7 @@ req:21
 	:title "Unified Adult and Child Standards" ;
 	:description "Adult social care systems and child social care systems must use the same standards. Both must implement the same specifications and protocols. This enables data sharing and coordination between adult and child services." ;
 	:use-case
-		[ :target uc:8; :comment "core req for UC, shared model/protocol is the foundation of interop between the two worlds" ; ]
+		[ :target uc:8; :comment "Core requirement for use case 8: Transition from children to adult social care. A shared data model and protocol is the foundation of interoperability between child and adult services." ; ]
 	;
 .
 
@@ -254,9 +254,9 @@ req:22
 	:title "Data Sunsetting and Archival" ;
 	:description "The system must support sunsetting and archival of old data. This functionality ensures that historical data is properly preserved. It also ensures that outdated data does not interfere with current operations." ;
 	:use-case
-		[ :target uc:7; :comment "archive might be the source of data that goes into SAR response" ; ],
-		[ :target uc:8; :comment "because transition is one of the triggers of sunsetting, it is also unified across the two legs of the system" ; ],
-		[ :target uc:9; :comment "as prev" ; ]
+		[ :target uc:7; :comment "Archives may be the source of data for subject access request responses." ; ],
+		[ :target uc:8; :comment "Transition from child to adult social care is one trigger for sunsetting. Unified archival standards ensure consistency across both services." ; ],
+		[ :target uc:9; :comment "Transfer of responsibility may trigger sunsetting. Archival standards must support cross-authority data preservation." ; ]
 	;
 .
 
@@ -264,9 +264,9 @@ req:23
 	:title "Case Import Functionality" ;
 	:description "The system must provide functionality to import individual cases. This includes all case data and associated documentation. The import process must validate data against the standard data model." ;
 	:use-case
-		[ :target uc:7; :comment "for traceability" ; ],
-		[ :target uc:8; :comment "protocol core for UC, receiving system must be able to accept incoming subject" ; ],
-		[ :target uc:9; :comment "" ; ]
+		[ :target uc:7; :comment "Case import functionality supports traceability for subject access requests." ; ],
+		[ :target uc:8; :comment "Core protocol requirement for use case 8: Transition from children's social care to adult social care. The receiving adult system must be able to accept incoming cases." ; ],
+		[ :target uc:9; :comment "Core protocol requirement for use case 9: Transfer of responsibility. The receiving local authority must be able to import cases." ; ]
 	;
 .
 
@@ -274,9 +274,9 @@ req:24
 	:title "Case Export Functionality" ;
 	:description "The system must provide functionality to export individual cases. This includes all case data and associated documentation. The export format must conform to the standard data model." ;
 	:use-case
-		[ :target uc:7; :comment "for traceability" ; ],
-		[ :target uc:8; :comment "proto core for UC, child system must be able to export to adult system" ; ],
-		[ :target uc:9; :comment "" ; ]
+		[ :target uc:7; :comment "Case export functionality supports traceability for subject access requests." ; ],
+		[ :target uc:8; :comment "Core protocol requirement for use case 8: Transition from children's social care to adult social care. The child system must be able to export cases to the adult system." ; ],
+		[ :target uc:9; :comment "Core protocol requirement for use case 9: Transfer of responsibility. The sending local authority must be able to export cases." ; ]
 	;
 .
 
@@ -284,8 +284,8 @@ req:25
 	:title "Case Export Request API" ;
 	:description "An API must exist for submitting case export requests. This API allows authorized users to request case data exports. The API must handle authorization and queueing of export requests." ;
 	:use-case
-		[ :target uc:8; :comment "" ; ],
-		[ :target uc:9; :comment "" ; ]
+		[ :target uc:8; :comment "An export request API enables authorized users to initiate transition from children's to adult social care." ; ],
+		[ :target uc:9; :comment "An export request API enables authorized users to initiate transfer of responsibility between local authorities." ; ]
 	;
 .
 
@@ -293,7 +293,7 @@ req:26
 	:title "Authorization Shapes in Ontology" ;
 	:description "The ontology must include data shapes that describe authorization rules. These shapes define who can access what data under what circumstances. They enable consistent authorization enforcement across systems." ;
 	:use-case
-		[ :target uc:5; :comment "" ; ]
+		[ :target uc:5; :comment "Authorization shapes enable consistent enforcement of access controls for data analysis." ; ]
 	;
 .
 
@@ -301,14 +301,14 @@ req:27
 	:title "Authorization Taxonomy" ;
 	:description "The taxonomy must include terms and categories related to authorization. This provides a standard vocabulary for describing permissions and access rights. It ensures consistent authorization terminology across systems." ;
 	:use-case
-		[ :target uc:5; :comment "" ; ],
-		[ :target uc:7; :comment "summary considers authorization terms and categories to eg redact data" ; ],
-		[ :target uc:8; :comment "policy language must be expressive enough to capture transition, eg authorize access after migration" ; ],
-		[ :target uc:9; :comment "technically same kind of import/export as above" ; ],
-		[ :target uc:10; :comment "authz tax must be able to describe enquiries from external sources, authorities" ; ],
-		[ :target uc:11; :comment "as prev uc except must describe eligibility for notification" ; ],
-		[ :target uc:12; :comment "" ; ],
-		[ :target uc:13; :comment "" ; ]
+		[ :target uc:5; :comment "Authorization taxonomy provides standard terminology for access control in data analysis." ; ],
+		[ :target uc:7; :comment "Authorization taxonomy enables care summaries to consider authorization terms and categories when redacting data." ; ],
+		[ :target uc:8; :comment "Authorization taxonomy must be expressive enough to capture transition scenarios, such as authorizing access after migration from child to adult services." ; ],
+		[ :target uc:9; :comment "Authorization taxonomy supports import/export authorization during transfer of responsibility, similar to transition scenarios." ; ],
+		[ :target uc:10; :comment "Authorization taxonomy must describe enquiries from external sources and authorities in multi-agency scenarios." ; ],
+		[ :target uc:11; :comment "Authorization taxonomy must describe eligibility for receiving notifications from external sources." ; ],
+		[ :target uc:12; :comment "Authorization taxonomy must support multiagency teams' access to shared records." ; ],
+		[ :target uc:13; :comment "Authorization taxonomy controls access to needs assessment data." ; ]
 	;
 .
 
