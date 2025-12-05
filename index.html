@@ -4,27 +4,155 @@
 	<title></title>
 	<script src="https://unpkg.com/n3/browser/n3.min.js"></script>
 	<script type="module">
+		class Vocabulary {
+			static get title() { return this.property("title") }
+			static get description() { return this.property("description") }
+			static get useCase() { return this.property("useCase") }
+			static get target() { return this.property("target") }
+			static get useCaseTitle() { return this.property("useCaseTitle") }
+			static get useCaseDescription() { return this.property("useCaseDescription") }
+			static get comment() { return this.property("comment") }
+
+			static property(name) {
+				return N3.DataFactory.namedNode(`https://github.com/SocialCareData/ucr/schema/${name}`)
+			}
+		}
+
+		class Graph {
+			constructor(graph) {
+				this.graph = graph
+			}
+
+			get requirements() {
+				return [...this.graph.match(undefined, Vocabulary.title)]
+					.map(x => x.subject)
+					.map(x => new Requirement(x, this.graph))
+					.sort((a, b) => b.useCases.length - a.useCases.length)
+			}
+
+			get useCases() {
+				return [...this.graph.match(undefined, Vocabulary.useCaseTitle)]
+					.map(x => x.subject)
+					.map(x => new UseCase(x, this.graph))
+					.sort((a, b) => b.requirements.length - a.requirements.length)
+			}
+		}
+
+		class Requirement {
+			constructor(node, graph) {
+				this.node = node
+				this.graph = graph
+			}
+
+			get id() {
+				return this.node.id
+			}
+
+			get number() {
+				return this.id.split("/").pop()
+			}
+
+			get title() {
+				return [...this.graph.match(this.node, Vocabulary.title)]
+					.map(x => x.object)
+					.map(x => x.value)
+				[0]
+			}
+
+			get description() {
+				return [...this.graph.match(this.node, Vocabulary.description)]
+					.map(x => x.object)
+					.map(x => x.value)
+				[0]
+			}
+
+			get useCases() {
+				return [...this.graph.match(this.node, Vocabulary.useCase)]
+					.map(x => x.object)
+					.map(x => new UseCaseLink(x, this.graph))
+			}
+		}
+
+		class UseCase {
+			constructor(node, graph) {
+				this.node = node
+				this.graph = graph
+			}
+
+			get id() {
+				return this.node.id
+			}
+
+			get number() {
+				return this.id.split("/").pop()
+			}
+
+			get title() {
+				return [...this.graph.match(this.node, Vocabulary.useCaseTitle)]
+					.map(x => x.object)
+					.map(x => x.value)
+				[0]
+			}
+
+			get description() {
+				return [...this.graph.match(this.node, Vocabulary.useCaseDescription)]
+					.map(x => x.object)
+					.map(x => x.value)
+				[0]
+			}
+
+			get requirements() {
+				return [...this.graph.match(undefined, Vocabulary.target, this.node)]
+					.map(x => x.subject)
+					.map(x => new UseCaseLink(x, this.graph))
+			}
+		}
+
+		class UseCaseLink {
+			constructor(node, graph) {
+				this.node = node
+				this.graph = graph
+			}
+
+			get requirement() {
+				return [...this.graph.match(undefined, Vocabulary.useCase, this.node)]
+					.map(x => x.subject)
+					.map(x => new Requirement(x, this.graph))
+				[0]
+			}
+
+			get target() {
+				return [...this.graph.match(this.node, Vocabulary.target)]
+					.map(x => x.object)
+					.map(x => new UseCase(x, this.graph))
+				[0]
+			}
+
+			get comment() {
+				return [...this.graph.match(this.node, Vocabulary.comment)]
+					.map(x => x.object)
+					.map(x => x.value)
+				[0]
+			}
+		}
+
+
+
 		const response = await fetch("data.ttl")
 		const text = await response.text()
 		const parser = new N3.Parser
 		const store = new N3.Store
 		const quads = parser.parse(text)
 		store.addQuads(quads)
+		const g = new Graph(store)
 
-		const requirements = [...store.match(undefined, p("title"))].map(q => ({
-			id: q.subject.id,
-			number: q.subject.id.split("/").pop(),
-			title: q.object.value,
-			useCaseCount: [...store.match(q.subject, p("use-case"))].length,
-			description: [...[...store.match(q.subject, p("description"))].map(x => x.object.value)][0],
-		}))
-		for (const requirement of requirements.sort((a, b) => b.useCaseCount - a.useCaseCount)) {
+		for (const requirement of g.requirements) {
 			const li = document.getElementById("requirements").appendChild(document.createElement("li"))
 			const div = li.appendChild(document.createElement("div"))
 			const descriptionDiv = li.appendChild(document.createElement("div"))
 			const commentDiv = li.appendChild(document.createElement("div"))
 
-			div.innerText = `${requirement.number} - ${requirement.title} (${requirement.useCaseCount})`
+			div.innerText = `${requirement.number} - ${requirement.title} (${requirement.useCases.length})`
 			li.dataset.id = requirement.id
 			commentDiv.className = "comment"
 			descriptionDiv.innerText = requirement.description
@@ -33,31 +161,13 @@
 			li.addEventListener("click", onRequirementClick)
 		}
 
-		const useCaseLinks = Object.entries(Object.groupBy([...store.match(undefined, p("use-case"))].map(q => ({
-			requirement: q.subject.id,
-			target: [...store.match(q.object, p("target"))].map(q => q.object.id)[0],
-			comment: [...store.match(q.object, p("comment"))].map(q => q.object.value)[0],
-		})), i => i.requirement)).map(x => [x[0], x[1].map(t => ({ target: t.target, comment: t.comment }))]).map(x => ({
-			requirement: x[0],
-			useCases: x[1]
-		}))
-
-		const useCases = [...new Set([...store.match(undefined, p("useCaseTitle"))].map(q => ({
-			id: q.subject.id,
-			number: q.subject.id.split("/").pop(),
-			title: q.object.value,
-			requirementCount: [...store.match(undefined, p("target"), q.subject)]
-				.map(x => [...store.match(undefined, p("use-case"), x.subject)]).length,
-			description: [...[...store.match(q.subject, p("useCaseDescription"))].map(x => x.object.value)][0],
-		})))]
-		console.log(useCases);
-		for (const useCase of useCases.sort((a, b) => b.requirementCount - a.requirementCount)) {
+		for (const useCase of g.useCases) {
 			const li = document.getElementById("useCases").appendChild(document.createElement("li"))
 			const div = li.appendChild(document.createElement("div"))
 			const descriptionDiv = li.appendChild(document.createElement("div"))
 			const commentDiv = li.appendChild(document.createElement("div"))
 
-			div.innerText = `${useCase.number} - ${useCase.title} (${useCase.requirementCount})`
+			div.innerText = `${useCase.number} - ${useCase.title} (${useCase.requirements.length})`
 			li.dataset.id = useCase.id
 			commentDiv.className = "comment"
 			descriptionDiv.innerText = useCase.description
@@ -88,13 +198,13 @@
 			clear()
 			this.classList.add("clicked")
 			for (const useCaseElement of document.querySelectorAll("#useCases li")) {
-				const links = useCaseLinks
-					.filter(x => x.requirement === this.dataset.id)
-					.flatMap(x => x.useCases.filter(x => x.target === useCaseElement.dataset.id))
-					.map(x => x.comment)
-				if (links.length) {
+				for (const link of g.requirements
+					.filter(x => x.id === this.dataset.id)
+					.flatMap(x => x.useCases)
+					.filter(x => x.target.id === useCaseElement.dataset.id)) {
+
 					useCaseElement.classList.add("filtered")
-					useCaseElement.querySelector(".comment").innerText = links[0]
+					useCaseElement.querySelector(".comment").innerText = link.comment
 				}
 			}
 		}
@@ -103,20 +213,15 @@
 			clear()
 			this.classList.add("clicked")
 			for (const requirementElement of document.querySelectorAll("#requirements li")) {
-				const links = useCaseLinks
-					.filter(x => x.useCases.some(x => x.target === this.dataset.id))
-					.filter(x => x.requirement === requirementElement.dataset.id)
-					.flatMap(x => x.useCases.filter(x => x.target === this.dataset.id).map(x => x.comment))
+				for (const link of g.useCases
+					.filter(x => x.id === this.dataset.id)
+					.flatMap(x => x.requirements)
+					.filter(x => x.requirement.id === requirementElement.dataset.id)) {
 
-				if (links.length) {
 					requirementElement.classList.add("filtered")
-					requirementElement.querySelector(".comment").innerText = links[0]
+					requirementElement.querySelector(".comment").innerText = link.comment
 				}
 			}
-		}
-
-		function p(name) {
-			return N3.DataFactory.namedNode(`https://github.com/SocialCareData/ucr/schema/${name}`)
 		}
 	</script>
 	<style>
@@ -140,6 +245,10 @@
 			list-style: none;
 			cursor: pointer;
 		}
+
+			li:hover:not(.clicked) {
+				background-color: lightblue;
+			}
 
 		.clicked {
 			background-color: yellow
