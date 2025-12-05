@@ -6,49 +6,63 @@
 	<script type="module">
 		import { Graph } from "./Graph.js"
 
-		const response = await fetch("data.ttl")
-		const text = await response.text()
-		const parser = new N3.Parser
-		const store = new N3.Store
-		const quads = parser.parse(text)
-		store.addQuads(quads)
-		const g = new Graph(store)
+		let g
+		window.addEventListener("load", onLoad)
 
-		for (const requirement of g.requirements) {
-			const li = document.getElementById("requirements").appendChild(document.createElement("li"))
-			const div = li.appendChild(document.createElement("div"))
-			const descriptionDiv = li.appendChild(document.createElement("div"))
-			const commentDiv = li.appendChild(document.createElement("div"))
+		async function onLoad() {
+			const response = await fetch("data.ttl")
+			const text = await response.text()
+			const parser = new N3.Parser
+			const store = new N3.Store
+			const quads = parser.parse(text)
+			store.addQuads(quads)
+			g = new Graph(store)
 
-			div.innerText = `${requirement.number} - ${requirement.title} (${requirement.useCases.length})`
-			li.dataset.id = requirement.id
-			commentDiv.className = "comment"
-			descriptionDiv.innerText = requirement.description
-			descriptionDiv.className = "description"
+			for (const requirement of g.requirements) {
+				const li = document.getElementById("requirements").appendChild(document.createElement("li"))
+				const a = li.appendChild(document.createElement("a"))
+				const descriptionDiv = li.appendChild(document.createElement("div"))
+				const commentDiv = li.appendChild(document.createElement("div"))
 
-			li.addEventListener("click", onRequirementClick)
-		}
-
-		for (const useCase of g.useCases) {
-			const li = document.getElementById("useCases").appendChild(document.createElement("li"))
-			const div = li.appendChild(document.createElement("div"))
-			const descriptionDiv = li.appendChild(document.createElement("div"))
-			const commentDiv = li.appendChild(document.createElement("div"))
-
-			div.innerText = `${useCase.number} - ${useCase.title} (${useCase.requirements.length})`
-			li.dataset.id = useCase.id
-			commentDiv.className = "comment"
-			descriptionDiv.innerText = useCase.description
-			descriptionDiv.className = "description"
-
-			li.addEventListener("click", onUseCaseClick)
-		}
-
-		document.addEventListener("keydown", e => {
-			if (e.key === "Escape") {
-				clear()
+				a.innerText = `${requirement.number} - ${requirement.title} (${requirement.useCases.length})`
+				a.id = `requirement-${requirement.number}`
+				a.href = `#requirement-${requirement.number}`
+				li.dataset.id = requirement.id
+				commentDiv.className = "comment"
+				descriptionDiv.innerText = requirement.description
+				descriptionDiv.className = "description"
 			}
-		})
+
+			for (const useCase of g.useCases) {
+				const li = document.getElementById("useCases").appendChild(document.createElement("li"))
+				const a = li.appendChild(document.createElement("a"))
+				const descriptionDiv = li.appendChild(document.createElement("div"))
+				const commentDiv = li.appendChild(document.createElement("div"))
+
+				a.innerText = `${useCase.number} - ${useCase.title} (${useCase.requirements.length})`
+				a.id = `usecase-${useCase.number}`
+				a.href = `#usecase-${useCase.number}`
+				li.dataset.id = useCase.id
+				commentDiv.className = "comment"
+				descriptionDiv.innerText = useCase.description
+				descriptionDiv.className = "description"
+			}
+
+
+			document.addEventListener("keydown", e => {
+				if (e.key === "Escape") {
+					clear()
+				}
+			})
+
+			window.addEventListener("hashchange", e => {
+				onHashChange(new URL(e.newURL).hash.split("#")[1])
+			})
+
+			if (location.hash) {
+				onHashChange(location.hash.split("#")[1])
+			}
+		}
 
 		function clear() {
 			for (const element of document.querySelectorAll(".clicked")) {
@@ -90,6 +104,18 @@
 					requirementElement.querySelector(".comment").innerText = link.comment
 				}
 			}
+		}
+
+		function onHashChange(hash) {
+			const target = document.getElementById(hash).parentElement
+
+			if (hash.startsWith("requirement")) {
+				onRequirementClick.call(target)
+			} else {
+				onUseCaseClick.call(target)
+			}
+
+			target.scrollIntoView()
 		}
 	</script>
 	<style>
