@@ -1,0 +1,49 @@
+body {
+	display: flex;
+	margin: 0;
+	height: 100vh;
+	justify-content: space-between;
+}
+
+fieldset {
+	overflow-y: auto;
+	width: 50%;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style: none;
+	cursor: pointer;
+}
+
+	li:hover:not(.clicked) {
+		background-color: lightblue;
+	}
+
+.clicked {
+	background-color: yellow
+}
+
+.filtered {
+	background-color: lightgreen
+}
+
+.comment {
+	font-style: italic;
+	padding-left: 30px;
+	font-size: 90%;
+	padding-bottom: 20px;
+}
+
+.description {
+	font-size: 90%;
+	padding-left: 30px;
+	display: none;
+}
+
+.clicked .description {
+	display: block;
+}
