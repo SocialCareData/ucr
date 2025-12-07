@@ -2,7 +2,7 @@
   "profiles": {
     "MakeWord": {
         "commandName": "Project",
-        "commandLineArgs": "../../../../pages/data.ttl ../../../../Ucr.docx ../../../../Original.docx"
+        "commandLineArgs": "../../../../pages/data.ttl ../../../../pages/Ucr.docx ../../../../Original.docx"
     }
   }
 }
