@@ -1,0 +1,41 @@
+body {
+	display: flex;
+	margin: 0;
+	height: 100vh;
+	justify-content: space-between;
+}
+
+table {
+	width: 100%;
+	border-spacing: 0;
+}
+
+td {
+	text-align: center;
+	border: 1px solid;
+	border-left: none;
+	border-top: none;
+}
+
+thead {
+	position: sticky;
+	top: 0;
+	background-color: white;
+	z-index: 1;
+}
+
+.requirements {
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	text-transform: uppercase
+}
+
+	.requirements span {
+		position: sticky;
+		top: 5em;
+		bottom: 1em;
+	}
+
+.useCases {
+	text-transform: uppercase
+}

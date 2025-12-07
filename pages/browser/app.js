@@ -78,7 +78,7 @@ function onUseCaseClick() {
 function onHashChange(hash) {
 	const target = document.getElementById(hash).parentElement
 
-	if (hash.startsWith("requirement")) {
+	if (hash.includes("requirement")) {
 		onRequirementClick.call(target)
 	} else {
 		onUseCaseClick.call(target)
