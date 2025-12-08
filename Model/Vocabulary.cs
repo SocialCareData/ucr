@@ -1,6 +1,6 @@
 ﻿using VDS.RDF;
 
-namespace MakeWord.Wrapping;
+namespace Model;
 
 internal class Vocabulary
 {

@@ -1,6 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
-using Query.Wrapping;
+using Model;
 using VDS.RDF;
 using VDS.RDF.Parsing;
 
