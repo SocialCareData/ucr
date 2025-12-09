@@ -34,4 +34,11 @@ export class UseCase {
 			.map(x => x.subject)
 			.map(x => new UseCaseLink(x, this.graph))
 	}
+
+	get narrativeDocument() {
+		return [...this.graph.match(this.node, Vocabulary.narrativeDocument)]
+			.map(x => x.object)
+			.map(x => x.id)
+		[0]
+	}
 }

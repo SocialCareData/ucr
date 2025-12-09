@@ -15,6 +15,7 @@ internal class Vocabulary
     internal static IUriNode Comment { get; } = Node("comment");
     internal static IUriNode UseCaseTitle { get; } = Node("useCaseTitle");
     internal static IUriNode UseCaseDescription { get; } = Node("useCaseDescription");
+    internal static IUriNode UseCaseNarrativeDocument { get; } = Node("useCaseNarrativeDocument");
 
     private static IUriNode Node(string name) => AnyNode($"{VocabularyBaseUri}{name}");
 

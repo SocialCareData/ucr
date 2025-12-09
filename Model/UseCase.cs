@@ -15,6 +15,7 @@ public class UseCase : GraphWrapperNode
 	public string Number { get => Id.Split("/").Last(); }
 	public string Title { get => this.Singular(Vocabulary.UseCaseTitle, ValueMappings.As<string>); }
 	public string Description { get => this.Singular(Vocabulary.UseCaseDescription, ValueMappings.As<string>); }
+	public Uri NarrativeDocument { get => this.Singular(Vocabulary.UseCaseNarrativeDocument, ValueMappings.As<Uri>); }
 
 	public ISet<Link> Links { get => this.Subjects(Vocabulary.Target, Link.Wrap, Link.Wrap); }
 }

@@ -22,7 +22,7 @@ await JsonSerializer.SerializeAsync(
 
 await JsonSerializer.SerializeAsync(
 	File.OpenWrite(Path.Combine(target, "useCases.json")),
-	g.UseCases.Select(x => new { id = x.Id, title = x.Title, description = x.Description }),
+	g.UseCases.Select(x => new { id = x.Id, title = x.Title, description = x.Description, narrativeDocument = x.NarrativeDocument }),
 	options);
 
 await JsonSerializer.SerializeAsync(

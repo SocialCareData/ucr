@@ -41,6 +41,10 @@ async function onLoad() {
 		const useCaseA = useCaseHeaderCell.appendChild(document.createElement("a"))
 		useCaseA.href = `../browser#${useCase.id}`
 		useCaseA.innerText = `${useCase.number} - ${useCase.title}`
+		const narrativeDocumentA = useCaseHeaderCell.appendChild(document.createElement("a"))
+		narrativeDocumentA.href = useCase.narrativeDocument
+		narrativeDocumentA.innerText = "🔗"
+		narrativeDocumentA.target = "_blank"
 	}
 
 	let isFirstRequirementRow = true

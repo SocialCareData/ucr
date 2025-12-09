@@ -76,7 +76,11 @@ foreach (var useCase in g.UseCases)
             new BookmarkStart { Id = "usecase_" + useCase.Number, Name = "usecase_" + useCase.Number },
             new Run(
                 new Text(
-                    $"{useCase.Number} - {useCase.Title}")),
+                    $"{useCase.Number} - {useCase.Title}"),
+                new Hyperlink(
+                    new Run(
+                        new Text("🔗")))
+                { Id = wordDocument.MainDocumentPart.AddHyperlinkRelationship(useCase.NarrativeDocument, true).Id }),
             new BookmarkEnd { Id = "usecase_" + useCase.Number })
         { ParagraphProperties = new ParagraphProperties { ParagraphStyleId = new ParagraphStyleId { Val = "Heading2" } } },
         new Paragraph(

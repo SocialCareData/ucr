@@ -1,4 +1,4 @@
-class UseCaseList extends HTMLElement {
+﻿class UseCaseList extends HTMLElement {
 	async connectedCallback() {
 		const g = await new Promise(resolve => this.ownerDocument.addEventListener("data-ready", e => resolve(e.detail.data)))
 
@@ -7,6 +7,7 @@ class UseCaseList extends HTMLElement {
 			const li = ul.appendChild(this.ownerDocument.createElement("li"))
 			const a = li.appendChild(this.ownerDocument.createElement("a"))
 			const descriptionDiv = li.appendChild(this.ownerDocument.createElement("div"))
+			const narrativeDocumentLink = li.appendChild(this.ownerDocument.createElement("a"))
 			const commentDiv = li.appendChild(this.ownerDocument.createElement("div"))
 
 			a.innerText = `${useCase.number} - ${useCase.title} (${useCase.requirements.length})`
@@ -14,6 +15,9 @@ class UseCaseList extends HTMLElement {
 			a.href = `#${useCase.id}`
 			li.useCase = useCase
 			commentDiv.className = "comment"
+			narrativeDocumentLink.href = useCase.narrativeDocument
+			narrativeDocumentLink.innerText = "🔗"
+			narrativeDocumentLink.target = "_blank"
 			descriptionDiv.innerText = useCase.description
 			descriptionDiv.className = "description"
 		}
