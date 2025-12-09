@@ -6,8 +6,8 @@
 		for (const useCase of g.useCasesDescending) {
 			const li = ul.appendChild(this.ownerDocument.createElement("li"))
 			const a = li.appendChild(this.ownerDocument.createElement("a"))
-			const descriptionDiv = li.appendChild(this.ownerDocument.createElement("div"))
 			const narrativeDocumentLink = li.appendChild(this.ownerDocument.createElement("a"))
+			const descriptionDiv = li.appendChild(this.ownerDocument.createElement("div"))
 			const commentDiv = li.appendChild(this.ownerDocument.createElement("div"))
 
 			a.innerText = `${useCase.number} - ${useCase.title} (${useCase.requirements.length})`
