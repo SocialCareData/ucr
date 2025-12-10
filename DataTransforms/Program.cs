@@ -15,17 +15,20 @@ FileLoader.Load(g, source);
 
 var options = new JsonSerializerOptions { WriteIndented = true };
 
+var requirementsFile = File.OpenWrite(Path.Combine(target, "requirements.json"));
 await JsonSerializer.SerializeAsync(
-	File.OpenWrite(Path.Combine(target, "requirements.json")),
+	requirementsFile,
 	g.Requirements.Select(x => new { id = x.Id, title = x.Title, description = x.Description }),
 	options);
 
+using var useCasesFile = File.OpenWrite(Path.Combine(target, "useCases.json"));
 await JsonSerializer.SerializeAsync(
-	File.OpenWrite(Path.Combine(target, "useCases.json")),
+	useCasesFile,
 	g.UseCases.Select(x => new { id = x.Id, title = x.Title, description = x.Description, narrativeDocument = x.NarrativeDocument }),
 	options);
 
+using var linksFile = File.OpenWrite(Path.Combine(target, "links.json"));
 await JsonSerializer.SerializeAsync(
-	File.OpenWrite(Path.Combine(target, "links.json")),
+	linksFile,
 	g.Links.Select(x => new { requirement = x.Requirement.Id, useCase = x.Target.Id, comment = x.Comment }),
 	options);
