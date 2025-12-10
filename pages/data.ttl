@@ -602,63 +602,63 @@ req:57
 	:title "'Find a SUI' request model" ;
 	:description "Must contain an information model that is sufficient to represent the (demographic and other) details of a person that is the subject of care for the purpose of finding their SUI. These details must all be subject to individual confidence scoring. The request model must contain sufficient information to identify the caller for the purpose of authentication and authorisation. The request model must contain sufficient information about the caller to facilitate an audit trail." ;
 	:useCase
-		[ :target uc:14; :comment "Represents the way users submit questions to the service." ; ],
+		[ :target uc:14; :comment "Represents the way users submit questions to the service." ; ]
 .
 
 req:58
 	:title "'Find a SUI' response model" ;
 	:description "Must contain an identifier of the subject described in the request. The identifier must be of a format and value that can be used to call the 'find a record' service. The response model must be cater to the possibility that a SUI could not be found for the given request." ;
 	:useCase
-		[ :target uc:14; :comment "Represents the way the service responds to users." ; ],
+		[ :target uc:14; :comment "Represents the way the service responds to users." ; ]
 .
 
 req:59
 	:title "'Find a SUI' protocol" ;
 	:description "Must describe a process of converting 'find a SUI' requests into 'find a SUI' responses. Must cater for authentication and authorization so that only appropriate callers can interact with the 'find a SUI' service for appropriate reasons. Must include a well-known address where the service can be called." ;
 	:useCase
-		[ :target uc:14; :comment "Represents the language users and the service use to communicate." ; ],
+		[ :target uc:14; :comment "Represents the language users and the service use to communicate." ; ]
 .
 
 req:60
 	:title "'Find a record' request model" ;
 	:description "Must contain a SUI obtained from the 'find a SUI' service. The request model must contain sufficient information to identify the caller for the purpose of authentication and authorisation. The request model must contain sufficient information about the caller to facilitate an audit trail." ;
 	:useCase
-		[ :target uc:14; :comment "Represents the way users submit questions to the service." ; ],
+		[ :target uc:14; :comment "Represents the way users submit questions to the service." ; ]
 .
 
 req:61
 	:title "'Find a record' response model" ;
 	:description "Must consist of a set of contact details for organisations/services that can hold information about the subject identified by the SUI oin the request. These contact details are not machine readable, rather they are for human consumption." ;
 	:useCase
-		[ :target uc:14; :comment "Represents the way the service responds to users." ; ],
+		[ :target uc:14; :comment "Represents the way the service responds to users." ; ]
 .
 
 req:62
 	:title "'Find a record' protocol" ;
 	:description "Must describe a process of converting 'find a record' requests into 'find a record' responses. Must cater for authentication and authorization so that only appropriate callers can interact with the 'find a record' service for appropriate reasons. Must include a well-known address where the service can be called." ;
 	:useCase
-		[ :target uc:14; :comment "Represents the language users and the service use to communicate." ; ],
+		[ :target uc:14; :comment "Represents the language users and the service use to communicate." ; ]
 .
 
 req:63
 	:title "'Find a record' submission request model" ;
 	:description "Must contain both a SUI for the subject of care and contact details of an organisation/service that is relevant to the care of that subject. The request model must contain sufficient information to identify the caller for the purpose of authentication and authorisation. The request model must contain sufficient information about the caller to facilitate an audit trail." ;
 	:useCase
-		[ :target uc:15; :comment "Represents the way case management systems submit records to the service." ; ],
+		[ :target uc:15; :comment "Represents the way case management systems submit records to the service." ; ]
 .
 
 req:64
 	:title "'Find a record' submission protocol" ;
 	:description "Must describe a process transmitting and receiving 'find a record' submissin requests. Must cater for authentication and authorization so that only appropriate callers can interact with the 'find a record' service for appropriate reasons. Must include a well-known address where the service can be called." ;
 	:useCase
-		[ :target uc:15; :comment "Represents the language case management systems and the service use to communicate." ; ],
+		[ :target uc:15; :comment "Represents the language case management systems and the service use to communicate." ; ]
 .
 
 req:65
 	:title "Submitting to 'find a record'" ;
 	:description "Case management systems (and other relevant systems) must submit information to the 'find a record' service using the 'find a record' submission request model and the 'find a record' submission protocol whenever information regarding a person who the subject or care or the organisational/service contact details relevant to that subject change." ;
 	:useCase
-		[ :target uc:15; :comment "Core requirement for uc:15, ensures that the NRL is kept up to date with the state of affairs relevant to a person who is the subject of care, so that other interested parties can query that information as part of uc:14." ; ],
+		[ :target uc:15; :comment "Core requirement for uc:15, ensures that the NRL is kept up to date with the state of affairs relevant to a person who is the subject of care, so that other interested parties can query that information as part of uc:14." ; ]
 .
 
 uc:1
