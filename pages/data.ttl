@@ -640,6 +640,27 @@ req:62
 		[ :target uc:14; :comment "Represents the language users and the service use to communicate." ; ],
 .
 
+req:63
+	:title "'Find a record' submission request model" ;
+	:description "Must contain both a SUI for the subject of care and contact details of an organisation/service that is relevant to the care of that subject. The request model must contain sufficient information to identify the caller for the purpose of authentication and authorisation. The request model must contain sufficient information about the caller to facilitate an audit trail." ;
+	:useCase
+		[ :target uc:15; :comment "Represents the way case management systems submit records to the service." ; ],
+.
+
+req:64
+	:title "'Find a record' submission protocol" ;
+	:description "Must describe a process transmitting and receiving 'find a record' submissin requests. Must cater for authentication and authorization so that only appropriate callers can interact with the 'find a record' service for appropriate reasons. Must include a well-known address where the service can be called." ;
+	:useCase
+		[ :target uc:15; :comment "Represents the language case management systems and the service use to communicate." ; ],
+.
+
+req:65
+	:title "Submitting to 'find a record'" ;
+	:description "Case management systems (and other relevant systems) must submit information to the 'find a record' service using the 'find a record' submission request model and the 'find a record' submission protocol whenever information regarding a person who the subject or care or the organisational/service contact details relevant to that subject change." ;
+	:useCase
+		[ :target uc:15; :comment "Core requirement for uc:15, ensures that the NRL is kept up to date with the state of affairs relevant to a person who is the subject of care, so that other interested parties can query that information as part of uc:14." ; ],
+.
+
 uc:1
 	:useCaseTitle "Access and contribute to a shared record (subject of care)" ;
 	:useCaseDescription "As a data subject, I need to be able to contribute to my record, so that my experience and preferences can be considered when making decisions about my care." ;
