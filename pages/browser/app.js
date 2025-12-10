@@ -52,12 +52,18 @@ function clear() {
 function onRequirementClick() {
 	clear()
 	this.classList.add("clicked")
+	let first = true
 	for (const useCaseElement of document.querySelectorAll("#useCases li")) {
 		for (const link of this.requirement.useCases
 			.filter(x => x.target.id === useCaseElement.useCase.id)) {
 
 			useCaseElement.classList.add("filtered")
 			useCaseElement.querySelector(".comment").innerText = link.comment
+
+			if (first) {
+				first = false
+				useCaseElement.scrollIntoView()
+			}
 		}
 	}
 }
@@ -65,12 +71,18 @@ function onRequirementClick() {
 function onUseCaseClick() {
 	clear()
 	this.classList.add("clicked")
+	let first = true
 	for (const requirementElement of document.querySelectorAll("#requirements li")) {
 		for (const link of this.useCase.requirements
 			.filter(x => x.requirement.id === requirementElement.requirement.id)) {
 
 			requirementElement.classList.add("filtered")
 			requirementElement.querySelector(".comment").innerText = link.comment
+
+			if (first) {
+				first = false
+				requirementElement.scrollIntoView()
+			}
 		}
 	}
 }
