@@ -598,6 +598,48 @@ req:56
 	:description "Systems must provide a full audit log of all actions in standard format. The audit log must meet statutory requirements for record-keeping. It provides accountability and supports compliance verification." ;
 .
 
+req:57
+	:title "'Find a SUI' request model" ;
+	:description "Must contain an information model that is sufficient to represent the (demographic and other) details of a person that is the subject of care for the purpose of finding their SUI. These details must all be subject to individual confidence scoring. The request model must contain sufficient information to identify the caller for the purpose of authentication and authorisation. The request model must contain sufficient information about the caller to facilitate an audit trail." ;
+	:useCase
+		[ :target uc:14; :comment "Represents the way users submit questions to the service." ; ],
+.
+
+req:58
+	:title "'Find a SUI' response model" ;
+	:description "Must contain an identifier of the subject described in the request. The identifier must be of a format and value that can be used to call the 'find a record' service. The response model must be cater to the possibility that a SUI could not be found for the given request." ;
+	:useCase
+		[ :target uc:14; :comment "Represents the way the service responds to users." ; ],
+.
+
+req:59
+	:title "'Find a SUI' protocol" ;
+	:description "Must describe a process of converting 'find a SUI' requests into 'find a SUI' responses. Must cater for authentication and authorization so that only appropriate callers can interact with the 'find a SUI' service for appropriate reasons. Must include a well-known address where the service can be called." ;
+	:useCase
+		[ :target uc:14; :comment "Represents the language users and the service use to communicate." ; ],
+.
+
+req:60
+	:title "'Find a record' request model" ;
+	:description "	Must contain a SUI obtained from the 'find a SUI' service. The request model must contain sufficient information to identify the caller for the purpose of authentication and authorisation. The request model must contain sufficient information about the caller to facilitate an audit trail." ;
+	:useCase
+		[ :target uc:14; :comment "Represents the way users submit questions to the service." ; ],
+.
+
+req:61
+	:title "'Find a record' response model" ;
+	:description "Must consist of a set of contact details for organisations/services that can hold information about the subject identified by the SUI oin the request. These contact details are not machine readable, rather they are for human consumption." ;
+	:useCase
+		[ :target uc:14; :comment "Represents the way the service responds to users." ; ],
+.
+
+req:62
+	:title "'Find a record' protocol" ;
+	:description "Must describe a process of converting 'find a record' requests into 'find a record' responses. Must cater for authentication and authorization so that only appropriate callers can interact with the 'find a record' service for appropriate reasons. Must include a well-known address where the service can be called." ;
+	:useCase
+		[ :target uc:14; :comment "Represents the language users and the service use to communicate." ; ],
+.
+
 uc:1
 	:useCaseTitle "Access and contribute to a shared record (subject of care)" ;
 	:useCaseDescription "As a data subject, I need to be able to contribute to my record, so that my experience and preferences can be considered when making decisions about my care." ;
