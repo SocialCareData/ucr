@@ -621,7 +621,7 @@ req:59
 
 req:60
 	:title "'Find a record' request model" ;
-	:description "	Must contain a SUI obtained from the 'find a SUI' service. The request model must contain sufficient information to identify the caller for the purpose of authentication and authorisation. The request model must contain sufficient information about the caller to facilitate an audit trail." ;
+	:description "Must contain a SUI obtained from the 'find a SUI' service. The request model must contain sufficient information to identify the caller for the purpose of authentication and authorisation. The request model must contain sufficient information about the caller to facilitate an audit trail." ;
 	:useCase
 		[ :target uc:14; :comment "Represents the way users submit questions to the service." ; ],
 .
