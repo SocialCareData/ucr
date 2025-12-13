@@ -1,0 +1,16 @@
+﻿@page
+@model WebApplication1.Pages.requirements.IndexModel
+@{
+    ViewBag.Title = "{requirements}";
+}
+
+@section head {
+    <link href="../style/site.css" rel="stylesheet" />
+}
+
+<ul>
+    @foreach (var requirement in Model.Requirements)
+    {
+        <li><a href="../requirement/@requirement.Number">@requirement.Number - @requirement.Title</a></li>
+    }
+</ul>

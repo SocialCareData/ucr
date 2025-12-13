@@ -1,0 +1,29 @@
+﻿@page "{id:int}"
+@model WebApplication1.Pages.usecase.IndexModel
+@{
+    ViewBag.Title = Model.UseCase.Title;
+}
+
+@section head {
+    <link href="../style/site.css" rel="stylesheet" />
+}
+
+<h1>@Model.UseCase.Number - @Model.UseCase.Title</h1>
+<code>@Model.UseCase.Id</code>
+<p>@Model.UseCase.Description</p>
+
+@if (Model.UseCase.Links.Any())
+{
+    <fieldset>
+        <legend>Related requirements</legend>
+        <ul>
+            @foreach (var link in Model.UseCase.Links)
+            {
+                <li>
+                    @link.Requirement.Number - <a href="../requirement/@link.Requirement.Number">@link.Requirement.Title</a>
+                    <blockquote>@link.Comment</blockquote>
+                </li>
+            }
+        </ul>
+    </fieldset>
+}

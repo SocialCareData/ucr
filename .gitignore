@@ -2,5 +2,6 @@
 .idea
 bin
 obj
-/pages/Ucr.docx
-/pages/data
+/Web/wwwroot/Ucr.docx
+/pages
+.csproj.user

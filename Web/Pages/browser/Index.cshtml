@@ -1,0 +1,19 @@
+﻿@page
+@{
+    ViewBag.Title = "{browser}";
+}
+
+@section head {
+    <script src="../script/browser.js" type="module"></script>
+    <link href="../style/site.css" rel="stylesheet" />
+    <link href="../style/browser.css" rel="stylesheet" />
+}
+
+<fieldset>
+	<legend>Requirements</legend>
+	<requirement-list id="requirements"></requirement-list>
+</fieldset>
+<fieldset>
+	<legend>Use cases</legend>
+	<usecase-list id="useCases"></usecase-list>
+</fieldset>

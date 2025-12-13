@@ -1,12 +1,12 @@
 ﻿import "https://unpkg.com/n3/browser/n3.min.js"
-import { Graph } from "../browser/Graph.js"
+import { Graph } from "./Graph.js"
 
 const g = await loadData()
 
 onLoad()
 
 async function loadData() {
-	const response = await fetch("../data.ttl")
+	const response = await fetch("../data/all.ttl")
 	const text = await response.text()
 	const store = new N3.Store
 	store.addQuads(new N3.Parser().parse(text))

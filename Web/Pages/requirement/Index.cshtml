@@ -1,0 +1,29 @@
+﻿@page "{id:int}"
+@model WebApplication1.Pages.requirement.IndexModel
+@{
+    ViewBag.Title = Model.Requirement.Title;
+}
+
+@section head {
+    <link href="../style/site.css" rel="stylesheet" />
+}
+
+<h1>@Model.Requirement.Number - @Model.Requirement.Title</h1>
+<code>@Model.Requirement.Id</code>
+<p>@Model.Requirement.Description</p>
+
+@if (Model.Requirement.Links.Any())
+{
+    <fieldset>
+        <legend>Related requirements</legend>
+        <ul>
+            @foreach (var link in Model.Requirement.Links)
+            {
+                <li>
+                    @link.Target.Number - <a href="../use-case/@link.Target.Number">@link.Target.Title</a>
+                    <blockquote>@link.Comment</blockquote>
+                </li>
+            }
+        </ul>
+    </fieldset>
+}

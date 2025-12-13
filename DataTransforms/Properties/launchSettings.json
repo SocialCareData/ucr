@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "MakeWord": {
-        "commandName": "Project",
-        "commandLineArgs": "../../../../pages/data.ttl ../../../../pages/data"
-    }
-  }
-}

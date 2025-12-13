@@ -12,7 +12,7 @@ await Promise.all([
 onLoad()
 
 async function loadData() {
-	const response = await fetch("../data.ttl")
+	const response = await fetch("../data/all.ttl")
 	const text = await response.text()
 	const store = new N3.Store
 	store.addQuads(new N3.Parser().parse(text))
@@ -88,13 +88,17 @@ function onUseCaseClick() {
 }
 
 function onHashChange(hash) {
-	const target = document.getElementById(hash).parentElement
-
-	if (hash.includes("requirement")) {
-		onRequirementClick.call(target)
+	if (hash == undefined) {
+		clear()
 	} else {
-		onUseCaseClick.call(target)
-	}
+		const target = document.getElementById(hash).parentElement
 
-	target.scrollIntoView()
+		if (hash.includes("requirement")) {
+			onRequirementClick.call(target)
+		} else {
+			onUseCaseClick.call(target)
+		}
+
+		target.scrollIntoView()
+	}
 }
