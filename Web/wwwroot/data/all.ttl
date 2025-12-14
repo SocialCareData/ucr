@@ -2,12 +2,14 @@ BASE <https://socialcaredata.github.io/ucr/>
 PREFIX : <schema/>
 PREFIX req: <requirement/>
 PREFIX uc: <use-case/>
+PREFIX cat: <requirement-category/>
 
 ##############
 # Requirements
 ##############
 
 req:1
+	:category cat:1 ;
 	:title "Bulk Data Export API" ;
 	:description "The system must provide an API for bulk data export. This API allows all data to be extracted from the system in a single operation. The export function must be accessible to authorized users and systems." ;
 	:useCase
@@ -16,6 +18,7 @@ req:1
 .
 
 req:2
+	:category cat:1 ;
 	:title "Bulk Data Import API" ;
 	:description "The system must provide an API for bulk data import. This API allows data to be inserted into the system in a single operation. The import function must validate incoming data against the standard data model." ;
 	:useCase
@@ -66,6 +69,7 @@ req:5
 .
 
 req:6
+	:category cat:1 ;
 	:title "System-to-System Data Transfer" ;
 	:description "The target system must be able to connect to the source system's export interface. This connection enables direct data import from one system to another. The functionality must support automated data transfer operations." ;
 	:useCase
@@ -89,6 +93,7 @@ req:7
 .
 
 req:8
+	:category cat:1 ;
 	:title "Global Query Interface" ;
 	:description "A global query interface must allow users to ask questions about all data in the system. This interface must provide a unified view across all case management systems. Users must be able to search and retrieve information regardless of which system stores the data." ;
 	:useCase
@@ -115,6 +120,7 @@ req:9
 .
 
 req:10
+	:category cat:1 ;
 	:title "Query Aggregation Functions" ;
 	:description "The query interface must support aggregation functions. Users must be able to perform operations like sum, count, average, and group by. These functions enable statistical analysis and reporting across the data set." ;
 	:useCase
@@ -255,6 +261,7 @@ req:21
 .
 
 req:22
+	:category cat:1 ;
 	:title "Data Sunsetting and Archival" ;
 	:description "The system must support sunsetting and archival of old data. This functionality ensures that historical data is properly preserved. It also ensures that outdated data does not interfere with current operations." ;
 	:useCase
@@ -265,6 +272,7 @@ req:22
 .
 
 req:23
+	:category cat:1 ;
 	:title "Case Import Functionality" ;
 	:description "The system must provide functionality to import individual cases. This includes all case data and associated documentation. The import process must validate data against the standard data model." ;
 	:useCase
@@ -275,6 +283,7 @@ req:23
 .
 
 req:24
+	:category cat:1 ;
 	:title "Case Export Functionality" ;
 	:description "The system must provide functionality to export individual cases. This includes all case data and associated documentation. The export format must conform to the standard data model." ;
 	:useCase
@@ -285,6 +294,7 @@ req:24
 .
 
 req:25
+	:category cat:1 ;
 	:title "Case Export Request API" ;
 	:description "An API must exist for submitting case export requests. This API allows authorized users to request case data exports. The API must handle authorization and queueing of export requests." ;
 	:useCase
@@ -317,6 +327,7 @@ req:27
 .
 
 req:28
+	:category cat:1 ;
 	:title "Standards-Based Authorization API" ;
 	:description "The API must implement authorization based on the authorization ontology and taxonomy. All access control decisions must use the standardized authorization data. This ensures consistent security enforcement. A standard protocol (e.g. OAuth) and authorization model that can evolve with legal requirements is required. The standard must accomodate for evolution of technology (orthogonality of standards)." ;
 	:useCase
@@ -431,6 +442,7 @@ req:39
 .
 
 req:40
+	:category cat:1 ;
 	:title "Federated Person Search" ;
 	:description "Functionality must exist to query the registry for relevant case management APIs and then search across them. The system must standardise queries and harmonize results from different APIs using a documented algorithm. This enables searching for individuals across multiple systems." ;
 	:useCase
@@ -460,6 +472,7 @@ req:42
 .
 
 req:43
+	:category cat:1 ;
 	:title "Credential-Based Authentication" ;
 	:description "The authorization component must support credential-based authentication. This authentication is based on verifiable credentials rather than identity alone. It enables authorized access by organizations and authorities." ;
 	:useCase
@@ -535,6 +548,7 @@ req:48
 .
 
 req:49
+	:category cat:1 ;
 	:title "Complete API Coverage" ;
 	:description "All system functionality must be available through the API. No functionality should require direct user interface access. This enables programmatic access and automation of all operations." ;
 	:useCase
@@ -659,6 +673,7 @@ req:64
 .
 
 req:65
+	:category cat:1 ;
 	:title "Submitting to 'find a record'" ;
 	:description "Case management systems (and other relevant systems) must submit information to the 'find a record' service using the 'find a record' submission request model and the 'find a record' submission protocol whenever information regarding a person who the subject or care or the organisational/service contact details relevant to that subject change." ;
 	:useCase
@@ -759,4 +774,13 @@ uc:15
 	:useCaseDescription "As the administrator of a social care CMS I need to contribute records about which individuals we are (or have been) working with to the 'Find a Record' service so that professionals in other organisations can rely on the responses they get from 'Find a Record'." ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/15.%20Contributing%20data%20to%20the%20NRL.docx?d=w36a4c42120a4454cb047682d97d1dfdc&csf=1&web=1&e=5t0cog> ;
 	:useCaseSplitFrom uc:10 ;
+.
+
+############
+# Categories
+############
+
+cat:1
+	:categoryTitle "Functional" ;
+	:categoryDescription "Requirements in this category specify capabilities that implementations must provide. They define what the system must do to deliver benefits defined in use cases." ;
 .
