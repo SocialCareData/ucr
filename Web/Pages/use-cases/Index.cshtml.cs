@@ -9,7 +9,7 @@ public class IndexModel : PageModel
 {
     public IEnumerable<UseCase> UseCases { get; private set; }
 
-    public void OnGet(int id)
+    public void OnGet()
     {
         var g = UcrGraph.Wrap(new Graph());
 		FileLoader.Load(g, "./wwwroot/data/all.ttl"); // TODO: Extract
