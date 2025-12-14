@@ -20,6 +20,8 @@ if (generating)
 	builder.Services.AddSingleton<IStaticResourcesInfoProvider>(new StaticResourcesInfoProvider([
 		new PageResource("/browser") { OutFile = "/browser/index.html" },
 		.. g.Requirements.Select(x => new PageResource($"/requirement/{x.Number}")),
+		new PageResource("/requirement-categories") { OutFile = "/requirement-categories/index.html" },
+		.. g.RequirementCategories.Select(x => new PageResource($"/requirement-category/{x.Number}")),
 		new PageResource("/requirements") { OutFile = "/requirements/index.html" },
 		new PageResource("/table") { OutFile = "/table/index.html" },
 		.. g.UseCases.Select(x => new PageResource($"/use-case/{x.Number}")),
