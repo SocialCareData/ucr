@@ -11,7 +11,7 @@ public class RequirementsController
     public IEnumerable<Requirement> GetRequirements()
     {
         var g = Model.UcrGraph.Wrap(new Graph());
-        FileLoader.Load(g, "./wwwroot/data/all.ttl");
+        FileLoader.Load(g, "./wwwroot/data/all.ttl"); // TODO: Extract
 
         return g.Requirements.Select(x => new Requirement(x.Id, x.Title, x.Description));
     }
@@ -20,7 +20,7 @@ public class RequirementsController
     public IEnumerable<UseCase> GetUseCases()
     {
         var g = Model.UcrGraph.Wrap(new Graph());
-        FileLoader.Load(g, "./wwwroot/data/all.ttl");
+        FileLoader.Load(g, "./wwwroot/data/all.ttl"); // TODO: Extract
 
         return g.UseCases.Select(x => new UseCase(x.Id, x.Title, x.Description, x.NarrativeDocument));
     }
@@ -29,7 +29,7 @@ public class RequirementsController
     public IEnumerable<Link> GetLinks()
     {
         var g = Model.UcrGraph.Wrap(new Graph());
-        FileLoader.Load(g, "./wwwroot/data/all.ttl");
+        FileLoader.Load(g, "./wwwroot/data/all.ttl"); // TODO: Extract
 
         return g.Links.Select(x => new Link(x.Requirement.Id, x.Target.Id, x.Comment));
     }

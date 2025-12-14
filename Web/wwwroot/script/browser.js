@@ -12,7 +12,7 @@ await Promise.all([
 onLoad()
 
 async function loadData() {
-	const response = await fetch("../data/all.ttl")
+	const response = await fetch("../data/all.ttl") // TODO: Extract
 	const text = await response.text()
 	const store = new N3.Store
 	store.addQuads(new N3.Parser().parse(text))
