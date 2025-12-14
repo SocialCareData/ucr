@@ -149,6 +149,7 @@ req:11
 .
 
 req:12
+	:category cat:2 ;
 	:title "Taxonomy Standard" ;
 	:description "A standard must exist to describe how data is categorized. This includes definitions for units of measure and classification schemes. The taxonomy ensures consistent categorization across all systems." ;
 	:useCase
@@ -166,6 +167,7 @@ req:12
 .
 
 req:13
+	:category cat:2 ;
 	:title "Data Freshness Standards" ;
 	:description "A standard must define time constraints for data freshness in statutory reporting. These standards specify how current data must be for different reporting requirements. Systems must meet these service level agreements." ;
 	:useCase
@@ -174,6 +176,7 @@ req:13
 .
 
 req:14
+	:category cat:2 ;
 	:title "Business Intelligence Export Formats" ;
 	:description "Query results must be available in formats used by business intelligence tools. Supported formats must include Excel and Looker Studio. This enables users to analyze data using familiar productivity software." ;
 	:useCase
@@ -237,6 +240,7 @@ req:18
 .
 
 req:19
+	:category cat:2 ;
 	:title "Subject Access Request Standard" ;
 	:description "A standard must exist for implementing subject data access requests for care leavers. This standard defines how individuals can request their personal data. It ensures compliance with data protection regulations." ;
 	:useCase
@@ -312,6 +316,7 @@ req:26
 .
 
 req:27
+	:category cat:2 ;
 	:title "Authorization Taxonomy" ;
 	:description "The taxonomy must include terms and categories related to authorization. This provides a standard vocabulary for describing permissions and access rights. It ensures consistent authorization terminology across systems." ;
 	:useCase
@@ -347,6 +352,7 @@ req:28
 .
 
 req:29
+	:category cat:2 ;
 	:title "Person Search Request Shape" ;
 	:description "The data standard must define the shape of person search requests. This includes all fields that can be used to search for a person. The standard ensures consistent search capabilities across systems." ;
 	:useCase
@@ -355,6 +361,7 @@ req:29
 .
 
 req:30
+	:category cat:2 ;
 	:title "Person Search Results Shape" ;
 	:description "The data standard must define the shape of person search results. This includes all fields returned in search responses. The standard ensures consistent result formats across systems." ;
 	:useCase
@@ -502,6 +509,7 @@ req:45
 .
 
 req:46
+	:category cat:2 ;
 	:title "Needs Assessment Data Shape" ;
 	:description "The data standard must include a shape for needs assessments. This shape defines all data elements used in assessing care needs. It ensures consistent documentation of needs assessments across systems." ;
 	:useCase
@@ -612,11 +620,13 @@ req:55
 .
 
 req:56
+	:category cat:2 ;
 	:title "Audit Log Standard" ;
 	:description "Systems must provide a full audit log of all actions in standard format. The audit log must meet statutory requirements for record-keeping. It provides accountability and supports compliance verification." ;
 .
 
 req:57
+	:category cat:2 ;
 	:title "'Find a SUI' request model" ;
 	:description "Must contain an information model that is sufficient to represent the (demographic and other) details of a person that is the subject of care for the purpose of finding their SUI. These details must all be subject to individual confidence scoring. The request model must contain sufficient information to identify the caller for the purpose of authentication and authorisation. The request model must contain sufficient information about the caller to facilitate an audit trail." ;
 	:useCase
@@ -624,6 +634,7 @@ req:57
 .
 
 req:58
+	:category cat:2 ;
 	:title "'Find a SUI' response model" ;
 	:description "Must contain an identifier of the subject described in the request. The identifier must be of a format and value that can be used to call the 'find a record' service. The response model must be cater to the possibility that a SUI could not be found for the given request." ;
 	:useCase
@@ -638,6 +649,7 @@ req:59
 .
 
 req:60
+	:category cat:2 ;
 	:title "'Find a record' request model" ;
 	:description "Must contain a SUI obtained from the 'find a SUI' service. The request model must contain sufficient information to identify the caller for the purpose of authentication and authorisation. The request model must contain sufficient information about the caller to facilitate an audit trail." ;
 	:useCase
@@ -645,6 +657,7 @@ req:60
 .
 
 req:61
+	:category cat:2 ;
 	:title "'Find a record' response model" ;
 	:description "Must consist of a set of contact details for organisations/services that can hold information about the subject identified by the SUI oin the request. These contact details are not machine readable, rather they are for human consumption." ;
 	:useCase
@@ -659,6 +672,7 @@ req:62
 .
 
 req:63
+	:category cat:2 ;
 	:title "'Find a record' submission request model" ;
 	:description "Must contain both a SUI for the subject of care and contact details of an organisation/service that is relevant to the care of that subject. The request model must contain sufficient information to identify the caller for the purpose of authentication and authorisation. The request model must contain sufficient information about the caller to facilitate an audit trail." ;
 	:useCase
@@ -783,4 +797,9 @@ uc:15
 cat:1
 	:categoryTitle "Functional" ;
 	:categoryDescription "Requirements in this category specify capabilities that implementations must provide. They define what the system must do to deliver benefits defined in use cases." ;
+.
+
+cat:2
+	:categoryTitle "Data" ;
+	:categoryDescription "Requirements in this category define the structure and semantics of data used in the protocol. They specify data models, formats, and standards to ensure consistent representation and interpretation of information."
 .
