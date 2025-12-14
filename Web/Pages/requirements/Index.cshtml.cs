@@ -3,7 +3,7 @@ using Model;
 using VDS.RDF;
 using VDS.RDF.Parsing;
 
-namespace WebApplication1.Pages.requirements;
+namespace Web.Pages.requirements;
 
 public class IndexModel : PageModel
 {

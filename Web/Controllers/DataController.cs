@@ -2,7 +2,7 @@
 using VDS.RDF;
 using VDS.RDF.Parsing;
 
-namespace WebApplication1.Controllers;
+namespace Web.Controllers;
 
 [Route("data")]
 public class RequirementsController
