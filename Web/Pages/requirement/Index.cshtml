@@ -1,14 +1,14 @@
 ﻿@page "{id:int}"
 @model Web.Pages.requirement.IndexModel
 @{
-    ViewBag.Title = Model.Requirement.Title;
+    ViewBag.Title = string.Format("{{requirement {0} - {1}}}", Model.Requirement.Number, Model.Requirement.Title);
 }
 
 @section head {
     <link href="../style/site.css" rel="stylesheet" />
 }
 
-<h1>@Model.Requirement.Number - @Model.Requirement.Title</h1>
+<h1>@ViewBag.Title</h1>
 <code>@Model.Requirement.Id</code>
 <p>@Model.Requirement.Description</p>
 
