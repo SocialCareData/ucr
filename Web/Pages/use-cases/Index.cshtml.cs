@@ -7,7 +7,7 @@ namespace WebApplication1.Pages.usecases;
 
 public class IndexModel : PageModel
 {
-    public IEnumerable<UseCase> UseCases { get; private set; }
+    public required IEnumerable<UseCase> UseCases { get; set; }
 
     public void OnGet()
     {

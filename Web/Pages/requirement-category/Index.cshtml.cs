@@ -7,7 +7,7 @@ namespace Web.Pages.requirementCategory;
 
 public class IndexModel : PageModel
 {
-    public RequirementCategory RequirementCategory { get; private set; }
+    public required RequirementCategory RequirementCategory { get; set; }
 
     public void OnGet(int id)
     {

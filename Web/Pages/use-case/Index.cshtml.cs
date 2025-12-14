@@ -7,7 +7,7 @@ namespace WebApplication1.Pages.usecase;
 
 public class IndexModel : PageModel
 {
-    public UseCase UseCase { get; private set; }
+    public required UseCase UseCase { get; set; }
 
     public void OnGet(int id)
     {
