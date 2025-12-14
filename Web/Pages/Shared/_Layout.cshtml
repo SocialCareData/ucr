@@ -5,6 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <environment include="Production">
+        <base href="https://socialcaredeat.github.io/ucr/" />
+    </environment>
     @RenderSection("head", required: false)
 </head>
 <body>
