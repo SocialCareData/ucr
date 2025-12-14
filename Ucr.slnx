@@ -1,8 +1,4 @@
 <Solution>
-  <Folder Name="/Solution Items/">
-    <File Path=".github/workflows/static.yml" />
-    <File Path="pages/data.ttl" />
-  </Folder>
   <Project Path="MakeWord/MakeWord.csproj" />
   <Project Path="Model/Model.csproj" Id="8befe544-6404-4e09-a2b0-b043bd4a56b4" />
   <Project Path="Web/Web.csproj" Id="724473bd-67e1-46d1-8a8a-74fe04ae9eba" />
