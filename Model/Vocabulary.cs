@@ -4,7 +4,7 @@ namespace Model;
 
 internal class Vocabulary
 {
-    internal const string VocabularyBaseUri = "https://github.com/SocialCareData/ucr/schema/";
+    internal const string VocabularyBaseUri = "https://socialcaredata.github.io/ucr/schema/";
 
     private static readonly NodeFactory Factory = new();
 

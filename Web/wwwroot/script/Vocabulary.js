@@ -9,6 +9,6 @@ export class Vocabulary {
 	static get narrativeDocument() { return this.property("useCaseNarrativeDocument") }
 
 	static property(name) {
-		return N3.DataFactory.namedNode(`https://github.com/SocialCareData/ucr/schema/${name}`)
+		return N3.DataFactory.namedNode(`https://socialcaredata.github.io/ucr/schema/${name}`)
 	}
 }

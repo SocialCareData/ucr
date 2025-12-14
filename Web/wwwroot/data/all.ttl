@@ -1,4 +1,4 @@
-BASE <https://github.com/SocialCareData/ucr/>
+BASE <https://socialcaredata.github.io/ucr/>
 PREFIX : <schema/>
 PREFIX req: <requirement/>
 PREFIX uc: <use-case/>
