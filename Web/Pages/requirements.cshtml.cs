@@ -3,17 +3,17 @@ using Model;
 using VDS.RDF;
 using VDS.RDF.Parsing;
 
-namespace Web.Pages.requirementCategories;
+namespace Web.Pages;
 
-public class IndexModel : PageModel
+public class RequirementsModel : PageModel
 {
-    public required IEnumerable<RequirementCategory> RequirementCategories { get; set; }
+    public required IEnumerable<Requirement> Requirements { get; set; }
 
     public void OnGet()
     {
         var g = UcrGraph.Wrap(new Graph());
 		FileLoader.Load(g, "./wwwroot/data/all.ttl"); // TODO: Extract
 
-		RequirementCategories = g.RequirementCategories;
+		Requirements = g.Requirements;
     }
 }

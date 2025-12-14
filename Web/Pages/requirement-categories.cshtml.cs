@@ -3,17 +3,17 @@ using Model;
 using VDS.RDF;
 using VDS.RDF.Parsing;
 
-namespace WebApplication1.Pages.usecases;
+namespace Web.Pages;
 
-public class IndexModel : PageModel
+public class RequirementCategoriesModel : PageModel
 {
-    public required IEnumerable<UseCase> UseCases { get; set; }
+    public required IEnumerable<RequirementCategory> RequirementCategories { get; set; }
 
     public void OnGet()
     {
         var g = UcrGraph.Wrap(new Graph());
 		FileLoader.Load(g, "./wwwroot/data/all.ttl"); // TODO: Extract
 
-		UseCases = g.UseCases;
+		RequirementCategories = g.RequirementCategories;
     }
 }

@@ -1,7 +1,7 @@
 ﻿@page
-@model WebApplication1.Pages.usecases.IndexModel
+@model UseCasesModel
 @{
-    ViewBag.Title = "{use cases}";
+    ViewBag.Title = Localizer["title"];
 }
 
 @section head {
@@ -12,6 +12,6 @@
 <ul>
     @foreach (var useCase in Model.UseCases)
     {
-        <li><a href="../use-case/@useCase.Number">@useCase.Number - @useCase.Title</a></li>
+        <li><a asp-page="use-case" asp-route-id="@useCase.Number">@useCase.Number - @useCase.Title</a></li>
     }
 </ul>

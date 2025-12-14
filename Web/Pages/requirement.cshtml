@@ -1,7 +1,7 @@
 ﻿@page "{id:int}"
-@model Web.Pages.requirement.IndexModel
+@model RequirementModel
 @{
-    ViewBag.Title = string.Format("{{requirement {0} - {1}}}", Model.Requirement.Number, Model.Requirement.Title);
+    ViewBag.Title = Localizer.GetString("title", Model.Requirement.Number, Model.Requirement.Title);
 }
 
 @section head {
@@ -15,12 +15,12 @@
 @if (Model.Requirement.Links.Any())
 {
     <fieldset>
-        <legend>Related use cases</legend>
+        <legend>@Localizer["related use cases"]</legend>
         <ul>
             @foreach (var link in Model.Requirement.Links)
             {
                 <li>
-                    @link.Target.Number - <a href="../use-case/@link.Target.Number">@link.Target.Title</a>
+                    @link.Target.Number - <a asp-page="use-case" asp-route-id="@link.Target.Number">@link.Target.Title</a>
                     <blockquote>@link.Comment</blockquote>
                 </li>
             }
@@ -31,12 +31,12 @@
 @if (Model.Requirement.Categories.Any())
 {
     <fieldset>
-        <legend>Categories</legend>
+        <legend>@Localizer["related categories"]</legend>
         <ul>
             @foreach (var category in Model.Requirement.Categories)
             {
                 <li>
-                    @category.Number - <a href="../requirement-category/@category.Number">@category.Title</a>
+                    @category.Number - <a asp-page="requirement-category" asp-route-id="@category.Number">@category.Title</a>
                     <blockquote>@category.Description</blockquote>
                 </li>
             }

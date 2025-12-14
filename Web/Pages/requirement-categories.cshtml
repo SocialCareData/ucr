@@ -1,0 +1,17 @@
+﻿@page
+@model RequirementCategoriesModel
+@{
+    ViewBag.Title = Localizer["title"];
+}
+
+@section head {
+    <link href="../style/site.css" rel="stylesheet" />
+}
+
+<h1>@ViewBag.Title</h1>
+<ul>
+    @foreach (var category in Model.RequirementCategories)
+    {
+        <li><a asp-page="requirement-category" asp-route-id="@category.Number">@category.Number - @category.Title</a></li>
+    }
+</ul>

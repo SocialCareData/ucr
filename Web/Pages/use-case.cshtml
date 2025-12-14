@@ -1,7 +1,7 @@
 ﻿@page "{id:int}"
-@model WebApplication1.Pages.usecase.IndexModel
+@model UseCaseModel
 @{
-    ViewBag.Title = string.Format("{{use case {0} - {1}}}", Model.UseCase.Number, Model.UseCase.Title);
+    ViewBag.Title = Localizer.GetString("title", Model.UseCase.Number, Model.UseCase.Title);
 }
 
 @section head {
@@ -15,18 +15,19 @@
 @if (Model.UseCase.Links.Any())
 {
     <fieldset>
-        <legend>Related requirements</legend>
+        <legend>
+            @Localizer["related requirements"]</legend>
         <ul>
             @foreach (var category in Model.UseCase.Links.SelectMany(x => x.Requirement.Categories).Distinct())
             {
                 <li>
                     <fieldset>
-                        <legend>@category.Number - <a href="../requirement-category/@category.Number">@category.Title</a></legend>
+                        <legend>@category.Number - <a asp-page="requirement-category" asp-route-id="@category.Number">@category.Title</a></legend>
                         <ul>
                             @foreach (var link in Model.UseCase.Links.Where(x => x.Requirement.Categories.Contains(category)))
                             {
                                 <li>
-                                    @link.Requirement.Number - <a href="../requirement/@link.Requirement.Number">@link.Requirement.Title</a>
+                                    @link.Requirement.Number - <a asp-page="requirement" asp-route-id="@link.Requirement.Number">@link.Requirement.Title</a>
                                     <blockquote>@link.Comment</blockquote>
                                 </li>
                             }
@@ -36,12 +37,12 @@
             }
             <li>
                 <fieldset>
-                    <legend>Uncategorised</legend>
+                    <legend>@Localizer["uncategorized"]</legend>
                     <ul>
                         @foreach (var link in Model.UseCase.Links.Where(x => !x.Requirement.Categories.Any()))
                         {
                             <li>
-                                @link.Requirement.Number - <a href="../requirement/@link.Requirement.Number">@link.Requirement.Title</a>
+                                @link.Requirement.Number - <a asp-page="requirement" asp-route-id="@link.Requirement.Number">@link.Requirement.Title</a>
                                 <blockquote>@link.Comment</blockquote>
                             </li>
                         }

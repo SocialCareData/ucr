@@ -1,7 +1,7 @@
 ﻿@page
-@model Web.Pages.requirements.IndexModel
+@model RequirementsModel
 @{
-    ViewBag.Title = "{requirements}";
+    ViewBag.Title = Localizer["title"];
 }
 
 @section head {
@@ -14,11 +14,11 @@
     {
         <li>
             <fieldset>
-                <legend>@category.Number - <a href="../requirement-category/@category.Number">@category.Title</a></legend>
+                <legend>@category.Number - <a asp-page="requirement-category" asp-route-id="@category.Number">@category.Title</a></legend>
                 <ul>
                     @foreach (var requirement in Model.Requirements.Where(x => x.Categories.Contains(category)))
                     {
-                        <li><a href="../requirement/@requirement.Number">@requirement.Number - @requirement.Title</a></li>
+                        <li><a asp-page="requirement" asp-route-id="@requirement.Number">@requirement.Number - @requirement.Title</a></li>
                     }
                 </ul>
             </fieldset>
@@ -30,7 +30,7 @@
             <ul>
                 @foreach (var requirement in Model.Requirements.Where(x => !x.Categories.Any()))
                 {
-                    <li><a href="../requirement/@requirement.Number">@requirement.Number - @requirement.Title</a></li>
+                    <li><a asp-page="requirement" asp-route-id="@requirement.Number">@requirement.Number - @requirement.Title</a></li>
                 }
             </ul>
         </fieldset>
