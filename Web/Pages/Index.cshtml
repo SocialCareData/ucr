@@ -3,10 +3,6 @@
     ViewBag.Title = "{use cases and requirements for social care}";
 }
 
-@section head {
-    <link href="./style/site.css" rel="stylesheet" />
-}
-
 <h1>@ViewBag.Title</h1>
 <ul>
     <li>
@@ -25,25 +21,25 @@
         <a asp-page="table">View as table (UC/requirement matrix)</a>
     </li>
     <li>
-        <a href="./Ucr.docx">Download Word document</a>
+        <a href="~/Ucr.docx">Download Word document</a>
     </li>
     <li>
-        <a href="./Ucr.xlsx">Download Excel document</a>
+        <a href="~/Ucr.xlsx">Download Excel document</a>
     </li>
     <li>
         <p>Data</p>
         <ul>
             <li>
-                <a href="./data/all.ttl">All (Turtle)</a>
+                <a href="~/data/all.ttl">All (Turtle)</a>
             </li>
             <li>
-                <a href="./data/requirements.json">Requirements (JSON)</a>
+                <a href="~/data/requirements.json">Requirements (JSON)</a>
             </li>
             <li>
-                <a href="./data/use-cases.json">Use cases (JSON)</a>
+                <a href="~/data/use-cases.json">Use cases (JSON)</a>
             </li>
             <li>
-                <a href="./data/links.json">Links (JSON)</a>
+                <a href="~/data/links.json">Links (JSON)</a>
             </li>
         </ul>
     </li>

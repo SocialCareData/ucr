@@ -4,10 +4,6 @@
     ViewBag.Title = Localizer.GetString("title", Model.UseCase.Number, Model.UseCase.Title);
 }
 
-@section head {
-    <link href="../style/site.css" rel="stylesheet" />
-}
-
 <h1>@ViewBag.Title</h1>
 <code>@Model.UseCase.Id</code>
 <p>@Model.UseCase.Description</p>

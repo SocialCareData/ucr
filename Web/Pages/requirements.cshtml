@@ -4,10 +4,6 @@
     ViewBag.Title = Localizer["title"];
 }
 
-@section head {
-    <link href="../style/site.css" rel="stylesheet" />
-}
-
 <h1>@ViewBag.Title</h1>
 <ul>
     @foreach (var category in Model.Requirements.SelectMany(x => x.Categories).Distinct())

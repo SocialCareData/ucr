@@ -1,4 +1,5 @@
 using AspNetStatic;
+using AspNetStatic.Optimizer;
 using Microsoft.AspNetCore.StaticFiles;
 using Model;
 using VDS.RDF;
@@ -15,6 +16,8 @@ builder.Services.AddMvc();
 
 if (generating)
 {
+	builder.Services.AddSingleton<IMarkupOptimizer, GithubPagesLinkRewriter>();
+
 	var g = UcrGraph.Wrap(new Graph());
 	FileLoader.Load(g, "./wwwroot/data/all.ttl"); // TODO: Extract
 
@@ -29,24 +32,24 @@ if (generating)
 		new PageResource("/use-cases") { OutFile = "/use-cases/index.html" },
 		new PageResource("/"),
 
-		new PageResource("/data/all.ttl"),
-		new PageResource("/data/requirements.json"),
-		new PageResource("/data/use-cases.json"),
-		new PageResource("/data/links.json"),
+		new BinResource("/data/all.ttl"),
+		new BinResource("/data/requirements.json"),
+		new BinResource("/data/use-cases.json"),
+		new BinResource("/data/links.json"),
 
-		new PageResource("/script/browser.js"),
-		new PageResource("/script/Graph.js"),
-		new PageResource("/script/Requirement.js"),
-		new PageResource("/script/RequirementList.js"),
-		new PageResource("/script/table.js"),
-		new PageResource("/script/UseCase.js"),
-		new PageResource("/script/UseCaseLink.js"),
-		new PageResource("/script/UseCaseList.js"),
-		new PageResource("/script/Vocabulary.js"),
+		new JsResource("/script/browser.js"),
+		new JsResource("/script/Graph.js"),
+		new JsResource("/script/Requirement.js"),
+		new JsResource("/script/RequirementList.js"),
+		new JsResource("/script/table.js"),
+		new JsResource("/script/UseCase.js"),
+		new JsResource("/script/UseCaseLink.js"),
+		new JsResource("/script/UseCaseList.js"),
+		new JsResource("/script/Vocabulary.js"),
 
-		new PageResource("/style/browser.css"),
-		new PageResource("/style/site.css"),
-		new PageResource("/style/table.css"),
+		new CssResource("/style/browser.css"),
+		new CssResource("/style/site.css"),
+		new CssResource("/style/table.css"),
 
 		new BinResource("/Ucr.docx"),
 		new BinResource("/Ucr.xlsx"),
@@ -74,7 +77,15 @@ if (generating)
 		Directory.CreateDirectory(destinationRoot);
 	}
 
-	app.GenerateStaticContent(destinationRoot, exitWhenDone: exitWhenDone, dontOptimizeContent: true);
+	app.GenerateStaticContent(destinationRoot, exitWhenDone: exitWhenDone);
 }
 
 app.Run();
+
+internal class GithubPagesLinkRewriter : IMarkupOptimizer
+{
+	MarkupOptimizerResult IMarkupOptimizer.Execute(string content, PageResource resource, string outFilePathname) => new(content
+		.Replace("href=\"/", "href=\"/ucr/")
+		.Replace("src=\"/", "src=\"/ucr/")
+	);
+}

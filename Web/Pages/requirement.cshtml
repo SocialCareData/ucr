@@ -4,10 +4,6 @@
     ViewBag.Title = Localizer.GetString("title", Model.Requirement.Number, Model.Requirement.Title);
 }
 
-@section head {
-    <link href="../style/site.css" rel="stylesheet" />
-}
-
 <h1>@ViewBag.Title</h1>
 <code>@Model.Requirement.Id</code>
 <p>@Model.Requirement.Description</p>

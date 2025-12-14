@@ -36,7 +36,7 @@ jobs:
         with:
           dotnet-version: '10'
       - run: dotnet run --project ./MakeWord/ -- ./Web/wwwroot/data/all.ttl ./Web/wwwroot/Ucr.docx ./Original.docx
-      - run: dotnet run --environment ASPNETCORE_ENVIRONMENT=Production --project ./Web/ -- ../pages true
+      - run: dotnet run --project ./Web/ -- ../pages true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
