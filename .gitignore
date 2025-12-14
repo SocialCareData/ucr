@@ -5,3 +5,4 @@ obj
 /Web/wwwroot/Ucr.docx
 /pages
 .csproj.user
+*.csproj.user
