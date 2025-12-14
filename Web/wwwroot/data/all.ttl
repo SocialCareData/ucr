@@ -3,6 +3,10 @@ PREFIX : <schema/>
 PREFIX req: <requirement/>
 PREFIX uc: <use-case/>
 
+##############
+# Requirements
+##############
+
 req:1
 	:title "Bulk Data Export API" ;
 	:description "The system must provide an API for bulk data export. This API allows all data to be extracted from the system in a single operation. The export function must be accessible to authorized users and systems." ;
@@ -660,6 +664,10 @@ req:65
 	:useCase
 		[ :target uc:15; :comment "Core requirement for uc:15, ensures that the NRL is kept up to date with the state of affairs relevant to a person who is the subject of care, so that other interested parties can query that information as part of uc:14." ; ]
 .
+
+###########
+# Use cases
+###########
 
 uc:1
 	:useCaseTitle "Access and contribute to a shared record (subject of care)" ;
