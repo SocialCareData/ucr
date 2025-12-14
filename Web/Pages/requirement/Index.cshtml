@@ -27,3 +27,19 @@
         </ul>
     </fieldset>
 }
+
+@if (Model.Requirement.Categories.Any())
+{
+    <fieldset>
+        <legend>Categories</legend>
+        <ul>
+            @foreach (var category in Model.Requirement.Categories)
+            {
+                <li>
+                    @category.Number - <a href="../requirement-category/@category.Number">@category.Title</a>
+                    <blockquote>@category.Description</blockquote>
+                </li>
+            }
+        </ul>
+    </fieldset>
+}

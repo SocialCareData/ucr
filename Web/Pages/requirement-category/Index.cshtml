@@ -1,0 +1,29 @@
+﻿@page "{id:int}"
+@model Web.Pages.requirementCategory.IndexModel
+@{
+    ViewBag.Title = Model.RequirementCategory.Title;
+}
+
+@section head {
+    <link href="../style/site.css" rel="stylesheet" />
+}
+
+<h1>@Model.RequirementCategory.Number - @Model.RequirementCategory.Title</h1>
+<code>@Model.RequirementCategory.Id</code>
+<p>@Model.RequirementCategory.Description</p>
+
+@if (Model.RequirementCategory.Requirements.Any())
+{
+    <fieldset>
+        <legend>Related requirements</legend>
+        <ul>
+            @foreach (var requirement in Model.RequirementCategory.Requirements)
+            {
+                <li>
+                    @requirement.Number - <a href="../requirement/@requirement.Number">@requirement.Title</a>
+                    <blockquote>@requirement.Description</blockquote>
+                </li>
+            }
+        </ul>
+    </fieldset>
+}

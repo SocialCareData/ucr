@@ -17,13 +17,37 @@
     <fieldset>
         <legend>Related requirements</legend>
         <ul>
-            @foreach (var link in Model.UseCase.Links)
+            @foreach (var category in Model.UseCase.Links.SelectMany(x => x.Requirement.Categories).Distinct())
             {
                 <li>
-                    @link.Requirement.Number - <a href="../requirement/@link.Requirement.Number">@link.Requirement.Title</a>
-                    <blockquote>@link.Comment</blockquote>
+                    <fieldset>
+                        <legend>@category.Number - <a href="../requirement-category/@category.Number">@category.Title</a></legend>
+                        <ul>
+                            @foreach (var link in Model.UseCase.Links.Where(x => x.Requirement.Categories.Contains(category)))
+                            {
+                                <li>
+                                    @link.Requirement.Number - <a href="../requirement/@link.Requirement.Number">@link.Requirement.Title</a>
+                                    <blockquote>@link.Comment</blockquote>
+                                </li>
+                            }
+                        </ul>
+                    </fieldset>
                 </li>
             }
+            <li>
+                <fieldset>
+                    <legend>Uncategorised</legend>
+                    <ul>
+                        @foreach (var link in Model.UseCase.Links.Where(x => !x.Requirement.Categories.Any()))
+                        {
+                            <li>
+                                @link.Requirement.Number - <a href="../requirement/@link.Requirement.Number">@link.Requirement.Title</a>
+                                <blockquote>@link.Comment</blockquote>
+                            </li>
+                        }
+                    </ul>
+                </fieldset>
+            </li>
         </ul>
     </fieldset>
 }

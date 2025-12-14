@@ -9,8 +9,29 @@
 }
 
 <ul>
-    @foreach (var requirement in Model.Requirements)
+    @foreach (var category in Model.Requirements.SelectMany(x => x.Categories).Distinct())
     {
-        <li><a href="../requirement/@requirement.Number">@requirement.Number - @requirement.Title</a></li>
+        <li>
+            <fieldset>
+                <legend>@category.Number - <a href="../requirement-category/@category.Number">@category.Title</a></legend>
+                <ul>
+                    @foreach (var requirement in Model.Requirements.Where(x => x.Categories.Contains(category)))
+                    {
+                        <li><a href="../requirement/@requirement.Number">@requirement.Number - @requirement.Title</a></li>
+                    }
+                </ul>
+            </fieldset>
+        </li>
     }
+    <li>
+        <fieldset>
+            <legend>Uncategorised</legend>
+            <ul>
+                @foreach (var requirement in Model.Requirements.Where(x => !x.Categories.Any()))
+                {
+                    <li><a href="../requirement/@requirement.Number">@requirement.Number - @requirement.Title</a></li>
+                }
+            </ul>
+        </fieldset>
+    </li>
 </ul>

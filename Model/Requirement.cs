@@ -17,4 +17,5 @@ public class Requirement : GraphWrapperNode
     public string Description { get => this.Singular(Vocabulary.Description, ValueMappings.As<string>); }
 
     public ISet<Link> Links { get => this.Objects(Vocabulary.UseCase, Link.Wrap, Link.Wrap); }
+    public ISet<RequirementCategory> Categories { get => this.Objects(Vocabulary.Category, RequirementCategory.Wrap, RequirementCategory.Wrap); }
 }

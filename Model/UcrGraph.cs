@@ -23,4 +23,9 @@ public class UcrGraph : WrapperGraph
         .Select(t => t.Object)
         .Select(s => s.In(this))
         .Select(Link.Wrap);
+
+	public IEnumerable<RequirementCategory> RequirementCategories => GetTriplesWithPredicate(Vocabulary.CategoryTitle)
+        .Select(t => t.Subject)
+        .Select(s => s.In(this))
+        .Select(RequirementCategory.Wrap);
 }
