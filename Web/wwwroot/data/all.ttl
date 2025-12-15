@@ -370,6 +370,7 @@ req:30
 .
 
 req:31
+	:category cat:3 ;
 	:title "Person Search Protocol" ;
 	:description "The protocol must include an API for person search operations. This API allows systems to search for individuals across case management systems. The API must support the standard search request and result shapes." ;
 	:useCase
@@ -458,6 +459,7 @@ req:40
 .
 
 req:41
+	:category cat:3 ;
 	:title "Publish-Subscribe Notification System" ;
 	:description "The protocol must define a publish-subscribe system for delivering notifications. Systems must be able to both publish and subscribe to notifications. This enables real-time updates and event-driven workflows." ;
 	:useCase
@@ -642,6 +644,7 @@ req:58
 .
 
 req:59
+	:category cat:3 ;
 	:title "'Find a SUI' protocol" ;
 	:description "Must describe a process of converting 'find a SUI' requests into 'find a SUI' responses. Must cater for authentication and authorization so that only appropriate callers can interact with the 'find a SUI' service for appropriate reasons. Must include a well-known address where the service can be called." ;
 	:useCase
@@ -665,6 +668,7 @@ req:61
 .
 
 req:62
+	:category cat:3 ;
 	:title "'Find a record' protocol" ;
 	:description "Must describe a process of converting 'find a record' requests into 'find a record' responses. Must cater for authentication and authorization so that only appropriate callers can interact with the 'find a record' service for appropriate reasons. Must include a well-known address where the service can be called." ;
 	:useCase
@@ -680,6 +684,7 @@ req:63
 .
 
 req:64
+	:category cat:3 ;
 	:title "'Find a record' submission protocol" ;
 	:description "Must describe a process transmitting and receiving 'find a record' submissin requests. Must cater for authentication and authorization so that only appropriate callers can interact with the 'find a record' service for appropriate reasons. Must include a well-known address where the service can be called." ;
 	:useCase
@@ -802,4 +807,9 @@ cat:1
 cat:2
 	:categoryTitle "Data" ;
 	:categoryDescription "Requirements in this category define the structure and semantics of data used in the protocol. They specify data models, formats, and standards to ensure consistent representation and interpretation of information."
+.
+
+cat:3
+	:categoryTitle "Protocol" ;
+	:categoryDescription "Requirements in this category define communication protocols. They specify how systems communicate with each other using request and response data formats."
 .
