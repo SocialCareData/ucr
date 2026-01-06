@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using VDS.RDF;
-using VDS.RDF.Parsing;
+using Model;
 
 namespace Web.Controllers;
 
@@ -8,31 +7,16 @@ namespace Web.Controllers;
 public class RequirementsController
 {
     [HttpGet("requirements.json")]
-    public IEnumerable<Requirement> GetRequirements()
-    {
-        var g = Model.UcrGraph.Wrap(new Graph());
-        FileLoader.Load(g, "./wwwroot/data/all.ttl"); // TODO: Extract
-
-        return g.Requirements.Select(x => new Requirement(x.Id, x.Title, x.Description));
-    }
+    public IEnumerable<Requirement> GetRequirements() =>
+        UcrGraph.Instance.Requirements.Select(x => new Requirement(x.Id, x.Title, x.Description));
 
     [HttpGet("use-cases.json")]
-    public IEnumerable<UseCase> GetUseCases()
-    {
-        var g = Model.UcrGraph.Wrap(new Graph());
-        FileLoader.Load(g, "./wwwroot/data/all.ttl"); // TODO: Extract
-
-        return g.UseCases.Select(x => new UseCase(x.Id, x.Title, x.Description, x.NarrativeDocument));
-    }
+    public IEnumerable<UseCase> GetUseCases() =>
+        UcrGraph.Instance.UseCases.Select(x => new UseCase(x.Id, x.Title, x.Description, x.NarrativeDocument));
 
     [HttpGet("links.json")]
-    public IEnumerable<Link> GetLinks()
-    {
-        var g = Model.UcrGraph.Wrap(new Graph());
-        FileLoader.Load(g, "./wwwroot/data/all.ttl"); // TODO: Extract
-
-        return g.Links.Select(x => new Link(x.Requirement.Id, x.Target.Id, x.Comment));
-    }
+    public IEnumerable<Link> GetLinks() =>
+        UcrGraph.Instance.Links.Select(x => new Link(x.Requirement.Id, x.Target.Id, x.Comment));
 
     public record Requirement(string Id, string Title, string Description);
 

@@ -1,4 +1,5 @@
 ﻿using VDS.RDF;
+using VDS.RDF.Parsing;
 using VDS.RDF.Wrapping;
 
 namespace Model;
@@ -8,6 +9,19 @@ public class UcrGraph : WrapperGraph
     private UcrGraph(IGraph original) : base(original) { }
 
 	public static UcrGraph Wrap(IGraph g) => new(g);
+
+    public static UcrGraph Instance
+    {
+        get
+        {
+            if (field is null)
+            {
+                FileLoader.Load(field = Wrap(new Graph()), "./wwwroot/data/all.ttl");
+            }
+
+            return field;
+        }
+    }
 
 	public IEnumerable<Requirement> Requirements => GetTriplesWithPredicate(Vocabulary.Title)
         .Select(t => t.Subject)

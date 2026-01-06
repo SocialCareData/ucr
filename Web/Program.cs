@@ -2,8 +2,6 @@ using AspNetStatic;
 using AspNetStatic.Optimizer;
 using Microsoft.AspNetCore.StaticFiles;
 using Model;
-using VDS.RDF;
-using VDS.RDF.Parsing;
 
 var generating = args.Length == 2;
 
@@ -18,17 +16,14 @@ if (generating)
 {
 	builder.Services.AddSingleton<IMarkupOptimizer, GithubPagesLinkRewriter>();
 
-	var g = UcrGraph.Wrap(new Graph());
-	FileLoader.Load(g, "./wwwroot/data/all.ttl"); // TODO: Extract
-
 	builder.Services.AddSingleton<IStaticResourcesInfoProvider>(new StaticResourcesInfoProvider([
 		new PageResource("/browser") { OutFile = "/browser/index.html" },
-		.. g.Requirements.Select(x => new PageResource($"/requirement/{x.Number}")),
+		.. UcrGraph.Instance.Requirements.Select(x => new PageResource($"/requirement/{x.Number}")),
 		new PageResource("/requirement-categories") { OutFile = "/requirement-categories/index.html" },
-		.. g.RequirementCategories.Select(x => new PageResource($"/requirement-category/{x.Number}")),
+		.. UcrGraph.Instance.RequirementCategories.Select(x => new PageResource($"/requirement-category/{x.Number}")),
 		new PageResource("/requirements") { OutFile = "/requirements/index.html" },
 		new PageResource("/table") { OutFile = "/table/index.html" },
-		.. g.UseCases.Select(x => new PageResource($"/use-case/{x.Number}")),
+		.. UcrGraph.Instance.UseCases.Select(x => new PageResource($"/use-case/{x.Number}")),
 		new PageResource("/use-cases") { OutFile = "/use-cases/index.html" },
 		new PageResource("/"),
 
