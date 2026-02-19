@@ -1166,7 +1166,9 @@ uc:13
 
 uc:14
 	:useCaseTitle "Contact details from SUI & NRL for safeguarding" ;
-	:useCaseDescription "As a social worker conducting safeguarding enquiries, I need the contact details of other professionals hold pertinent information about the subject so that I can coordinate information sharing and support to allow for effective analysis and decision making." ;
+	:useCaseDescription """
+As a social worker conducting safeguarding enquiries, I need the contact details of other professionals hold pertinent information about the subject so that I can coordinate information sharing and support to allow for effective analysis and decision making.
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/14.%20NRL%20SUI.docx?d=w8567667333514e23b15e9f84fb4ba6d6&csf=1&web=1&e=QTX4nC> ;
 	:useCaseSplitFrom uc:10 ;
 .
