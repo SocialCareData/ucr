@@ -1068,7 +1068,45 @@ uc:11
 
 uc:12
 	:useCaseTitle "Multiagency input into a person's record" ;
-	:useCaseDescription "As a practitioner working in a multiagency team, I need all key partners to be able to view relevant aspects of a child's record and input into the record of a child I am providing care for, so that the record provides a full picture of the child and their needs." ;
+	:useCaseDescription """
+<dl>
+	<div>
+		<dt>Sub-use cases</dt>
+		<dd>
+			<ol>
+				<li>
+					<span>CSC multi-agency team input</span>
+					<ol>
+						<li>
+							<span>As a practitioner working in a multiagency team, I need all key partners to be able to view relevant aspects of a child’s record and input into the record of a child I am providing care for, so that the record provides a full picture of the child and their needs.</span>
+						</li>
+						<li>
+							<span>As a practitioner working in a multiagency team, I need to a record of who has contributed to assessments and other key forms/documents so that I can have a better understanding of why certain decisions have been made and where to go for more information.</span>
+						</li>
+						<li>
+							<span>As a practitioner working in a multiagency team but not employed by CS, I need access to CMS to view and edit children’s case files where I am the allocated professional (FFC).</span>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<span>External input into an adult social care record</span>
+					<ol>
+						<li>
+							<span>As a care provider/ care worker I can contribute observations or concerns (e.g., missed visits, safeguarding flags; poc) directly into a shared record, so that other professionals working with the person can have an up-to-date understanding of care and any risks.</span>
+						</li>
+						<li>
+							<span>As a mental health practitioner, I can record updates linked to a person’s wellbeing, so that social care can respond proactively.</span>
+						</li>
+						<li>
+							<span>As a reablement manager, I need to add information about a new care package to a shared record so that care workers can carry out care and social workers can view the details of the care package.</span>
+						</li>
+					</ol>
+				</li>
+			</ol>
+		</dd>
+	</div>
+</dl>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/12.%20Use%20Case%20-%20Multiagency%20Input.docx?d=w72bc801eff39431aa218df754a96b6f0&csf=1&web=1&e=rNhvoO> ;
 .
 
