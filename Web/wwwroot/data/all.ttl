@@ -1175,7 +1175,11 @@ As a social worker conducting safeguarding enquiries, I need the contact details
 
 uc:15
 	:useCaseTitle "Contributing data to NRL" ;
-	:useCaseDescription "As the administrator of a social care CMS I need to contribute records about which individuals we are (or have been) working with to the 'Find a Record' service so that professionals in other organisations can rely on the responses they get from 'Find a Record'." ;
+	:useCaseDescription """
+<p>As the administrator of a social care CMS...</p>
+<p>...I need to contribute records about which individuals we are (or have been) working with to the ‘Find a Record’ service...</p>
+<p>...so that professionals in other organisations can rely on the responses they get from ‘Find a Record’.</p>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/15.%20Contributing%20data%20to%20the%20NRL.docx?d=w36a4c42120a4454cb047682d97d1dfdc&csf=1&web=1&e=5t0cog> ;
 	:useCaseSplitFrom uc:10 ;
 .
