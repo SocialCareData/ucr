@@ -950,7 +950,74 @@ uc:9
 
 uc:10
 	:useCaseTitle "Multi-agency enquiries" ;
-	:useCaseDescription "As a professional starting work directly with an individual, I want to know their history of involvement with professionals, including concerns, interventions, and outcomes.  This helps me plan my work with them, and avoids them feeling they have to explain their story over and over again." ;
+	:useCaseDescription """
+<dl>
+	<div>
+		<dt>Overview</dt>
+		<dd>accessing and understanding relevant information about an individual across agencies to support safe, timely, and well-coordinated decision-making</dd>
+	</div>
+	<div>
+		<dt>Sub-use cases </dt>
+		<dd>
+			<ol>
+				<li>
+					<span>Frontline practitioner enquiries when beginning work with an individual</span>
+					<ol>
+						<li>
+							<span>As a professional starting work directly with an individual, I want to know their history of involvement with professionals, including concerns, interventions, and outcomes.  This helps me plan my work with them and avoids them feeling they have to explain their story repeatedly.</span>
+						</li>
+						<li>
+							<span>As a professional starting work directly with an individual, I want to be able to contact other professionals who are currently supporting them or who have in the past.  This helps us co-ordinate our work and learn from each other.</span>
+						</li>
+						<li>
+							<span>As a MASH officer / social worker who has received a referral about a child, I want to be able to quickly find information about that child or their family members held by other professionals in order to triage and allocate them appropriately (allocation decision usually signed off by manager).</span>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<span>Safeguarding enquiries (use cases 10a/14 and 10b/15)</span>
+					<ol>
+						<li>
+							<span>As a social worker conducting safeguarding enquiries, I need the contact details of other professionals hold pertinent information about the subject so that I can coordinate information sharing and support to allow for effective analysis and decision making.</span>
+						</li>
+						<li>
+							<span>As the administrator of a social care CMS, I need to contribute records about which individuals we are (or have been) working with to the ‘Find a Record’ service, so that professionals in other organisations can rely on the responses they get from ‘Find a Record’.</span>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<span>Enquiries for CSC statutory processes</span>
+					<ol>
+						<li>
+							<span>As a social work manager, I need to be able to read all information held by professionals about a child and their family to inform my decision whether to initiate a child protection investigation under CA s.47.</span>
+						</li>
+						<li>
+							<span>As a social worker conducting a s.47 investigation, I need to contact all other professionals involved with a family to invite them to share information and decision-making as a professional network.</span>
+						</li>
+						<li>
+							<span>As a social worker supporting a child under CA s.17 (Child in Need) I need to access information held by other professionals about the child, where the child’s parent or carer has consented to this information sharing.</span>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<span>Enquiries for ASC assessment and care coordination</span>
+					<ol>
+						<li>
+							<span>As an ASC social worker, I need to gather up-to-date health and community health information, carer information and other information about a person relevant to complete a Care Act assessment including assessing their capacity and seeking information on legal orders.</span>
+						</li>
+						<li>
+							<span>As an ASC social worker, I need to see employment and benefits information from DWP so that I can understand their income and entitlements which determines how much the LA pays for the package of care.</span>
+						</li>
+						<li>
+							<span>As an ASC social worker, I need to see provider information e.g. Dols assessments; care plans, safeguarding information and outcomes so that I can review and adjust a person’s LA care plan.</span>
+						</li>
+					</ol>
+				</li>
+			</ol>
+		</dd>
+	</div>
+</dl>
+""";
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/10.Use%20Case%20-%20Multi%20agency%20enquiries.docx?d=w11a1e05fe58a4b8cbe543255da43841b&csf=1&web=1&e=fthCge> ;
 .
 
