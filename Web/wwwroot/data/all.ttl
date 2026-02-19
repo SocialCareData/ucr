@@ -913,7 +913,9 @@ uc:5
 
 uc:6
 	:useCaseTitle "Social care statutory reporting" ;
-	:useCaseDescription "As a BI/ performance team member, I can generate accurate statutory returns (e.g. CLD or SSDA903) from reliable data in the CMS, minimising manual data cleansing, so that the local authority meets national reporting requirements, and we can use this data for benchmarking and insights." ;
+	:useCaseDescription """
+As a local authority responsible for statutory social care reporting, I need reliable, standardised, highquality data and efficient processes for generating and submitting statutory returns (e.g. CLD or SSDA903), so that national bodies (DfE/DHSC) receive accurate, timely, comparable information that supports policymaking, oversight, and service improvement.
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/6.Use%20case%20-%20Statutory%20reporting.docx?d=we9160b5a670d4175bfe48f9d4cc2a53d&csf=1&web=1&e=74pvQb> ;
 .
 
