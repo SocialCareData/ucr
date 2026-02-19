@@ -705,7 +705,62 @@ req:65
 
 uc:1
 	:useCaseTitle "Access and contribute to a shared record (subject of care)" ;
-	:useCaseDescription "As a data subject, I need to be able to contribute to my record, so that my experience and preferences can be considered when making decisions about my care." ;
+	:useCaseDescription """
+<dl>
+	<div>
+		<dt>Overview</dt>
+		<dd>Supporting access and contribution to a shared care record (from the data subject and family networks) in a way that accurately represents the person’s voice, experience and preferences.</dd>
+	</div>
+	<div>
+		<dt>Sub-use cases</dt>
+		<dd>
+			<ol>
+				<li>
+					<span>Child/ young person contributing to their record</span>
+					<ol>
+						<li>
+							<span>As a child/ young person I need to be able to share my experiences and preferences and for this to be represented on my record</span>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<span>Individual (adult) contributing to their record</span>
+					<ol>
+						<li>
+							<span>As an adult receiving care and support I need to access information about me, complete assessments, manage care records, and track progress to maintain control and independence. I need to update information about my preferences, routines, and communication needs, so that professionals understand how best to support me, and I need to approve, question, or correct information recorded about me, so that my record is accurate and reflects my perspective.</span>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<span>Family network contributing to a record</span>
+					<ol>
+						<li>
+							<span>As a family member participating in a family group decision-making process, I need to be able to contribute towards decisions and plans made for a child or young person in a way that’s easily captured on a system, so that a record of my views and involvement can be made</span>
+						</li>
+						<li>
+							<span>As a parent/ individual with parental responsibility, I need to be able to contribute towards the record of the person I have responsibility for, so that my experiences of caring for the person can be considered as part of the wider network of involvement</span>
+						</li>
+						<li>
+							<span>As a carer, I need to contribute relevant observations or updates about the person I support, so that social workers and providers can make timely decisions. </span>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<span>Professional requirements to represent voice of the person</span>
+					<ol>
+						<li>
+							<span>As a social worker, I need to be able to capture the voice of the person I am supporting and their family members in their records in a way that is efficient, so that I can capture their voice without needing to double key lots of information.</span>
+						</li>
+						<li>
+							<span>As a social worker, I need CMS records that hold family members accountable for their agreed actions.</span>
+						</li>
+					</ol>
+				</li>
+			</ol>
+		</dd>
+	</div>
+</dl>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/1.Use%20Case%20-%20Access%20and%20contribute%20to%20a%20shared%20record.docx?d=w8b258b24e73c42898668b4e8ba8a6e82&csf=1&web=1&e=cql8dk> ;
 .
 
