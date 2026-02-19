@@ -766,7 +766,37 @@ uc:1
 
 uc:2
 	:useCaseTitle "Social worker recording" ;
-	:useCaseDescription "As a person giving care, I need to write freeform notes regarding the provision of care following an interaction with a person receiving care so that relevant information is kept for further reference." ;
+	:useCaseDescription """
+<dl>
+	<div>
+		<dt>Generic</dt>
+		<dd>As a professional working with a client, I need to write/ record freeform records of activities and observations following an interaction with a client so that relevant information is kept for further reference. I need these notes to then be easily added to their CMS record.</dd>
+	</div>
+	<div>
+		<dt>Sub-use cases</dt>
+		<dd>
+			<ol>
+				<li>
+					<span>Children’s Social Worker visiting a child and family</span>
+					<ol>
+						<li>
+							<span>As a social worker visiting a child and family, I need to make a record of the visit that includes a narrative account, my observations, my analysis, and any expressed wishes and feelings of the child or family.</span>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<span>Adults Social Worker visiting a client</span>
+					<ol>
+						<li>
+							<span>As a social worker visiting an individual, I need to make a record of the visit that includes a narrative account, my observations, my analysis, and any input from the individual</span>
+						</li>
+					</ol>
+				</li>
+			</ol>
+		</dd>
+	</div>
+</dl>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/2.%20Use%20Case%20-%20Social%20Worker%20recording%20data.docx?d=w007534adc56043888919aecf0cbf754d&csf=1&web=1&e=GrISbw> ;
 .
 
