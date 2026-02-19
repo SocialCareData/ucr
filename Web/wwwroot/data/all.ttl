@@ -930,7 +930,9 @@ uc:7
 
 uc:8
 	:useCaseTitle "Transition  from children's social care to adult social care" ;
-	:useCaseDescription "As an adult social worker or transitions manager, I can receive, track, and act on information about young people transitioning from children's to adult services, so that their care is continuous, assessments are timely, and support plans are appropriate when they reach adulthood." ;
+	:useCaseDescription """
+As an adult social worker or transitions manager, I can receive, track, and act on information about young people transitioning from children’s to adult services, so that their care is continuous, assessments are timely, and support plans are appropriate when they reach adulthood.
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/8.Use%20case%20-%20CSC%20to%20ASC%20transitions.docx?d=wfae32b14cc094ed8a40ba15b122d83a5&csf=1&web=1&e=fgpgCk> ;
 .
 
