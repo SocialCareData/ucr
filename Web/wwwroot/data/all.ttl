@@ -938,7 +938,13 @@ As an adult social worker or transitions manager, I can receive, track, and act 
 
 uc:9
 	:useCaseTitle "Transfer of responsibility" ;
-	:useCaseDescription "As a social worker I need to be able to transfer records between local authorities, so that when a child or young person who is subject to a child protection plan moves outside my local authority, the new social work teams are able to understand the full history of my involvement.  This transfer of records happens at a Transfer-in Child Protection Conference, hosted by the receiving social work team." ;
+	:useCaseDescription """
+<p>As a social worker I need to be able to transfer records between local authorities, so that when a child or young person who is subject to a child protection plan moves outside my local authority, the new social work teams are able to understand the full history of my involvement.  This transfer of records happens at a Transfer-in Child Protection Conference, hosted by the receiving social work team.</p>
+<p>As a social worker I need to be able to understand the full history of incoming child protection cases from other local authorities so I can appropriately support the child</p>
+<p>As a social worker I need to be able to request the full records held by another local authority on a child I am working with.</p>
+<p>As an administrator, I need to be able to respond to requests from other local authorities for information about children by sharing the full history of our involvement with them.</p>
+<p>As a child or young person working with social care, records created about me need to be able to move with me, so that social workers in my new authority have a complete understanding of my case</p>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/9.Use%20Case%20-%20Transfer%20of%20responsibility.docx?d=w3aa5ced9d74d4486a4c17812abe0ef1e&csf=1&web=1&e=l33lRG> ;
 .
 
