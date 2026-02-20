@@ -26,6 +26,7 @@ if (generating)
 		.. UcrGraph.Instance.UseCases.Select(x => new PageResource($"/use-case/{x.Number}")),
 		new PageResource("/use-cases") { OutFile = "/use-cases/index.html" },
 		.. UcrGraph.Instance.CoreStandards.Select(x => new PageResource($"/core-standard/{x.Number}")),
+		new PageResource("/core-standards") { OutFile = "/core-standards/index.html" },
 		new PageResource("/"),
 
 		new BinResource("/data/all.ttl"),
