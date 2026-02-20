@@ -53,7 +53,7 @@ function onRequirementClick() {
 	clear()
 	this.classList.add("clicked")
 	let first = true
-	for (const useCaseElement of document.querySelectorAll("#useCases li")) {
+	for (const useCaseElement of document.querySelectorAll("#useCases > ul > li")) {
 		for (const link of this.requirement.useCases
 			.filter(x => x.target.id === useCaseElement.useCase.id)) {
 
@@ -72,7 +72,7 @@ function onUseCaseClick() {
 	clear()
 	this.classList.add("clicked")
 	let first = true
-	for (const requirementElement of document.querySelectorAll("#requirements li")) {
+	for (const requirementElement of document.querySelectorAll("#requirements > ul > li")) {
 		for (const link of this.useCase.requirements
 			.filter(x => x.requirement.id === requirementElement.requirement.id)) {
 
