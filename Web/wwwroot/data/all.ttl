@@ -3,6 +3,7 @@ PREFIX : <schema/>
 PREFIX req: <requirement/>
 PREFIX uc: <use-case/>
 PREFIX cat: <requirement-category/>
+PREFIX core: <core-standard/>
 
 ##############
 # Requirements
@@ -1364,4 +1365,30 @@ cat:6
 	</ul>
 </fieldset>
 """ ;
+.
+
+################
+# Core standards
+################
+
+# Source: https://socialfinanceltd.sharepoint.com/:x:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/Use%20case%20tags.xlsx?d=wbfdabbe46f914fd090625e8508a94284&csf=1&web=1&e=jFxHLz&nav=MTVfe0MyMTk2OUMyLTE5M0UtNDg2Ny04MTY2LUFDNzY5MTQ1OUZCN30
+
+core:1
+		:coreStandardTitle "Identity and access management" ;
+		:coreStandardDescription "Identity and Access Management concerns how systems and users are reliably identified, authenticated, and authorised when interacting across organisational or technical boundaries. In interoperability, IAM ensures that only legitimate actors can access data or services, and that they can only perform actions they are permitted to undertake. It provides the trust framework underpinning secure data exchange." ;
+.
+
+core:2
+		:coreStandardTitle "Query/ response" ;
+		:coreStandardDescription "Request/Response is an interaction pattern where one system actively asks another system for specific information or an action, and receives a direct reply. In interoperability, this model supports on-demand data retrieval, typically in real time, with a clear initiating party and a defined response." ;
+.
+
+core:3
+		:coreStandardTitle "Bulk transfer" ;
+		:coreStandardDescription "Bulk Transfer refers to the movement of large volumes of data between systems, typically in batches rather than in real time. In interoperability, this approach is used for large-scale data sharing, migration, or synchronisation, where completeness and efficiency of transfer are prioritised over immediacy." ;
+.
+
+core:4
+		:coreStandardTitle "Publish/ subscribe" ;
+		:coreStandardDescription "Publish/Subscribe is an event-driven interaction model in which one system publishes information or updates, and other systems subscribe to receive relevant events. In interoperability, this enables decoupled, scalable information sharing, where multiple consumers can automatically receive updates as they occur." ;
 .
