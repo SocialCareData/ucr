@@ -31,6 +31,7 @@ if (generating)
 		new BinResource("/data/requirements.json"),
 		new BinResource("/data/use-cases.json"),
 		new BinResource("/data/links.json"),
+		new BinResource("/data/core-standards.json"),
 
 		new JsResource("/script/browser.js"),
 		new JsResource("/script/Graph.js"),
