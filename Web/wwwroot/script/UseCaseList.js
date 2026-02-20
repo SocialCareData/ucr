@@ -18,7 +18,7 @@
 			narrativeDocumentLink.href = useCase.narrativeDocument
 			narrativeDocumentLink.innerText = "🔗"
 			narrativeDocumentLink.target = "_blank"
-			descriptionDiv.innerText = useCase.description
+			descriptionDiv.innerHTML = useCase.description
 			descriptionDiv.className = "description"
 		}
 

@@ -19,6 +19,9 @@ internal class Vocabulary
     internal static IUriNode UseCaseNarrativeDocument { get; } = Node("useCaseNarrativeDocument");
     internal static IUriNode CategoryTitle { get; } = Node("categoryTitle");
     internal static IUriNode CategoryDescription { get; } = Node("categoryDescription");
+    internal static IUriNode CoreStandardTitle { get; } = Node("coreStandardTitle");
+    internal static IUriNode CoreStandardDescription { get; } = Node("coreStandardDescription");
+    internal static IUriNode CoreStandard { get; } = Node("coreStandard");
 
     private static IUriNode Node(string name) => AnyNode($"{VocabularyBaseUri}{name}");
 

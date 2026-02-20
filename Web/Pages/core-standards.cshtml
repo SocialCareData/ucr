@@ -1,0 +1,13 @@
+﻿@page
+@model CoreStandardsModel
+@{
+    ViewBag.Title = Localizer["title"];
+}
+
+<h1>@ViewBag.Title</h1>
+<ul>
+    @foreach (var standard in Model.CoreStandards)
+    {
+        <li><a asp-page="core-standard" asp-route-id="@standard.Number">@standard.Number - @standard.Title</a></li>
+    }
+</ul>

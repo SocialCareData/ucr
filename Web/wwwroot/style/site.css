@@ -2,3 +2,20 @@
 	margin: 0;
 	height: 100vh;
 }
+
+ol {
+	list-style-type: upper-alpha
+}
+
+	ol ol {
+		list-style-type: lower-roman
+	}
+
+li:target > span {
+	font-weight: bold;
+	background-color: yellow;
+}
+
+	li:target > span:before {
+		content: "⇨";
+	}

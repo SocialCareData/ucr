@@ -117,16 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="related use cases" xml:space="preserve">
-    <value>Related use cases</value>
-  </data>
-  <data name="related categories" xml:space="preserve">
-    <value>Related categories</value>
-  </data>
   <data name="title" xml:space="preserve">
-    <value>Requirement {0} - {1}</value>
-  </data>
-  <data name="related core standards" xml:space="preserve">
-    <value>Related core standards</value>
+    <value>Core standard {0} - {1}</value>
   </data>
 </root>

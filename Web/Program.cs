@@ -25,12 +25,15 @@ if (generating)
 		new PageResource("/table") { OutFile = "/table/index.html" },
 		.. UcrGraph.Instance.UseCases.Select(x => new PageResource($"/use-case/{x.Number}")),
 		new PageResource("/use-cases") { OutFile = "/use-cases/index.html" },
+		.. UcrGraph.Instance.CoreStandards.Select(x => new PageResource($"/core-standard/{x.Number}")),
+		new PageResource("/core-standards") { OutFile = "/core-standards/index.html" },
 		new PageResource("/"),
 
 		new BinResource("/data/all.ttl"),
 		new BinResource("/data/requirements.json"),
 		new BinResource("/data/use-cases.json"),
 		new BinResource("/data/links.json"),
+		new BinResource("/data/core-standards.json"),
 
 		new JsResource("/script/browser.js"),
 		new JsResource("/script/Graph.js"),

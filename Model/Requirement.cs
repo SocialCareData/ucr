@@ -18,4 +18,5 @@ public class Requirement : GraphWrapperNode
 
     public ISet<Link> Links { get => this.Objects(Vocabulary.UseCase, Link.Wrap, Link.Wrap); }
     public ISet<RequirementCategory> Categories { get => this.Objects(Vocabulary.Category, RequirementCategory.Wrap, RequirementCategory.Wrap); }
+    public ISet<CoreStandard> CoreStandards { get => this.Objects(Vocabulary.CoreStandard, CoreStandard.Wrap, CoreStandard.Wrap); }
 }

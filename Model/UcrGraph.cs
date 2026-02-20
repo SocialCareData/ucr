@@ -42,4 +42,9 @@ public class UcrGraph : WrapperGraph
         .Select(t => t.Subject)
         .Select(s => s.In(this))
         .Select(RequirementCategory.Wrap);
+
+	public IEnumerable<CoreStandard> CoreStandards => GetTriplesWithPredicate(Vocabulary.CoreStandardTitle)
+        .Select(t => t.Subject)
+        .Select(s => s.In(this))
+        .Select(CoreStandard.Wrap);
 }

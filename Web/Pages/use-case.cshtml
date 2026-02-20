@@ -6,7 +6,7 @@
 
 <h1>@ViewBag.Title</h1>
 <code>@Model.UseCase.Id</code>
-<p>@Model.UseCase.Description</p>
+<p>@Html.Raw(Model.UseCase.Description)</p>
 
 @if (Model.UseCase.Links.Any())
 {

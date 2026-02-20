@@ -3,12 +3,14 @@ PREFIX : <schema/>
 PREFIX req: <requirement/>
 PREFIX uc: <use-case/>
 PREFIX cat: <requirement-category/>
+PREFIX core: <core-standard/>
 
 ##############
 # Requirements
 ##############
 
 req:1
+	:coreStandard core:3 ;
 	:category cat:1 ;
 	:title "Bulk Data Export API" ;
 	:description "The system must provide an API for bulk data export. This API allows all data to be extracted from the system in a single operation. The export function must be accessible to authorized users and systems." ;
@@ -18,6 +20,7 @@ req:1
 .
 
 req:2
+	:coreStandard core:3 ;
 	:category cat:1 ;
 	:title "Bulk Data Import API" ;
 	:description "The system must provide an API for bulk data import. This API allows data to be inserted into the system in a single operation. The import function must validate incoming data against the standard data model." ;
@@ -69,6 +72,7 @@ req:5
 .
 
 req:6
+	:coreStandard core:3 ;
 	:category cat:1 ;
 	:title "System-to-System Data Transfer" ;
 	:description "The target system must be able to connect to the source system's export interface. This connection enables direct data import from one system to another. The functionality must support automated data transfer operations." ;
@@ -80,6 +84,7 @@ req:6
 .
 
 req:7
+	:coreStandard core:2 ;
 	:title "Case Management System Registry" ;
 	:description "A registry must exist that links case management systems to local authorities. This registry documents which systems are used by which authorities. It enables coordination and data sharing between authorities." ;
 	:useCase
@@ -93,6 +98,7 @@ req:7
 .
 
 req:8
+	:coreStandard core:2 ;
 	:category cat:1 ;
 	:title "Global Query Interface" ;
 	:description "A global query interface must allow users to ask questions about all data in the system. This interface must provide a unified view across all case management systems. Users must be able to search and retrieve information regardless of which system stores the data." ;
@@ -110,6 +116,7 @@ req:8
 .
 
 req:9
+	:coreStandard core:2 ;
 	:title "Statutory Reporting Registry" ;
 	:description "A registry must exist that documents all statutory reporting requirements for local authorities. This registry must be maintained and updated as requirements change. It serves as a reference for compliance obligations." ;
 	:useCase
@@ -120,6 +127,7 @@ req:9
 .
 
 req:10
+	:coreStandard core:2 ;
 	:category cat:1 ;
 	:title "Query Aggregation Functions" ;
 	:description "The query interface must support aggregation functions. Users must be able to perform operations like sum, count, average, and group by. These functions enable statistical analysis and reporting across the data set." ;
@@ -176,6 +184,7 @@ req:13
 .
 
 req:14
+	:coreStandard core:3 ;
 	:category cat:2 ;
 	:title "Business Intelligence Export Formats" ;
 	:description "Query results must be available in formats used by business intelligence tools. Supported formats must include Excel and Looker Studio. This enables users to analyze data using familiar productivity software." ;
@@ -240,6 +249,7 @@ req:18
 .
 
 req:19
+	:coreStandard core:2 ;
 	:category cat:2 ;
 	:title "Subject Access Request Standard" ;
 	:description "A standard must exist for implementing subject data access requests for care leavers. This standard defines how individuals can request their personal data. It ensures compliance with data protection regulations." ;
@@ -249,6 +259,7 @@ req:19
 .
 
 req:20
+	:coreStandard core:2 ;
 	:title "AI Legal Requirements Registry" ;
 	:description "A registry must document legal requirements for AI tools in social care. This registry specifies compliance obligations for AI systems. It helps AI tool developers understand their legal obligations." ;
 	:useCase
@@ -265,6 +276,7 @@ req:21
 .
 
 req:22
+	:coreStandard core:3 ;
 	:category cat:1 ;
 	:title "Data Sunsetting and Archival" ;
 	:description "The system must support sunsetting and archival of old data. This functionality ensures that historical data is properly preserved. It also ensures that outdated data does not interfere with current operations." ;
@@ -276,6 +288,7 @@ req:22
 .
 
 req:23
+	:coreStandard core:3 ;
 	:category cat:1 ;
 	:title "Case Import Functionality" ;
 	:description "The system must provide functionality to import individual cases. This includes all case data and associated documentation. The import process must validate data against the standard data model." ;
@@ -287,6 +300,7 @@ req:23
 .
 
 req:24
+	:coreStandard core:3 ;
 	:category cat:1 ;
 	:title "Case Export Functionality" ;
 	:description "The system must provide functionality to export individual cases. This includes all case data and associated documentation. The export format must conform to the standard data model." ;
@@ -298,6 +312,7 @@ req:24
 .
 
 req:25
+	:coreStandard core:3 ;
 	:category cat:1 ;
 	:title "Case Export Request API" ;
 	:description "An API must exist for submitting case export requests. This API allows authorized users to request case data exports. The API must handle authorization and queueing of export requests." ;
@@ -308,6 +323,7 @@ req:25
 .
 
 req:26
+	:coreStandard core:1 ;
 	:title "Authorization Shapes in Ontology" ;
 	:description "The ontology must include data shapes that describe authorization rules. These shapes define who can access what data under what circumstances. They enable consistent authorization enforcement across systems." ;
 	:useCase
@@ -316,6 +332,7 @@ req:26
 .
 
 req:27
+	:coreStandard core:1 ;
 	:category cat:2 ;
 	:title "Authorization Taxonomy" ;
 	:description "The taxonomy must include terms and categories related to authorization. This provides a standard vocabulary for describing permissions and access rights. It ensures consistent authorization terminology across systems." ;
@@ -332,6 +349,7 @@ req:27
 .
 
 req:28
+	:coreStandard core:1 ;
 	:category cat:1 ;
 	:title "Standards-Based Authorization API" ;
 	:description "The API must implement authorization based on the authorization ontology and taxonomy. All access control decisions must use the standardized authorization data. This ensures consistent security enforcement. A standard protocol (e.g. OAuth) and authorization model that can evolve with legal requirements is required. The standard must accomodate for evolution of technology (orthogonality of standards)." ;
@@ -352,6 +370,7 @@ req:28
 .
 
 req:29
+	:coreStandard core:2 ;
 	:category cat:2 ;
 	:title "Person Search Request Shape" ;
 	:description "The data standard must define the shape of person search requests. This includes all fields that can be used to search for a person. The standard ensures consistent search capabilities across systems." ;
@@ -361,6 +380,7 @@ req:29
 .
 
 req:30
+	:coreStandard core:2 ;
 	:category cat:2 ;
 	:title "Person Search Results Shape" ;
 	:description "The data standard must define the shape of person search results. This includes all fields returned in search responses. The standard ensures consistent result formats across systems." ;
@@ -370,6 +390,7 @@ req:30
 .
 
 req:31
+	:coreStandard core:2 ;
 	:category cat:3 ;
 	:title "Person Search Protocol" ;
 	:description "The protocol must include an API for person search operations. This API allows systems to search for individuals across case management systems. The API must support the standard search request and result shapes." ;
@@ -379,6 +400,7 @@ req:31
 .
 
 req:32
+	:coreStandard core:2 ;
 	:title "Lightweight Information Client Creation" ;
 	:description "The protocol must enable the creation of social care information clients. These clients can access, display and modify social care data without implementing full case management. This supports specialized tools and applications. This is a subset of the full standards for data model and protocol." ;
 	:useCase
@@ -389,6 +411,7 @@ req:32
 .
 
 req:33
+	:coreStandard core:2 ;
 	:title "Lightweight Information Provider Support" ;
 	:description "The protocol must support creating information providers that are not full case management systems. This allows non-social-care systems to expose data in a compatible format. It enables integration with external data sources." ;
 	:useCase
@@ -405,6 +428,7 @@ req:34
 .
 
 req:35
+	:coreStandard core:2 ;
 	:title "Plugin Registry" ;
 	:description "A registry must exist of plugins for interoperating with external systems. Implementers can use these existing plugins rather than building their own. The registry promotes code reuse and reduces implementation effort. This facilitates distributed workloads, removes redundancy in implementing connectors and lowers the cost of integration by sharing implementations." ;
 	:useCase
@@ -413,6 +437,7 @@ req:35
 .
 
 req:36
+	:coreStandard core:2 ;
 	:title "Person Matching Algorithm Standard" ;
 	:description "A standard must define the algorithm for matching person records across systems. This algorithm determines when two records refer to the same individual. It ensures consistent person matching across all implementations." ;
 	:useCase
@@ -421,6 +446,7 @@ req:36
 .
 
 req:37
+	:coreStandard core:2 ;
 	:title "Case Management API Registry" ;
 	:description "A registry must exist that lists all case management system APIs. This registry provides discovery of available systems and their endpoints. It enables systems to find and connect with each other." ;
 	:useCase
@@ -459,6 +485,7 @@ req:40
 .
 
 req:41
+	:coreStandard core:4 ;
 	:category cat:3 ;
 	:title "Publish-Subscribe Notification System" ;
 	:description "The protocol must define a publish-subscribe system for delivering notifications. Systems must be able to both publish and subscribe to notifications. This enables real-time updates and event-driven workflows." ;
@@ -468,6 +495,7 @@ req:41
 .
 
 req:42
+	:coreStandard core:1 ;
 	:title "External Actor Authorization" ;
 	:description "The authorization component must accommodate external actors. These may include organizations or systems outside the core social care ecosystem. The authorization model must support secure access by external parties." ;
 	:useCase
@@ -481,6 +509,7 @@ req:42
 .
 
 req:43
+	:coreStandard core:1 ;
 	:category cat:1 ;
 	:title "Credential-Based Authentication" ;
 	:description "The authorization component must support credential-based authentication. This authentication is based on verifiable credentials rather than identity alone. It enables authorized access by organizations and authorities." ;
@@ -493,6 +522,7 @@ req:43
 .
 
 req:44
+	:coreStandard core:1, core:2 ;
 	:title "Trusted Credential Issuer Registry" ;
 	:description "A registry must exist of trusted credential issuers and credential types. The registry must map credential types to permissions. This enables automated authorization decisions based on presented credentials." ;
 	:useCase
@@ -622,12 +652,14 @@ req:55
 .
 
 req:56
+	:coreStandard core:1 ;
 	:category cat:2 ;
 	:title "Audit Log Standard" ;
 	:description "Systems must provide a full audit log of all actions in standard format. The audit log must meet statutory requirements for record-keeping. It provides accountability and supports compliance verification." ;
 .
 
 req:57
+	:coreStandard core:2 ;
 	:category cat:2 ;
 	:title "'Find a SUI' request model" ;
 	:description "Must contain an information model that is sufficient to represent the (demographic and other) details of a person that is the subject of care for the purpose of finding their SUI. These details must all be subject to individual confidence scoring. The request model must contain sufficient information to identify the caller for the purpose of authentication and authorisation. The request model must contain sufficient information about the caller to facilitate an audit trail." ;
@@ -636,6 +668,7 @@ req:57
 .
 
 req:58
+	:coreStandard core:2 ;
 	:category cat:2 ;
 	:title "'Find a SUI' response model" ;
 	:description "Must contain an identifier of the subject described in the request. The identifier must be of a format and value that can be used to call the 'find a record' service. The response model must be cater to the possibility that a SUI could not be found for the given request." ;
@@ -644,6 +677,7 @@ req:58
 .
 
 req:59
+	:coreStandard core:2 ;
 	:category cat:3 ;
 	:title "'Find a SUI' protocol" ;
 	:description "Must describe a process of converting 'find a SUI' requests into 'find a SUI' responses. Must cater for authentication and authorization so that only appropriate callers can interact with the 'find a SUI' service for appropriate reasons. Must include a well-known address where the service can be called." ;
@@ -652,6 +686,7 @@ req:59
 .
 
 req:60
+	:coreStandard core:2 ;
 	:category cat:2 ;
 	:title "'Find a record' request model" ;
 	:description "Must contain a SUI obtained from the 'find a SUI' service. The request model must contain sufficient information to identify the caller for the purpose of authentication and authorisation. The request model must contain sufficient information about the caller to facilitate an audit trail." ;
@@ -660,6 +695,7 @@ req:60
 .
 
 req:61
+	:coreStandard core:2 ;
 	:category cat:2 ;
 	:title "'Find a record' response model" ;
 	:description "Must consist of a set of contact details for organisations/services that can hold information about the subject identified by the SUI oin the request. These contact details are not machine readable, rather they are for human consumption." ;
@@ -668,6 +704,7 @@ req:61
 .
 
 req:62
+	:coreStandard core:2 ;
 	:category cat:3 ;
 	:title "'Find a record' protocol" ;
 	:description "Must describe a process of converting 'find a record' requests into 'find a record' responses. Must cater for authentication and authorization so that only appropriate callers can interact with the 'find a record' service for appropriate reasons. Must include a well-known address where the service can be called." ;
@@ -676,6 +713,7 @@ req:62
 .
 
 req:63
+	:coreStandard core:3 ;
 	:category cat:2 ;
 	:title "'Find a record' submission request model" ;
 	:description "Must contain both a SUI for the subject of care and contact details of an organisation/service that is relevant to the care of that subject. The request model must contain sufficient information to identify the caller for the purpose of authentication and authorisation. The request model must contain sufficient information about the caller to facilitate an audit trail." ;
@@ -684,6 +722,7 @@ req:63
 .
 
 req:64
+	:coreStandard core:3 ;
 	:category cat:3 ;
 	:title "'Find a record' submission protocol" ;
 	:description "Must describe a process transmitting and receiving 'find a record' submissin requests. Must cater for authentication and authorization so that only appropriate callers can interact with the 'find a record' service for appropriate reasons. Must include a well-known address where the service can be called." ;
@@ -692,6 +731,7 @@ req:64
 .
 
 req:65
+	:coreStandard core:3 ;
 	:category cat:1 ;
 	:title "Submitting to 'find a record'" ;
 	:description "Case management systems (and other relevant systems) must submit information to the 'find a record' service using the 'find a record' submission request model and the 'find a record' submission protocol whenever information regarding a person who the subject or care or the organisational/service contact details relevant to that subject change." ;
@@ -705,92 +745,572 @@ req:65
 
 uc:1
 	:useCaseTitle "Access and contribute to a shared record (subject of care)" ;
-	:useCaseDescription "As a data subject, I need to be able to contribute to my record, so that my experience and preferences can be considered when making decisions about my care." ;
+	:useCaseDescription """
+<dl>
+	<div>
+		<dt>Overview</dt>
+		<dd>Supporting access and contribution to a shared care record (from the data subject and family networks) in a way that accurately represents the person’s voice, experience and preferences.</dd>
+	</div>
+	<div>
+		<dt>Sub-use cases</dt>
+		<dd>
+			<ol>
+				<li id="sub-use-case_A">
+					<span>Child/ young person contributing to their record</span>
+					<ol>
+						<li>
+							<span>As a child/ young person I need to be able to share my experiences and preferences and for this to be represented on my record</span>
+						</li>
+					</ol>
+				</li>
+				<li id="sub-use-case_B">
+					<span>Individual (adult) contributing to their record</span>
+					<ol>
+						<li>
+							<span>As an adult receiving care and support I need to access information about me, complete assessments, manage care records, and track progress to maintain control and independence. I need to update information about my preferences, routines, and communication needs, so that professionals understand how best to support me, and I need to approve, question, or correct information recorded about me, so that my record is accurate and reflects my perspective.</span>
+						</li>
+					</ol>
+				</li>
+				<li id="sub-use-case_C">
+					<span>Family network contributing to a record</span>
+					<ol>
+						<li>
+							<span>As a family member participating in a family group decision-making process, I need to be able to contribute towards decisions and plans made for a child or young person in a way that’s easily captured on a system, so that a record of my views and involvement can be made</span>
+						</li>
+						<li>
+							<span>As a parent/ individual with parental responsibility, I need to be able to contribute towards the record of the person I have responsibility for, so that my experiences of caring for the person can be considered as part of the wider network of involvement</span>
+						</li>
+						<li>
+							<span>As a carer, I need to contribute relevant observations or updates about the person I support, so that social workers and providers can make timely decisions. </span>
+						</li>
+					</ol>
+				</li>
+				<li id="sub-use-case_D">
+					<span>Professional requirements to represent voice of the person</span>
+					<ol>
+						<li>
+							<span>As a social worker, I need to be able to capture the voice of the person I am supporting and their family members in their records in a way that is efficient, so that I can capture their voice without needing to double key lots of information.</span>
+						</li>
+						<li>
+							<span>As a social worker, I need CMS records that hold family members accountable for their agreed actions.</span>
+						</li>
+					</ol>
+				</li>
+			</ol>
+		</dd>
+	</div>
+</dl>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/1.Use%20Case%20-%20Access%20and%20contribute%20to%20a%20shared%20record.docx?d=w8b258b24e73c42898668b4e8ba8a6e82&csf=1&web=1&e=cql8dk> ;
 .
 
 uc:2
 	:useCaseTitle "Social worker recording" ;
-	:useCaseDescription "As a person giving care, I need to write freeform notes regarding the provision of care following an interaction with a person receiving care so that relevant information is kept for further reference." ;
+	:useCaseDescription """
+<dl>
+	<div>
+		<dt>Generic</dt>
+		<dd>As a professional working with a client, I need to write/ record freeform records of activities and observations following an interaction with a client so that relevant information is kept for further reference. I need these notes to then be easily added to their CMS record.</dd>
+	</div>
+	<div>
+		<dt>Sub-use cases</dt>
+		<dd>
+			<ol>
+				<li id="sub-use-case-A">
+					<span>Children’s Social Worker visiting a child and family</span>
+					<ol>
+						<li>
+							<span>As a social worker visiting a child and family, I need to make a record of the visit that includes a narrative account, my observations, my analysis, and any expressed wishes and feelings of the child or family.</span>
+						</li>
+					</ol>
+				</li>
+				<li id="sub-use-case-B">
+					<span>Adults Social Worker visiting a client</span>
+					<ol>
+						<li>
+							<span>As a social worker visiting an individual, I need to make a record of the visit that includes a narrative account, my observations, my analysis, and any input from the individual</span>
+						</li>
+					</ol>
+				</li>
+			</ol>
+		</dd>
+	</div>
+</dl>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/2.%20Use%20Case%20-%20Social%20Worker%20recording%20data.docx?d=w007534adc56043888919aecf0cbf754d&csf=1&web=1&e=GrISbw> ;
 .
 
 uc:3
 	:useCaseTitle "Finding and synthesising information from the CMS" ;
-	:useCaseDescription "As a social worker, I need to find information within my CMS quickly and reliably, so that I can use it to inform mine or my colleagues' planning and work with the subject of care." ;
+	:useCaseDescription """
+<dl>
+	<div>
+		<dt>Generic</dt>
+		<dd>As a social care professional, I need to quickly find, understand, and reuse important information stored across the CMS, so that I can make informed decisions, complete required documentation efficiently, and provide highquality support without unnecessary administrative burden.</dd>
+	</div>
+	<div>
+		<dt>Examples</dt>
+		<dd>
+			<ol>
+				<li id="sub-use-case-A">
+					<span>As a social worker, I need to find information within my CMS quickly and reliably, so that I can use it to inform mine or my colleagues planning and work with the subject of care.</span>
+				</li>
+				<li id="sub-use-case-B">
+					<span>As a social worker, I need to synthesise existing information which is spread throughout many fields and documents, into new content for new and specific purposes.</span>
+				</li>
+				<li id="sub-use-case-C">
+					<span>As a social worker, I need to be able to find patterns in existing records that go back multiple years and are recorded using different form templates and linguistic and analytical styles.  I need this information to be rank-able chronologically and by level of importance.</span>
+				</li>
+				<li id="sub-use-case-D">
+					<span>As a social worker I need to be able to see the most important information quickly and easily.</span>
+				</li>
+				<li id="sub-use-case-E">
+					<span>As a social worker I need the form that I am currently completing to automatically contain information that is already captured in other places in the CMS, both to aid my analysis and to reduce duplication of effort.</span>
+				</li>
+				<li id="sub-use-case-F">
+					<span>As a manager / auditor, I need to find key information (including specific documents) quickly and easily to conduct case file audits.</span>
+				</li>
+			</ol>
+		</dd>
+	</div>
+</dl>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/3.Use%20Case%20-%20Finding%20and%20synthesising%20information%20from%20the%20CMS.docx?d=wd01381d671cb48b0a8e8ab6958d0d956&csf=1&web=1&e=jaM0HA> ;
 .
 
 uc:4
 	:useCaseTitle "Supporting CMS migration" ;
-	:useCaseDescription "As a social care leader, I need to be getting the best value for my social workers from their case management system so that they can do their jobs most effectively" ;
+	:useCaseDescription """
+<dl>
+	<div>
+		<dt>Generic</dt>
+		<dd>As a local authority, we need to be able to easily move between case management systems and ensure they deliver maximum value for staff and public services, so that we can improve social worker effectiveness, ensure responsible use of public funds, and foster a more competitive and innovative CMS market.</dd>
+	</div>
+	<div>
+		<dt>Examples </dt>
+		<dd>
+			<ol>
+				<li id="sub-use-case-A">
+					<span>As a social care leader, I need to be getting the best value for my social workers from their case management system so that they can do their jobs most effectively</span>
+				</li>
+				<li id="sub-use-case-B">
+					<span>As a social care leader, I need to be getting the best value for money from my case management system so that I can evidence sensible use of public funds</span>
+				</li>
+				<li id="sub-use-case-C">
+					<span>As a social care data lead, I need to be able to easily migrate data between my current system and newly commissioned systems so that social workers can continue working seamlessly between systems</span>
+				</li>
+				<li id="sub-use-case-D">
+					<span>As a social care leader, I need a range of software options available for purchase that will reduce the administrative burden on my social workers and admin staff, so that I can make the case to my council for spending more on software.</span>
+				</li>
+			</ol>
+		</dd>
+	</div>
+</dl>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/4.Use%20Case%20-%20Supporting%20CMS%20Migration.docx?d=wbb5c2921c16a459ba6dd073337b76fc9&csf=1&web=1&e=eCdD1H> ;
 .
 
 uc:5
 	:useCaseTitle "Analysing information from the CMS" ;
-	:useCaseDescription "As a social work senior leader, I need to be able to analyse data about children being supported by my service area, so that I can make decisions about service planning." ;
+	:useCaseDescription """
+<dl>
+	<div>
+		<dt>Generic</dt>
+		<dd>As a social care leader, I need timely, accurate, and comprehensive analysis of data from across the case management system and related services so that I can understand need, monitor risk, plan resources effectively, and ensure statutory responsibilities are met.</dd>
+	</div>
+	<div>
+		<dt>Examples</dt>
+		<dd>
+			<ol>
+				<li id="sub-use-case-A">
+					<span>As a social work senior leader, I need to be able to analyse data about children being supported by my service area, so that I can make decisions about service planning.</span>
+				</li>
+				<li id="sub-use-case-B">
+					<span>As a social work senior leader, I need to analyse pathways through services, to identify opportunities for operational improvement and/or earlier intervention</span>
+				</li>
+				<li id="sub-use-case-C">
+					<span>As a social work senior leader, I need to model scenarios of future service demand, expenditure, and outcomes, to make decisions about where to put our resources</span>
+				</li>
+				<li id="sub-use-case-D">
+					<span>As a social work leader, I need to quantify the risk of specific events happening to specific people in a specific timeframe, so that I can identify opportunities for prevention and early intervention.</span>
+				</li>
+				<li id="sub-use-case-E">
+					<span>As a social work leader, I need to be able to quickly audit specific sections of case files across all cases in order to prepare for inspection.</span>
+				</li>
+				<li id="sub-use-case-F">
+					<span>As a social work team manager, I need to be able to monitor risk on children allocated within my team and ensure professionals are making good decisions and following up on actions necessary to keep children safe.</span>
+				</li>
+				<li id="sub-use-case-G">
+					<span>As a social work team manager, I need to be able to track the performance of my supervisees against targets and statutory requirements.</span>
+				</li>
+			</ol>
+		</dd>
+	</div>
+</dl>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/5.Use%20Case%20-%20Analysing%20information%20from%20the%20CMS.docx?d=w35bfe69bdf594b37b506d87462073323&csf=1&web=1&e=pnRTZb> ;
 .
 
 uc:6
 	:useCaseTitle "Social care statutory reporting" ;
-	:useCaseDescription "As a BI/ performance team member, I can generate accurate statutory returns (e.g. CLD or SSDA903) from reliable data in the CMS, minimising manual data cleansing, so that the local authority meets national reporting requirements, and we can use this data for benchmarking and insights." ;
+	:useCaseDescription """
+As a local authority responsible for statutory social care reporting, I need reliable, standardised, highquality data and efficient processes for generating and submitting statutory returns (e.g. CLD or SSDA903), so that national bodies (DfE/DHSC) receive accurate, timely, comparable information that supports policymaking, oversight, and service improvement.
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/6.Use%20case%20-%20Statutory%20reporting.docx?d=we9160b5a670d4175bfe48f9d4cc2a53d&csf=1&web=1&e=74pvQb> ;
 .
 
 uc:7
 	:useCaseTitle "Sharing care summaries" ;
-	:useCaseDescription "As a social work admin support team, I need to be able to create a version of someone's care records which are intelligible to them and do not breach duties of confidentiality to others, so that I can respect their right to know what was written about them." ;
+	:useCaseDescription """
+<p>As a social work admin support team, I need to be able to create a version of someone’s care records which are intelligible to them and do not breach duties of confidentiality to others, so that I can uphold the LA’s ethical and legal responsibility to them.  I need to compile and share them in a way that minimises the traumatising impact of reading them on the person.</p>
+<p>As an adult who has left the care system, I need to access a copy of my records which I can understand, so I can understand what decisions were made about me and why</p>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/7.Use%20Case%20-%20Sharing%20care%20summaries.docx?d=w173b860234ae47bf8e5e8d82a18b803d&csf=1&web=1&e=kpP5Wf> ;
 .
 
 uc:8
 	:useCaseTitle "Transition  from children's social care to adult social care" ;
-	:useCaseDescription "As an adult social worker or transitions manager, I can receive, track, and act on information about young people transitioning from children's to adult services, so that their care is continuous, assessments are timely, and support plans are appropriate when they reach adulthood." ;
+	:useCaseDescription """
+As an adult social worker or transitions manager, I can receive, track, and act on information about young people transitioning from children’s to adult services, so that their care is continuous, assessments are timely, and support plans are appropriate when they reach adulthood.
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/8.Use%20case%20-%20CSC%20to%20ASC%20transitions.docx?d=wfae32b14cc094ed8a40ba15b122d83a5&csf=1&web=1&e=fgpgCk> ;
 .
 
 uc:9
 	:useCaseTitle "Transfer of responsibility" ;
-	:useCaseDescription "As a social worker I need to be able to transfer records between local authorities, so that when a child or young person who is subject to a child protection plan moves outside my local authority, the new social work teams are able to understand the full history of my involvement.  This transfer of records happens at a Transfer-in Child Protection Conference, hosted by the receiving social work team." ;
+	:useCaseDescription """
+<p>As a social worker I need to be able to transfer records between local authorities, so that when a child or young person who is subject to a child protection plan moves outside my local authority, the new social work teams are able to understand the full history of my involvement.  This transfer of records happens at a Transfer-in Child Protection Conference, hosted by the receiving social work team.</p>
+<p>As a social worker I need to be able to understand the full history of incoming child protection cases from other local authorities so I can appropriately support the child</p>
+<p>As a social worker I need to be able to request the full records held by another local authority on a child I am working with.</p>
+<p>As an administrator, I need to be able to respond to requests from other local authorities for information about children by sharing the full history of our involvement with them.</p>
+<p>As a child or young person working with social care, records created about me need to be able to move with me, so that social workers in my new authority have a complete understanding of my case</p>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/9.Use%20Case%20-%20Transfer%20of%20responsibility.docx?d=w3aa5ced9d74d4486a4c17812abe0ef1e&csf=1&web=1&e=l33lRG> ;
 .
 
 uc:10
 	:useCaseTitle "Multi-agency enquiries" ;
-	:useCaseDescription "As a professional starting work directly with an individual, I want to know their history of involvement with professionals, including concerns, interventions, and outcomes.  This helps me plan my work with them, and avoids them feeling they have to explain their story over and over again." ;
+	:useCaseDescription """
+<dl>
+	<div>
+		<dt>Overview</dt>
+		<dd>accessing and understanding relevant information about an individual across agencies to support safe, timely, and well-coordinated decision-making</dd>
+	</div>
+	<div>
+		<dt>Sub-use cases </dt>
+		<dd>
+			<ol>
+				<li id="sub-use-case-A">
+					<span>Frontline practitioner enquiries when beginning work with an individual</span>
+					<ol>
+						<li>
+							<span>As a professional starting work directly with an individual, I want to know their history of involvement with professionals, including concerns, interventions, and outcomes.  This helps me plan my work with them and avoids them feeling they have to explain their story repeatedly.</span>
+						</li>
+						<li>
+							<span>As a professional starting work directly with an individual, I want to be able to contact other professionals who are currently supporting them or who have in the past.  This helps us co-ordinate our work and learn from each other.</span>
+						</li>
+						<li>
+							<span>As a MASH officer / social worker who has received a referral about a child, I want to be able to quickly find information about that child or their family members held by other professionals in order to triage and allocate them appropriately (allocation decision usually signed off by manager).</span>
+						</li>
+					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/4">CSC safeguarding use cases</a>
+							</li>
+						</ul>
+					</fieldset>
+				</li>
+				<li id="sub-use-case-B">
+					<span>Safeguarding enquiries (use cases 10a/14 and 10b/15)</span>
+					<ol>
+						<li>
+							<span>As a social worker conducting safeguarding enquiries, I need the contact details of other professionals hold pertinent information about the subject so that I can coordinate information sharing and support to allow for effective analysis and decision making.</span>
+						</li>
+						<li>
+							<span>As the administrator of a social care CMS, I need to contribute records about which individuals we are (or have been) working with to the ‘Find a Record’ service, so that professionals in other organisations can rely on the responses they get from ‘Find a Record’.</span>
+						</li>
+					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/4">CSC safeguarding use cases</a>
+							</li>
+							<li>
+								<a href="/requirement-category/6">SUI</a>
+							</li>
+						</ul>
+					</fieldset>
+				</li>
+				<li id="sub-use-case-C">
+					<span>Enquiries for CSC statutory processes</span>
+					<ol>
+						<li>
+							<span>As a social work manager, I need to be able to read all information held by professionals about a child and their family to inform my decision whether to initiate a child protection investigation under CA s.47.</span>
+						</li>
+						<li>
+							<span>As a social worker conducting a s.47 investigation, I need to contact all other professionals involved with a family to invite them to share information and decision-making as a professional network.</span>
+						</li>
+						<li>
+							<span>As a social worker supporting a child under CA s.17 (Child in Need) I need to access information held by other professionals about the child, where the child’s parent or carer has consented to this information sharing.</span>
+						</li>
+					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/4">CSC safeguarding use cases</a>
+							</li>
+						</ul>
+					</fieldset>
+				</li>
+				<li id="sub-use-case-D">
+					<span>Enquiries for ASC assessment and care coordination</span>
+					<ol>
+						<li>
+							<span>As an ASC social worker, I need to gather up-to-date health and community health information, carer information and other information about a person relevant to complete a Care Act assessment including assessing their capacity and seeking information on legal orders.</span>
+						</li>
+						<li>
+							<span>As an ASC social worker, I need to see employment and benefits information from DWP so that I can understand their income and entitlements which determines how much the LA pays for the package of care.</span>
+						</li>
+						<li>
+							<span>As an ASC social worker, I need to see provider information e.g. Dols assessments; care plans, safeguarding information and outcomes so that I can review and adjust a person’s LA care plan.</span>
+						</li>
+					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/5">ASC care coordination use cases</a>
+							</li>
+						</ul>
+					</fieldset>
+				</li>
+			</ol>
+		</dd>
+	</div>
+</dl>
+""";
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/10.Use%20Case%20-%20Multi%20agency%20enquiries.docx?d=w11a1e05fe58a4b8cbe543255da43841b&csf=1&web=1&e=fthCge> ;
 .
 
 uc:11
 	:useCaseTitle "Multi-agency notifications" ;
-	:useCaseDescription "As a social worker, I need to be notified of important events regarding the people I am supporting, so that I can make decisions about their care based on the most up-to-date information." ;
+	:useCaseDescription """
+<dl>
+	<div>
+		<dt>General</dt>
+		<dd>As a social worker, I need to be notified of important events regarding the people I am supporting, so that I can make decisions about their care based on the most up-to-date information.</dd>
+	</div>
+	<div>
+		<dt>Sub-use cases</dt>
+		<dd>
+			<ol>
+				<li id="sub-use-case-A">
+					<span>Safeguarding notifications</span>
+					<ol>
+						<li>
+							<span>As another agency (e.g. police force, education) I need to share information regarding key events with a local authority to fulfil my statutory safeguarding responsibilities</span>
+						</li>
+						<li>
+							<span>As a social worker, I need to be notified when a certain combination of statuses in a case are met so that I can intervene effectively</span>
+						</li>
+					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/4">CSC safeguarding use cases</a>
+							</li>
+						</ul>
+					</fieldset>
+				</li>
+				<li id="sub-use-case-B">
+					<span>Notifications between secondary care and social care</span>
+					<ol>
+						<li>
+							<span>As an adult’s social work assessor, I need to be notified of important events e.g. admission to or discharge from hospital so I can coordinate timely assessments and care, pause or restart care packages and update care providers</span>
+						</li>
+						<li>
+							<span>As a hospital discharge coordinator, I need to notify social care of a planned discharge date and receive confirmation of receipt of the referral, so that the right level of care can be arranged without delays</span>
+						</li>
+						<li>
+							<span>As a care worker in a care home, I need to be notified of important events (e.g. discharge from hospital, safeguarding) of residents so I am able to support their transition between settings.</span>
+						</li>
+					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/5">ASC care coordination use cases</a>
+							</li>
+						</ul>
+					</fieldset>
+				</li>
+			</ol>
+		</dd>
+	</div>
+</dl>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/11.Use%20Case%20-%20Multi%20agency%20notifications.docx?d=w5e6a5ab598f24455a5c9842a22c8b5b7&csf=1&web=1&e=8uIZf2> ;
 .
 
 uc:12
 	:useCaseTitle "Multiagency input into a person's record" ;
-	:useCaseDescription "As a practitioner working in a multiagency team, I need all key partners to be able to view relevant aspects of a child's record and input into the record of a child I am providing care for, so that the record provides a full picture of the child and their needs." ;
+	:useCaseDescription """
+<dl>
+	<div>
+		<dt>Sub-use cases</dt>
+		<dd>
+			<ol>
+				<li id="sub-use-case-A">
+					<span>CSC multi-agency team input</span>
+					<ol>
+						<li>
+							<span>As a practitioner working in a multiagency team, I need all key partners to be able to view relevant aspects of a child’s record and input into the record of a child I am providing care for, so that the record provides a full picture of the child and their needs.</span>
+						</li>
+						<li>
+							<span>As a practitioner working in a multiagency team, I need to a record of who has contributed to assessments and other key forms/documents so that I can have a better understanding of why certain decisions have been made and where to go for more information.</span>
+						</li>
+						<li>
+							<span>As a practitioner working in a multiagency team but not employed by CS, I need access to CMS to view and edit children’s case files where I am the allocated professional (FFC).</span>
+						</li>
+					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/4">CSC safeguarding use cases</a>
+							</li>
+						</ul>
+					</fieldset>
+				</li>
+				<li id="sub-use-case-B">
+					<span>External input into an adult social care record</span>
+					<ol>
+						<li>
+							<span>As a care provider/ care worker I can contribute observations or concerns (e.g., missed visits, safeguarding flags; poc) directly into a shared record, so that other professionals working with the person can have an up-to-date understanding of care and any risks.</span>
+						</li>
+						<li>
+							<span>As a mental health practitioner, I can record updates linked to a person’s wellbeing, so that social care can respond proactively.</span>
+						</li>
+						<li>
+							<span>As a reablement manager, I need to add information about a new care package to a shared record so that care workers can carry out care and social workers can view the details of the care package.</span>
+						</li>
+					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/5">ASC care coordination use cases</a>
+							</li>
+						</ul>
+					</fieldset>
+				</li>
+			</ol>
+		</dd>
+	</div>
+</dl>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/12.%20Use%20Case%20-%20Multiagency%20Input.docx?d=w72bc801eff39431aa218df754a96b6f0&csf=1&web=1&e=rNhvoO> ;
 .
 
 uc:13
 	:useCaseTitle "Recording and sharing adult social care needs assessments" ;
-	:useCaseDescription "As an adult social worker or delegated professional (e.g., OT), I can record a person's care needs, preferences, and outcomes in a structured, standardised way, so that the local authority can determine eligibility, plan support, ensure continuity of care, facilitate sharing with other professionals, and improve oversight and service quality." ;
+	:useCaseDescription """
+<dl>
+	<div>
+		<dt>Sub-use cases</dt>
+		<dd>
+			<ol>
+				<li id="sub-use-case-A">
+					<span>Recording care needs</span>
+					<ol>
+						<li>
+							<span>As an adult social worker or delegated professional (e.g., OT), I can record a person’s care needs, preferences, and outcomes in a structured, standardised way, so that the local authority can determine eligibility, resource allocation, plan support, ensure continuity of care, facilitate sharing with other professionals, and improve oversight and service quality.</span>
+						</li>
+					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/5">ASC care coordination use cases</a>
+							</li>
+						</ul>
+					</fieldset>
+				</li>
+				<li id="sub-use-case-B">
+					<span>Sharing assessments and plans</span>
+					<ol>
+						<li>
+							<span>As a social care professional, I want to share relevant parts of an assessment and care plan with:</span>
+							<ul>
+								<li>
+									<span>Healthcare professionals so that they can coordinate effectively, ensure continuity of care, and support integrated health and care planning.</span>
+								</li>
+								<li>
+									<span>care providers so that providers have the information they need to support me as an individual.</span>
+								</li>
+								<li>
+									<span>Housing services where relevant so that housing officers/ providers can understand my needs, risks and adjustments (eg equipment) enabling them to provide safe a suitable accommodation.</span>
+								</li>
+								<li>
+									<span>other external agencies where relevant e.g. voluntary sector providers, so that multi-agency partners have the relevant details they need to deliver coordinated, person-centred support. </span>
+								</li>
+							</ul>
+						</li>
+					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/5">ASC care coordination use cases</a>
+							</li>
+						</ul>
+					</fieldset>
+				</li>
+				<li id="sub-use-case-C">
+					<span>Citizen access to assessments and plans</span>
+					<ol>
+						<li>
+							<span>As an adult having my needs assessed, I would like to see a copy of the assessment as well as the care/support plan (or shared, with consent, to an appointed advocate; legal power of attorney; deputy or family member) so that I can understand my assessed needs and what support I am eligible for, and what has been refused (to be able to challenge decisions if necessary). I want to ensure my wellbeing was considered [note: links to 1Bi]</span>
+						</li>
+					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/5">ASC care coordination use cases</a>
+							</li>
+						</ul>
+					</fieldset>
+				</li>
+			</ol>
+		</dd>
+	</div>
+</dl>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/13.Use%20case%20-%20Shared%20understanding%20of%20care.docx?d=w57e8d61c7be641fda45b2d00e51ad072&csf=1&web=1&e=AlqFUq> ;
 .
 
 uc:14
 	:useCaseTitle "Contact details from SUI & NRL for safeguarding" ;
-	:useCaseDescription "As a social worker conducting safeguarding enquiries, I need the contact details of other professionals hold pertinent information about the subject so that I can coordinate information sharing and support to allow for effective analysis and decision making." ;
+	:useCaseDescription """
+As a social worker conducting safeguarding enquiries, I need the contact details of other professionals hold pertinent information about the subject so that I can coordinate information sharing and support to allow for effective analysis and decision making.
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/14.%20NRL%20SUI.docx?d=w8567667333514e23b15e9f84fb4ba6d6&csf=1&web=1&e=QTX4nC> ;
 	:useCaseSplitFrom uc:10 ;
 .
 
 uc:15
 	:useCaseTitle "Contributing data to NRL" ;
-	:useCaseDescription "As the administrator of a social care CMS I need to contribute records about which individuals we are (or have been) working with to the 'Find a Record' service so that professionals in other organisations can rely on the responses they get from 'Find a Record'." ;
+	:useCaseDescription """
+<p>As the administrator of a social care CMS...</p>
+<p>...I need to contribute records about which individuals we are (or have been) working with to the ‘Find a Record’ service...</p>
+<p>...so that professionals in other organisations can rely on the responses they get from ‘Find a Record’.</p>
+""" ;
 	:useCaseNarrativeDocument <https://socialfinanceltd.sharepoint.com/:w:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/15.%20Contributing%20data%20to%20the%20NRL.docx?d=w36a4c42120a4454cb047682d97d1dfdc&csf=1&web=1&e=5t0cog> ;
 	:useCaseSplitFrom uc:10 ;
 .
@@ -806,10 +1326,108 @@ cat:1
 
 cat:2
 	:categoryTitle "Data" ;
-	:categoryDescription "Requirements in this category define the structure and semantics of data used in the protocol. They specify data models, formats, and standards to ensure consistent representation and interpretation of information."
+	:categoryDescription "Requirements in this category define the structure and semantics of data used in the protocol. They specify data models, formats, and standards to ensure consistent representation and interpretation of information." ;
 .
 
 cat:3
 	:categoryTitle "Protocol" ;
-	:categoryDescription "Requirements in this category define communication protocols. They specify how systems communicate with each other using request and response data formats."
+	:categoryDescription "Requirements in this category define communication protocols. They specify how systems communicate with each other using request and response data formats." ;
+.
+
+cat:4
+	:categoryTitle "CSC safeguarding use cases" ;
+	:categoryDescription """
+<p>Use cases that support safeguarding in children's social care</p>
+<fieldset>
+	<legend>Related use cases</legend>
+	<ul>
+		<li>
+			<a href="/use-case/10#sub-use-case-A">Frontline practitioner enquiries when beginning work with an individual</a>
+		</li>
+		<li>
+			<a href="/use-case/10#sub-use-case-B">Safeguarding enquiries (use cases 10a/14 and 10b/15)</a>
+		</li>
+		<li>
+			<a href="/use-case/10#sub-use-case-C">Enquiries for CSC statutory processes</a>
+		</li>
+		<li>
+			<a href="/use-case/11#sub-use-case-A">Safeguarding notifications</a>
+		</li>
+		<li>
+			<a href="/use-case/12#sub-use-case-A">CSC multi-agency team input</a>
+		</li>
+	</ul>
+</fieldset>
+""" ;
+.
+
+cat:5
+	:categoryTitle "ASC care coordination use cases" ;
+	:categoryDescription """
+<p>Use cases that support adult social care care coordination</p>
+<fieldset>
+	<legend>Related use cases</legend>
+	<ul>
+		<li>
+			<a href="/use-case/10#sub-use-case-D">Enquiries for ASC assessment and care coordination</a>
+		</li>
+		<li>
+			<a href="/use-case/11#sub-use-case-B">Notifications between secondary care and social care</a>
+		</li>
+		<li>
+			<a href="/use-case/12#sub-use-case-B">External input into an adult social care record</a>
+		</li>
+		<li>
+			<a href="/use-case/13#sub-use-case-A">Recording care needs</a>
+		</li>
+		<li>
+			<a href="/use-case/13#sub-use-case-B">Sharing assessments and plans</a>
+		</li>
+		<li>
+			<a href="/use-case/13#sub-use-case-C">Citizen access to assessments and plans</a>
+		</li>
+	</ul>
+</fieldset>
+""" ;
+.
+
+cat:6
+	:categoryTitle "SUI" ;
+	:categoryDescription """
+<p>Use cases that support DfE SUI work</p>
+<fieldset>
+	<legend>Related use cases</legend>
+	<ul>
+		<li>
+			<a href="/use-case/10#sub-use-case-B">Safeguarding enquiries (use cases 10a/14 and 10b/15)</a>
+		</li>
+	</ul>
+</fieldset>
+""" ;
+.
+
+################
+# Core standards
+################
+
+# Source: https://socialfinanceltd.sharepoint.com/:x:/r/sites/CSCCMSStandardsProgramme/Shared%20Documents/Standards%20Development%20(Phase%202)/Use%20cases/Use%20case%20tags.xlsx?d=wbfdabbe46f914fd090625e8508a94284&csf=1&web=1&e=jFxHLz&nav=MTVfe0MyMTk2OUMyLTE5M0UtNDg2Ny04MTY2LUFDNzY5MTQ1OUZCN30
+
+core:1
+		:coreStandardTitle "Identity and access management" ;
+		:coreStandardDescription "Identity and Access Management concerns how systems and users are reliably identified, authenticated, and authorised when interacting across organisational or technical boundaries. In interoperability, IAM ensures that only legitimate actors can access data or services, and that they can only perform actions they are permitted to undertake. It provides the trust framework underpinning secure data exchange." ;
+.
+
+core:2
+		:coreStandardTitle "Query/ response" ;
+		:coreStandardDescription "Request/Response is an interaction pattern where one system actively asks another system for specific information or an action, and receives a direct reply. In interoperability, this model supports on-demand data retrieval, typically in real time, with a clear initiating party and a defined response." ;
+.
+
+core:3
+		:coreStandardTitle "Bulk transfer" ;
+		:coreStandardDescription "Bulk Transfer refers to the movement of large volumes of data between systems, typically in batches rather than in real time. In interoperability, this approach is used for large-scale data sharing, migration, or synchronisation, where completeness and efficiency of transfer are prioritised over immediacy." ;
+.
+
+core:4
+		:coreStandardTitle "Publish/ subscribe" ;
+		:coreStandardDescription "Publish/Subscribe is an event-driven interaction model in which one system publishes information or updates, and other systems subscribe to receive relevant events. In interoperability, this enables decoupled, scalable information sharing, where multiple consumers can automatically receive updates as they occur." ;
 .

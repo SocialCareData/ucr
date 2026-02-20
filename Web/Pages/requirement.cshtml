@@ -39,3 +39,19 @@
         </ul>
     </fieldset>
 }
+
+@if (Model.Requirement.CoreStandards.Any())
+{
+    <fieldset>
+        <legend>@Localizer["related core standards"]</legend>
+        <ul>
+            @foreach (var standard in Model.Requirement.CoreStandards)
+            {
+                <li>
+                    @standard.Number - <a asp-page="core-standard" asp-route-id="@standard.Number">@standard.Title</a>
+                    <blockquote>@standard.Description</blockquote>
+                </li>
+            }
+        </ul>
+    </fieldset>
+}

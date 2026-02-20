@@ -6,7 +6,7 @@
 
 <h1>@ViewBag.Title</h1>
 <code>@Model.RequirementCategory.Id</code>
-<p>@Model.RequirementCategory.Description</p>
+<p>@Html.Raw(@Model.RequirementCategory.Description)</p>
 
 @if (Model.RequirementCategory.Requirements.Any())
 {
