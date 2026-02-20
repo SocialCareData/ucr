@@ -1195,10 +1195,10 @@ cat:1
 
 cat:2
 	:categoryTitle "Data" ;
-	:categoryDescription "Requirements in this category define the structure and semantics of data used in the protocol. They specify data models, formats, and standards to ensure consistent representation and interpretation of information."
+	:categoryDescription "Requirements in this category define the structure and semantics of data used in the protocol. They specify data models, formats, and standards to ensure consistent representation and interpretation of information." ;
 .
 
 cat:3
 	:categoryTitle "Protocol" ;
-	:categoryDescription "Requirements in this category define communication protocols. They specify how systems communicate with each other using request and response data formats."
+	:categoryDescription "Requirements in this category define communication protocols. They specify how systems communicate with each other using request and response data formats." ;
 .
