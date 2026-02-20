@@ -1296,15 +1296,72 @@ cat:3
 
 cat:4
 	:categoryTitle "CSC safeguarding use cases" ;
-	:categoryDescription "Use cases that support safeguarding in children's social care" ;
+	:categoryDescription """
+<p>Use cases that support safeguarding in children's social care</p>
+<fieldset>
+	<legend>Related use cases</legend>
+	<ul>
+		<li>
+			<a href="/use-case/10#sub-use-case-A">Frontline practitioner enquiries when beginning work with an individual</a>
+		</li>
+		<li>
+			<a href="/use-case/10#sub-use-case-B">Safeguarding enquiries (use cases 10a/14 and 10b/15)</a>
+		</li>
+		<li>
+			<a href="/use-case/10#sub-use-case-C">Enquiries for CSC statutory processes</a>
+		</li>
+		<li>
+			<a href="/use-case/11#sub-use-case-A">Safeguarding notifications</a>
+		</li>
+		<li>
+			<a href="/use-case/12#sub-use-case-A">CSC multi-agency team input</a>
+		</li>
+	</ul>
+</fieldset>
+""" ;
 .
 
 cat:5
 	:categoryTitle "ASC care coordination use cases" ;
-	:categoryDescription "Use cases that support adult social care care coordination" ;
+	:categoryDescription """
+<p>Use cases that support adult social care care coordination</p>
+<fieldset>
+	<legend>Related use cases</legend>
+	<ul>
+		<li>
+			<a href="/use-case/10#sub-use-case-D">Enquiries for ASC assessment and care coordination</a>
+		</li>
+		<li>
+			<a href="/use-case/11#sub-use-case-B">Notifications between secondary care and social care</a>
+		</li>
+		<li>
+			<a href="/use-case/12#sub-use-case-B">External input into an adult social care record</a>
+		</li>
+		<li>
+			<a href="/use-case/13#sub-use-case-A">Recording care needs</a>
+		</li>
+		<li>
+			<a href="/use-case/13#sub-use-case-B">Sharing assessments and plans</a>
+		</li>
+		<li>
+			<a href="/use-case/13#sub-use-case-C">Citizen access to assessments and plans</a>
+		</li>
+	</ul>
+</fieldset>
+""" ;
 .
 
 cat:6
 	:categoryTitle "SUI" ;
-	:categoryDescription "Use cases that support DfE SUI work" ;
+	:categoryDescription """
+<p>Use cases that support DfE SUI work</p>
+<fieldset>
+	<legend>Related use cases</legend>
+	<ul>
+		<li>
+			<a href="/use-case/10#sub-use-case-B">Safeguarding enquiries (use cases 10a/14 and 10b/15)</a>
+		</li>
+	</ul>
+</fieldset>
+""" ;
 .
