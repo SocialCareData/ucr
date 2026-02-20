@@ -2,3 +2,11 @@
 	margin: 0;
 	height: 100vh;
 }
+
+ol {
+	list-style-type: upper-alpha
+}
+
+	ol ol {
+		list-style-type: lower-roman
+	}
