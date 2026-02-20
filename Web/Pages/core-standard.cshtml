@@ -16,7 +16,7 @@
             @foreach (var coreStandard in Model.CoreStandard.Requirements)
             {
                 <li>
-                    @coreStandard.Number - <a asp-page="coreStandard" asp-route-id="@coreStandard.Number">@coreStandard.Title</a>
+                    @coreStandard.Number - <a asp-page="requirement" asp-route-id="@coreStandard.Number">@coreStandard.Title</a>
                     <blockquote>@coreStandard.Description</blockquote>
                 </li>
             }
