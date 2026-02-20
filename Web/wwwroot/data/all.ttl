@@ -1202,3 +1202,18 @@ cat:3
 	:categoryTitle "Protocol" ;
 	:categoryDescription "Requirements in this category define communication protocols. They specify how systems communicate with each other using request and response data formats." ;
 .
+
+cat:4
+	:categoryTitle "CSC safeguarding use cases" ;
+	:categoryDescription "Use cases that support safeguarding in children's social care" ;
+.
+
+cat:5
+	:categoryTitle "ASC care coordination use cases" ;
+	:categoryDescription "Use cases that support adult social care care coordination" ;
+.
+
+cat:6
+	:categoryTitle "SUI" ;
+	:categoryDescription "Use cases that support DfE SUI work" ;
+.
