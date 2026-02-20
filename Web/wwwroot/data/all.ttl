@@ -973,6 +973,14 @@ uc:10
 							<span>As a MASH officer / social worker who has received a referral about a child, I want to be able to quickly find information about that child or their family members held by other professionals in order to triage and allocate them appropriately (allocation decision usually signed off by manager).</span>
 						</li>
 					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/4">CSC safeguarding use cases</a>
+							</li>
+						</ul>
+					</fieldset>
 				</li>
 				<li id="sub-use-case-B">
 					<span>Safeguarding enquiries (use cases 10a/14 and 10b/15)</span>
@@ -984,6 +992,17 @@ uc:10
 							<span>As the administrator of a social care CMS, I need to contribute records about which individuals we are (or have been) working with to the ‘Find a Record’ service, so that professionals in other organisations can rely on the responses they get from ‘Find a Record’.</span>
 						</li>
 					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/4">CSC safeguarding use cases</a>
+							</li>
+							<li>
+								<a href="/requirement-category/6">SUI</a>
+							</li>
+						</ul>
+					</fieldset>
 				</li>
 				<li id="sub-use-case-C">
 					<span>Enquiries for CSC statutory processes</span>
@@ -998,6 +1017,14 @@ uc:10
 							<span>As a social worker supporting a child under CA s.17 (Child in Need) I need to access information held by other professionals about the child, where the child’s parent or carer has consented to this information sharing.</span>
 						</li>
 					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/4">CSC safeguarding use cases</a>
+							</li>
+						</ul>
+					</fieldset>
 				</li>
 				<li id="sub-use-case-D">
 					<span>Enquiries for ASC assessment and care coordination</span>
@@ -1012,6 +1039,14 @@ uc:10
 							<span>As an ASC social worker, I need to see provider information e.g. Dols assessments; care plans, safeguarding information and outcomes so that I can review and adjust a person’s LA care plan.</span>
 						</li>
 					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/5">ASC care coordination use cases</a>
+							</li>
+						</ul>
+					</fieldset>
 				</li>
 			</ol>
 		</dd>
@@ -1043,6 +1078,14 @@ uc:11
 							<span>As a social worker, I need to be notified when a certain combination of statuses in a case are met so that I can intervene effectively</span>
 						</li>
 					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/4">CSC safeguarding use cases</a>
+							</li>
+						</ul>
+					</fieldset>
 				</li>
 				<li id="sub-use-case-B">
 					<span>Notifications between secondary care and social care</span>
@@ -1057,6 +1100,14 @@ uc:11
 							<span>As a care worker in a care home, I need to be notified of important events (e.g. discharge from hospital, safeguarding) of residents so I am able to support their transition between settings.</span>
 						</li>
 					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/5">ASC care coordination use cases</a>
+							</li>
+						</ul>
+					</fieldset>
 				</li>
 			</ol>
 		</dd>
@@ -1087,6 +1138,14 @@ uc:12
 							<span>As a practitioner working in a multiagency team but not employed by CS, I need access to CMS to view and edit children’s case files where I am the allocated professional (FFC).</span>
 						</li>
 					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/4">CSC safeguarding use cases</a>
+							</li>
+						</ul>
+					</fieldset>
 				</li>
 				<li id="sub-use-case-B">
 					<span>External input into an adult social care record</span>
@@ -1101,6 +1160,14 @@ uc:12
 							<span>As a reablement manager, I need to add information about a new care package to a shared record so that care workers can carry out care and social workers can view the details of the care package.</span>
 						</li>
 					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/5">ASC care coordination use cases</a>
+							</li>
+						</ul>
+					</fieldset>
 				</li>
 			</ol>
 		</dd>
@@ -1125,6 +1192,14 @@ uc:13
 							<span>As an adult social worker or delegated professional (e.g., OT), I can record a person’s care needs, preferences, and outcomes in a structured, standardised way, so that the local authority can determine eligibility, resource allocation, plan support, ensure continuity of care, facilitate sharing with other professionals, and improve oversight and service quality.</span>
 						</li>
 					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/5">ASC care coordination use cases</a>
+							</li>
+						</ul>
+					</fieldset>
 				</li>
 				<li id="sub-use-case-B">
 					<span>Sharing assessments and plans</span>
@@ -1147,6 +1222,14 @@ uc:13
 							</ul>
 						</li>
 					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/5">ASC care coordination use cases</a>
+							</li>
+						</ul>
+					</fieldset>
 				</li>
 				<li id="sub-use-case-C">
 					<span>Citizen access to assessments and plans</span>
@@ -1155,6 +1238,14 @@ uc:13
 							<span>As an adult having my needs assessed, I would like to see a copy of the assessment as well as the care/support plan (or shared, with consent, to an appointed advocate; legal power of attorney; deputy or family member) so that I can understand my assessed needs and what support I am eligible for, and what has been refused (to be able to challenge decisions if necessary). I want to ensure my wellbeing was considered [note: links to 1Bi]</span>
 						</li>
 					</ol>
+					<fieldset>
+						<legend>Related categories</legend>
+						<ul>
+							<li>
+								<a href="/requirement-category/5">ASC care coordination use cases</a>
+							</li>
+						</ul>
+					</fieldset>
 				</li>
 			</ol>
 		</dd>
