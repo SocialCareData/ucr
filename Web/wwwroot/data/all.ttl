@@ -715,7 +715,7 @@ uc:1
 		<dt>Sub-use cases</dt>
 		<dd>
 			<ol>
-				<li>
+				<li id="sub-use-case_A">
 					<span>Child/ young person contributing to their record</span>
 					<ol>
 						<li>
@@ -723,7 +723,7 @@ uc:1
 						</li>
 					</ol>
 				</li>
-				<li>
+				<li id="sub-use-case_B">
 					<span>Individual (adult) contributing to their record</span>
 					<ol>
 						<li>
@@ -731,7 +731,7 @@ uc:1
 						</li>
 					</ol>
 				</li>
-				<li>
+				<li id="sub-use-case_C">
 					<span>Family network contributing to a record</span>
 					<ol>
 						<li>
@@ -745,7 +745,7 @@ uc:1
 						</li>
 					</ol>
 				</li>
-				<li>
+				<li id="sub-use-case_D">
 					<span>Professional requirements to represent voice of the person</span>
 					<ol>
 						<li>
@@ -776,7 +776,7 @@ uc:2
 		<dt>Sub-use cases</dt>
 		<dd>
 			<ol>
-				<li>
+				<li id="sub-use-case-A">
 					<span>Children’s Social Worker visiting a child and family</span>
 					<ol>
 						<li>
@@ -784,7 +784,7 @@ uc:2
 						</li>
 					</ol>
 				</li>
-				<li>
+				<li id="sub-use-case-B">
 					<span>Adults Social Worker visiting a client</span>
 					<ol>
 						<li>
@@ -812,22 +812,22 @@ uc:3
 		<dt>Examples</dt>
 		<dd>
 			<ol>
-				<li>
+				<li id="sub-use-case-A">
 					<span>As a social worker, I need to find information within my CMS quickly and reliably, so that I can use it to inform mine or my colleagues planning and work with the subject of care.</span>
 				</li>
-				<li>
+				<li id="sub-use-case-B">
 					<span>As a social worker, I need to synthesise existing information which is spread throughout many fields and documents, into new content for new and specific purposes.</span>
 				</li>
-				<li>
+				<li id="sub-use-case-C">
 					<span>As a social worker, I need to be able to find patterns in existing records that go back multiple years and are recorded using different form templates and linguistic and analytical styles.  I need this information to be rank-able chronologically and by level of importance.</span>
 				</li>
-				<li>
+				<li id="sub-use-case-D">
 					<span>As a social worker I need to be able to see the most important information quickly and easily.</span>
 				</li>
-				<li>
+				<li id="sub-use-case-E">
 					<span>As a social worker I need the form that I am currently completing to automatically contain information that is already captured in other places in the CMS, both to aid my analysis and to reduce duplication of effort.</span>
 				</li>
-				<li>
+				<li id="sub-use-case-F">
 					<span>As a manager / auditor, I need to find key information (including specific documents) quickly and easily to conduct case file audits.</span>
 				</li>
 			</ol>
@@ -850,16 +850,16 @@ uc:4
 		<dt>Examples </dt>
 		<dd>
 			<ol>
-				<li>
+				<li id="sub-use-case-A">
 					<span>As a social care leader, I need to be getting the best value for my social workers from their case management system so that they can do their jobs most effectively</span>
 				</li>
-				<li>
+				<li id="sub-use-case-B">
 					<span>As a social care leader, I need to be getting the best value for money from my case management system so that I can evidence sensible use of public funds</span>
 				</li>
-				<li>
+				<li id="sub-use-case-C">
 					<span>As a social care data lead, I need to be able to easily migrate data between my current system and newly commissioned systems so that social workers can continue working seamlessly between systems</span>
 				</li>
-				<li>
+				<li id="sub-use-case-D">
 					<span>As a social care leader, I need a range of software options available for purchase that will reduce the administrative burden on my social workers and admin staff, so that I can make the case to my council for spending more on software.</span>
 				</li>
 			</ol>
@@ -882,25 +882,25 @@ uc:5
 		<dt>Examples</dt>
 		<dd>
 			<ol>
-				<li>
+				<li id="sub-use-case-A">
 					<span>As a social work senior leader, I need to be able to analyse data about children being supported by my service area, so that I can make decisions about service planning.</span>
 				</li>
-				<li>
+				<li id="sub-use-case-B">
 					<span>As a social work senior leader, I need to analyse pathways through services, to identify opportunities for operational improvement and/or earlier intervention</span>
 				</li>
-				<li>
+				<li id="sub-use-case-C">
 					<span>As a social work senior leader, I need to model scenarios of future service demand, expenditure, and outcomes, to make decisions about where to put our resources</span>
 				</li>
-				<li>
+				<li id="sub-use-case-D">
 					<span>As a social work leader, I need to quantify the risk of specific events happening to specific people in a specific timeframe, so that I can identify opportunities for prevention and early intervention.</span>
 				</li>
-				<li>
+				<li id="sub-use-case-E">
 					<span>As a social work leader, I need to be able to quickly audit specific sections of case files across all cases in order to prepare for inspection.</span>
 				</li>
-				<li>
+				<li id="sub-use-case-F">
 					<span>As a social work team manager, I need to be able to monitor risk on children allocated within my team and ensure professionals are making good decisions and following up on actions necessary to keep children safe.</span>
 				</li>
-				<li>
+				<li id="sub-use-case-G">
 					<span>As a social work team manager, I need to be able to track the performance of my supervisees against targets and statutory requirements.</span>
 				</li>
 			</ol>
@@ -960,7 +960,7 @@ uc:10
 		<dt>Sub-use cases </dt>
 		<dd>
 			<ol>
-				<li>
+				<li id="sub-use-case-A">
 					<span>Frontline practitioner enquiries when beginning work with an individual</span>
 					<ol>
 						<li>
@@ -974,7 +974,7 @@ uc:10
 						</li>
 					</ol>
 				</li>
-				<li>
+				<li id="sub-use-case-B">
 					<span>Safeguarding enquiries (use cases 10a/14 and 10b/15)</span>
 					<ol>
 						<li>
@@ -985,7 +985,7 @@ uc:10
 						</li>
 					</ol>
 				</li>
-				<li>
+				<li id="sub-use-case-C">
 					<span>Enquiries for CSC statutory processes</span>
 					<ol>
 						<li>
@@ -999,7 +999,7 @@ uc:10
 						</li>
 					</ol>
 				</li>
-				<li>
+				<li id="sub-use-case-D">
 					<span>Enquiries for ASC assessment and care coordination</span>
 					<ol>
 						<li>
@@ -1033,7 +1033,7 @@ uc:11
 		<dt>Sub-use cases</dt>
 		<dd>
 			<ol>
-				<li>
+				<li id="sub-use-case-A">
 					<span>Safeguarding notifications</span>
 					<ol>
 						<li>
@@ -1044,7 +1044,7 @@ uc:11
 						</li>
 					</ol>
 				</li>
-				<li>
+				<li id="sub-use-case-B">
 					<span>Notifications between secondary care and social care</span>
 					<ol>
 						<li>
@@ -1074,7 +1074,7 @@ uc:12
 		<dt>Sub-use cases</dt>
 		<dd>
 			<ol>
-				<li>
+				<li id="sub-use-case-A">
 					<span>CSC multi-agency team input</span>
 					<ol>
 						<li>
@@ -1088,7 +1088,7 @@ uc:12
 						</li>
 					</ol>
 				</li>
-				<li>
+				<li id="sub-use-case-B">
 					<span>External input into an adult social care record</span>
 					<ol>
 						<li>
@@ -1118,15 +1118,15 @@ uc:13
 		<dt>Sub-use cases</dt>
 		<dd>
 			<ol>
-				<li>
-					<span>Recording care needs </span>
+				<li id="sub-use-case-A">
+					<span>Recording care needs</span>
 					<ol>
 						<li>
 							<span>As an adult social worker or delegated professional (e.g., OT), I can record a person’s care needs, preferences, and outcomes in a structured, standardised way, so that the local authority can determine eligibility, resource allocation, plan support, ensure continuity of care, facilitate sharing with other professionals, and improve oversight and service quality.</span>
 						</li>
 					</ol>
 				</li>
-				<li>
+				<li id="sub-use-case-B">
 					<span>Sharing assessments and plans</span>
 					<ol>
 						<li>
@@ -1148,7 +1148,7 @@ uc:13
 						</li>
 					</ol>
 				</li>
-				<li>
+				<li id="sub-use-case-C">
 					<span>Citizen access to assessments and plans</span>
 					<ol>
 						<li>
