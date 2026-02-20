@@ -1,0 +1,25 @@
+﻿@page "{id:int}"
+@model CoreStandardModel
+@{
+    ViewBag.Title = Localizer.GetString("title", Model.CoreStandard.Number, Model.CoreStandard.Title);
+}
+
+<h1>@ViewBag.Title</h1>
+<code>@Model.CoreStandard.Id</code>
+<p>@Html.Raw(@Model.CoreStandard.Description)</p>
+
+@if (Model.CoreStandard.Requirements.Any())
+{
+    <fieldset>
+        <legend>Related requirements</legend>
+        <ul>
+            @foreach (var coreStandard in Model.CoreStandard.Requirements)
+            {
+                <li>
+                    @coreStandard.Number - <a asp-page="coreStandard" asp-route-id="@coreStandard.Number">@coreStandard.Title</a>
+                    <blockquote>@coreStandard.Description</blockquote>
+                </li>
+            }
+        </ul>
+    </fieldset>
+}
