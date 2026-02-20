@@ -126,4 +126,7 @@
   <data name="title" xml:space="preserve">
     <value>Requirement {0} - {1}</value>
   </data>
+  <data name="related core standards" xml:space="preserve">
+    <value>Related core standards</value>
+  </data>
 </root>
